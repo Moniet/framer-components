@@ -1,2 +1,13 @@
+#GENERAL
 node_modules
 /packages/*/node_modules
+/*/**/*.tsbuildinfo
+.DS_STORE
+/*/**/.DS_STORE
+
+#FRONEND
+/frontend/.next
+/frontend/build
+
+#PACKAGES
+/packages/*/**/dist
