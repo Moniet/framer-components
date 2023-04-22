@@ -8,6 +8,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "emitDeclarationOnly": true,
     "module": "NodeNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -27,5 +28,5 @@
     "./src/components/*/*.ts",
     "src/components/Button/index.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/*/*.modules.css"]
 }
