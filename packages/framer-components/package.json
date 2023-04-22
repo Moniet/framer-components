@@ -1,0 +1,24 @@
+{
+  "name": "framer-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm; node esmbuild/esmbuild serve ./src/components ",
+    "build": "pnpm; node esmbuild/esmbuild build ./src/components dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^18.0.37",
+    "esbuild": "^0.17.17",
+    "framer": "^2.3.0",
+    "framer-motion": "^10.12.4",
+    "globby": "^13.1.4",
+    "react": "^18.2.0",
+    "tmp": "^0.2.1",
+    "typescript": "^5.0.4"
+  }
+}
