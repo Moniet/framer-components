@@ -8,7 +8,7 @@
     "serve": "PORT=3006 serve ./dist",
     "build": "node esmbuild/esmbuild",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ghpages": "ts-node publish.mjs"
+    "ghpages": "node publish.mjs"
   },
   "keywords": [],
   "author": "",

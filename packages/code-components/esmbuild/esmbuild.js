@@ -39,21 +39,4 @@ async function build() {
   console.log(`Build done at ${defaultOutdir}`)
 }
 
-async function serve(path = defaultPath, port = 8000) {
-  function onRequest(info) {
-    const status = color(
-      info.status.toString().startsWith("2") ? 32 : 31,
-      info.status
-    )
-    const line = color(
-      37,
-      `${info.method} ${status} ${info.path} [${info.timeInMS}ms]`
-    )
-    console.log(line)
-  }
-
-  await esbuild.serve({ port, onRequest }, await getBuildOptions(path))
-  console.log(`Server listening at http://127.0.0.1:${port}`)
-}
-
 build()

@@ -27,8 +27,5 @@
     "./src/components/*/*.ts",
     "src/components/Button/index.tsx"
   ],
-  "ts-node": {
-    "esm": true
-  },
   "exclude": ["node_modules"]
 }
