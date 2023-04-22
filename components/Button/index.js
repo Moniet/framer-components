@@ -1,1 +1,0 @@
-import{jsx as _jsx}from"react/jsx-runtime";var styles={padding:"1rem",borderRadius:"10px",background:"#222",color:"#f2f2f2"};var Button=function(){return _jsx("div",{style:styles,children:"Button Text"})};export default Button;
