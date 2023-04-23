@@ -19,5 +19,5 @@
     "noImplicitAny": false,
     "outDir": "./dist"
   },
-  "exclude": ["node_modules", "**/*.modules.css"]
+  "exclude": ["node_modules", "**/*.modules.css", "dist"]
 }
