@@ -1,15 +1,15 @@
 // src/components/StripeCart/index.tsx
 import { useStripeState } from "../../hooks/useStripeState.js";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-11902-pZqCJ3qKgTtI/code-components/src/components/StripeCart/styles.module.css.js
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-12437-D0oGAp5mNFEu/code-components/src/components/StripeCart/styles.module.css.js
 var digest = "251ecfccf5e88021cc183a41e8c3627580fedbc154ca997ff0379592cf8b0b7d";
-var css = `._container_1qbxz_1 {
+var css = `._container_178hc_1 {
   width: var(--fc-sc-width, 30px);
   height: var(--fc-sc-width, 30px);
   position: relative;
 }
 
-._badge_1qbxz_7 {
+._badge_178hc_7 {
   --fc-sc-badge-bg: rgb(40, 65, 252);
   --fc-sc-badge-color: rgb(255, 255, 255);
   border-radius: 50%;
@@ -19,6 +19,8 @@ var css = `._container_1qbxz_1 {
   position: absolute;
   top: 0;
   right: 0;
+  background: var(--fc-sc-badge-bg);
+  color: var(--fc-sc-badge-color);
   transform: translate(50%, -50%);
 }
 `;
@@ -32,7 +34,7 @@ var css = `._container_1qbxz_1 {
     }
   }
 })();
-var styles_module_css_default = { "container": "_container_1qbxz_1", "badge": "_badge_1qbxz_7" };
+var styles_module_css_default = { "container": "_container_178hc_1", "badge": "_badge_178hc_7" };
 
 // src/components/StripeCart/index.tsx
 import { ControlType, addPropertyControls } from "framer";
