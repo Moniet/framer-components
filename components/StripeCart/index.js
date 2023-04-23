@@ -1,5 +1,5 @@
 // src/components/StripeCart/index.tsx
-import { useStripeStore } from "../../hooks/useStripeStore.js";
+import { useStripeState } from "../../hooks/useStripeState.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 var CartIcon = () => /* @__PURE__ */ jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 512 512", children: [
   /* @__PURE__ */ jsx(
@@ -26,7 +26,7 @@ var CartIcon = () => /* @__PURE__ */ jsxs("svg", { xmlns: "http://www.w3.org/200
   )
 ] });
 var StripeCart = ({ icon = CartIcon }) => {
-  const [state] = useStripeStore((state2) => [state2.items]);
+  const [state] = useStripeState();
   return /* @__PURE__ */ jsxs("div", { children: [
     "number of items : ",
     state.length

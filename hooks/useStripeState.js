@@ -7,11 +7,9 @@ var StripeObserver = class {
     this.store = [];
     this.listeners = [];
   }
-  setItem = (item) => {
-    console.log("set item");
-    this.store.push(item);
+  setItem = async (item) => {
+    this.store = [...this.store, item];
     for (let listener of this.listeners) {
-      console.log(listener);
       listener(this.store);
     }
   };
