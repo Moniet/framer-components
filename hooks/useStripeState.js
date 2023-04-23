@@ -43,7 +43,6 @@ function useStripeState() {
   useEffect(() => {
     observer.current.listen(listener);
     return () => {
-      console.log("unmount");
       observer.current?.removeListener(listener);
     };
   }, []);
