@@ -6,7 +6,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "serve": "PORT=3006 serve ./dist",
-    "build": "node esmbuild/esmbuild",
+    "build": "node esmbuild/esmbuild;tsc;",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ghpages": "node publish.mjs"
   },
