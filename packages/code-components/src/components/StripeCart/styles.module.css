@@ -1,0 +1,23 @@
+.container {
+  width: var(--fc-sc-width, 30px);
+  height: var(--fc-sc-width, 30px);
+  position: relative;
+}
+
+.badge {
+  --fc-sc-badge-bg: rgb(40, 65, 252);
+  --fc-sc-badge-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--fc-sc-badge-bg);
+  color: var(--fc-sc-badge-color);
+  transform: translate(50%, -50%);
+  line-height: 0;
+  aspect-ratio: 1/1;
+}

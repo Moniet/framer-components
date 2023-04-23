@@ -1,5 +1,14 @@
-import styles from "./Button.modules.css";
+import * as React from "react"
+import styles from "./Button.modules.css"
+import { useStripeStore } from "../../hooks/useStripeStore"
+import { useStripeState } from "../../hooks/useStripeState"
 
-export const Button = () => {
-  return <div className={styles.btn}>Button Text</div>;
-};
+export const Button = ({ label = "Button" }) => {
+  const [state, setState] = useStripeState()
+
+  return (
+    <div className={styles.btn} onClick={() => setState("item")}>
+      {label}
+    </div>
+  )
+}

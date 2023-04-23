@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext",
     "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
-    "module": "NodeNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "declaration": true,
@@ -19,6 +19,6 @@
     "noImplicitAny": false,
     "outDir": "./dist"
   },
-  "include": ["src/*", "css.d.ts"],
+  "include": ["src/**/*", "css.d.ts"],
   "exclude": ["node_modules", "src/**/*.modules.css", "dist"]
 }

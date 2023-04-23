@@ -2,4 +2,7 @@
   background: #222;
   color: white;
   border-radius: 10px;
+  padding: 1rem;
+  font-family: Helvetica, sans-serif;
+  width: fit-content;
 }

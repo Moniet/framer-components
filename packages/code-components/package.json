@@ -4,11 +4,13 @@
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "serve": "PORT=3006 serve ./dist",
-    "build": "node esmbuild/esmbuild;tsc;",
+    "build": "node esmbuild/esmbuild.cjs;tsc;",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ghpages": "node publish.mjs"
+    "ghpages": "node publish.mjs",
+    "build-watch": "node esmbuild/esmbuild.cjs watch"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fastify/static": "^6.10.1",
+    "@preact/signals-react": "^1.3.1",
     "@swc/core": "^1.3.53",
     "@types/node": "^18.15.13",
     "@types/react": "^18.0.37",
@@ -41,7 +44,8 @@
     "typescript": "^5.0.4",
     "util": "^0.12.5",
     "webpack": "^5.80.0",
-    "webpack-cli": "^5.0.2"
+    "webpack-cli": "^5.0.2",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",
