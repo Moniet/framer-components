@@ -18,7 +18,6 @@ var StripeObserver = class {
   };
   removeListener = (fn) => {
     const index = this.listeners.findIndex((listener) => listener === fn);
-    console.log("removing listener");
     if (index > -1) {
       this.listeners = this.listeners.slice(0, index).concat(this.listeners.slice(index + 1));
     }
@@ -42,6 +41,7 @@ function useStripeState() {
   }, []);
   useEffect(() => {
     observer.current.listen(listener);
+    setState(observer.current.store || []);
     return () => {
       observer.current?.removeListener(listener);
     };
