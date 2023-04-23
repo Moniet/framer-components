@@ -22,8 +22,6 @@ class StripeObserver {
 
   removeListener = (fn: (state: any) => void) => {
     const index = this.listeners.findIndex((listener) => listener === fn)
-    console.log("removing listener")
-
     if (index > -1) {
       this.listeners = this.listeners
         .slice(0, index)
