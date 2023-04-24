@@ -1,5 +1,5 @@
 // esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-82697-hJhRU393TslO/code-components/src/components/Button/Button.modules.css.js
-var digest = "5105957a1cea6613b231d6e7f17b62fa5a735716624dd56bcd1a5704c6ab1a70";
+var digest = "a61c51422e09338e3845dffe5bcf88aa3eb653955f4f277dcc1537011d0ef15b";
 var css = `._btn_1ek6r_1 {
   background: #222;
   color: white;
