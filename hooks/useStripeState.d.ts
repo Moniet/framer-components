@@ -3,7 +3,8 @@ declare class StripeObserver {
     listeners: ((state: typeof this.store) => void)[];
     constructor();
     setItem: (item: any) => Promise<void>;
-    deleteItem: (item: any) => Promise<any[]>;
+    publishChanges: () => Promise<void>;
+    deleteItem: (item: any) => Promise<void>;
     listen: (listener: (state: any) => void) => void;
     removeListener: (fn: (state: any) => void) => void;
 }
