@@ -8,12 +8,14 @@ var StripeSetup = ({ stripeKey }) => {
   }, []);
   return null;
 };
-addPropertyControls(StripeSetup, {
+var propControls = {
   stripeKey: {
     title: "Stripe Key",
     type: ControlType.String
   }
-});
+};
+addPropertyControls(StripeSetup, propControls);
 export {
-  StripeSetup
+  StripeSetup,
+  propControls
 };
