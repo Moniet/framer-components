@@ -9,9 +9,22 @@ var StripeObserver = class {
   }
   setItem = async (item) => {
     this.store = [...this.store, item];
+    this.publishChanges();
+  };
+  publishChanges = async () => {
     for (let listener of this.listeners) {
       listener(this.store);
     }
+  };
+  deleteItem = async (item) => {
+    const index = this.store.findIndex((d) => d?.id === item?.id);
+    if (index > -1) {
+      this.store = [
+        ...this.store.slice(0, index),
+        ...this.store.slice(index + 1)
+      ];
+    }
+    this.publishChanges();
   };
   listen = (listener) => {
     this.listeners.push(listener);
@@ -49,7 +62,10 @@ function useStripeState() {
   const handleSetState = (item) => {
     observer?.current.setItem(item);
   };
-  return [state, handleSetState, observer.current];
+  const handleRemoveState = (item) => {
+    observer?.current.deleteItem(item);
+  };
+  return [state, handleSetState, handleRemoveState, observer.current];
 }
 export {
   useStripeState
