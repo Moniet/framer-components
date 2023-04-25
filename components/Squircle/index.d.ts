@@ -10,10 +10,6 @@ export declare const Squircle: ({ id, curvature, color }: {
     color?: string | undefined;
 }) => JSX.Element;
 export declare const propControls: {
-    size: {
-        type: ControlType;
-        defaultValue: number;
-    };
     color: {
         type: ControlType;
         defaultValue: string;

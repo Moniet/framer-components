@@ -42,10 +42,6 @@ var Squircle = ({
   ] });
 };
 var propControls = {
-  size: {
-    type: ControlType.Number,
-    defaultValue: 200
-  },
   color: {
     type: ControlType.Color,
     defaultValue: "#555"
