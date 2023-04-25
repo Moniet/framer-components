@@ -5,18 +5,17 @@ import { createSquirclePath } from "./createSquirclePath.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 var getId = () => Math.random() + "";
 var Squircle = ({
-  size = 200,
   id = getId(),
   curvature = 0.3,
   color = "#333"
 }) => {
-  const width = size;
-  const height = size;
   const [viewBox, d] = useMemo(() => {
+    const height = 100;
+    const width = 100;
     const viewBox2 = [0, 0, width, height];
     const squirclePath = createSquirclePath(width, height, curvature);
     return [viewBox2, squirclePath];
-  }, [width, height, id, curvature]);
+  }, [id, curvature]);
   const maskId = `${id}-mask`;
   return /* @__PURE__ */ jsxs("div", { children: [
     /* @__PURE__ */ jsx("svg", { viewBox: viewBox.join(" "), xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ jsx(
@@ -54,8 +53,8 @@ var propControls = {
   curvature: {
     type: ControlType.Number,
     min: 0,
-    max: 1,
-    step: 0.1,
+    max: 0.7,
+    step: 0.01,
     defaultValue: 0.3
   }
 };
