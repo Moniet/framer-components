@@ -18,13 +18,14 @@ var Squircle = ({
   }, [width, height, id, curvature]);
   const maskId = `${id}-mask`;
   return /* @__PURE__ */ jsxs("div", { children: [
-    /* @__PURE__ */ jsx("svg", { viewBox: viewBox.join(" "), children: /* @__PURE__ */ jsx(
+    /* @__PURE__ */ jsx("svg", { viewBox: viewBox.join(" "), xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ jsx(
       "path",
       {
         d,
         id: maskId,
         transform: "rotate(45)",
-        style: { transformOrigin: "center" }
+        style: { transformOrigin: "center" },
+        fill: color
       }
     ) }),
     /* @__PURE__ */ jsx(
@@ -33,7 +34,7 @@ var Squircle = ({
         style: {
           width: "100%",
           height: "100%",
-          background: color,
+          background: "black",
           clipPath: `url(#${maskId})`
         }
       }
