@@ -15,7 +15,6 @@ export declare const propControls: {
         min: number;
         max: number;
         step: number;
-        displayStepper: boolean;
     };
     width: {
         type: ControlType;

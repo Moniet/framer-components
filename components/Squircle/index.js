@@ -44,8 +44,7 @@ var propControls = {
     type: ControlType.Number,
     min: 0,
     max: 1,
-    step: 0.1,
-    displayStepper: true
+    step: 0.1
   },
   width: {
     type: ControlType.Number,
