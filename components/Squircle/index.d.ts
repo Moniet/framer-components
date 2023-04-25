@@ -1,7 +1,7 @@
 import { ControlType } from "framer";
 /**
  * @framerSupportedLayoutWidth fixed
- * @framerSupportedLayoutHeight fixed
+ * @framerSupportedLayoutHeight auto
  */
 export declare const Squircle: ({ width, height, id, curvature }: {
     width: number;
