@@ -3,14 +3,16 @@ import { ControlType } from "framer";
  * @framerSupportedLayoutWidth fixed
  * @framerSupportedLayoutHeight auto
  */
-export declare const Squircle: ({ width, height, id, curvature, color }: {
-    width: number;
-    height: number;
+export declare const Squircle: ({ size, id, curvature, color }: {
+    size: number;
     id?: string | undefined;
     curvature?: number | undefined;
     color?: string | undefined;
 }) => JSX.Element;
 export declare const propControls: {
+    size: {
+        type: ControlType;
+    };
     color: {
         type: ControlType;
     };
@@ -19,13 +21,5 @@ export declare const propControls: {
         min: number;
         max: number;
         step: number;
-    };
-    width: {
-        type: ControlType;
-        min: number;
-    };
-    height: {
-        type: ControlType;
-        min: number;
     };
 };

@@ -5,12 +5,13 @@ import { createSquirclePath } from "./createSquirclePath.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 var getId = () => Math.random() + "";
 var Squircle = ({
-  width = 200,
-  height = 200,
+  size = 200,
   id = getId(),
   curvature = 0.3,
   color = "#333"
 }) => {
+  const width = size;
+  const height = size;
   const [viewBox, d] = useMemo(() => {
     const viewBox2 = [0, 0, width, height];
     const squirclePath = createSquirclePath(width, height, curvature);
@@ -42,6 +43,9 @@ var Squircle = ({
   ] });
 };
 var propControls = {
+  size: {
+    type: ControlType.Number
+  },
   color: {
     type: ControlType.Color
   },
@@ -50,14 +54,6 @@ var propControls = {
     min: 0,
     max: 1,
     step: 0.1
-  },
-  width: {
-    type: ControlType.Number,
-    min: 0
-  },
-  height: {
-    type: ControlType.Number,
-    min: 0
   }
 };
 addPropertyControls(Squircle, propControls);
