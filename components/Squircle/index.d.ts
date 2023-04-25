@@ -12,14 +12,17 @@ export declare const Squircle: ({ size, id, curvature, color }: {
 export declare const propControls: {
     size: {
         type: ControlType;
+        defaultValue: number;
     };
     color: {
         type: ControlType;
+        defaultValue: string;
     };
     curvature: {
         type: ControlType;
         min: number;
         max: number;
         step: number;
+        defaultValue: number;
     };
 };

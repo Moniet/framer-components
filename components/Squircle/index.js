@@ -44,16 +44,19 @@ var Squircle = ({
 };
 var propControls = {
   size: {
-    type: ControlType.Number
+    type: ControlType.Number,
+    defaultValue: 200
   },
   color: {
-    type: ControlType.Color
+    type: ControlType.Color,
+    defaultValue: "#555"
   },
   curvature: {
     type: ControlType.Number,
     min: 0,
     max: 1,
-    step: 0.1
+    step: 0.1,
+    defaultValue: 0.3
   }
 };
 addPropertyControls(Squircle, propControls);
