@@ -8,7 +8,8 @@ var Squircle = ({
   width = 200,
   height = 200,
   id = getId(),
-  curvature = 0.3
+  curvature = 0.3,
+  color = "#333"
 }) => {
   const [viewBox, d] = useMemo(() => {
     const viewBox2 = [0, 0, width, height];
@@ -32,7 +33,7 @@ var Squircle = ({
         style: {
           width: "100%",
           height: "100%",
-          background: "deepskyblue",
+          background: color,
           clipPath: `url(#${maskId})`
         }
       }
@@ -40,11 +41,14 @@ var Squircle = ({
   ] });
 };
 var propControls = {
+  color: {
+    type: ControlType.Color
+  },
   curvature: {
     type: ControlType.Number,
     min: 0,
     max: 1,
-    step: 0.01
+    step: 0.1
   },
   width: {
     type: ControlType.Number,
