@@ -13,7 +13,7 @@ var Squircle = ({
     const height = 100;
     const width = 100;
     const viewBox2 = [0, 0, width, height];
-    const squirclePath = createSquirclePath(width, height, curvature);
+    const squirclePath = createSquirclePath(width - 20, height - 20, curvature);
     return [viewBox2, squirclePath];
   }, [id, curvature]);
   const maskId = `${id}-mask`;
