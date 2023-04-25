@@ -4,7 +4,6 @@ import { ControlType } from "framer";
  * @framerSupportedLayoutHeight auto
  */
 export declare const Squircle: ({ id, curvature, color }: {
-    size: number;
     id?: string | undefined;
     curvature?: number | undefined;
     color?: string | undefined;
