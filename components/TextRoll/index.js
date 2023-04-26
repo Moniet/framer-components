@@ -2,6 +2,32 @@
 import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-49206-mtpowgzv2Odm/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "cafce72f7b8e55d0871fff0a97f3f8651ac557d32d6781a25bd39b5f8339a111";
+var css = `._container_1suhb_1 {
+  position: relative;
+}
+
+._text_1suhb_5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+`;
+(function() {
+  if (globalThis.window) {
+    if (!document.getElementById(digest)) {
+      var ele = document.createElement("style");
+      ele.id = digest;
+      ele.textContent = css;
+      document.head.appendChild(ele);
+    }
+  }
+})();
+var styles_module_css_default = { "container": "_container_1suhb_1", "text": "_text_1suhb_5" };
+
+// src/components/TextRoll/index.tsx
 import { jsx } from "react/jsx-runtime";
 var TextRoll = ({
   text = "Example Text, Goes Here",
@@ -31,7 +57,7 @@ var TextRoll = ({
       clearInterval(int);
     };
   }, [words]);
-  return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("div", { className: styles_module_css_default.container, children: /* @__PURE__ */ jsx("div", { className: styles_module_css_default.text, children: /* @__PURE__ */ jsx(
     AnimatePresence,
     {
       initial: initialAnimation,
@@ -52,7 +78,7 @@ var TextRoll = ({
         index
       )
     }
-  ) });
+  ) }) });
 };
 var propControls = {
   animation: {
