@@ -3,16 +3,17 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-49369-MHYOn4ZIvh1y/code-components/src/components/TextRoll/styles.module.css.js
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-64438-h1jTGjqkW90u/code-components/src/components/TextRoll/styles.module.css.js
 var digest = "4b3ab9e611648fa4189fa04066c7e071d4f364daec93de9b49837cfd727554c1";
-var css = `._container_1suhb_1 {
+var css = `._container_1jtez_1 {
   position: relative;
+  width: fit-content;
+  height: fit-content;
 }
 
-._text_1suhb_5 {
-  position: absolute;
-  top: 0;
-  left: 0;
+._text_1jtez_7 {
+  width: fit-content;
+  height: fit-content;
 }
 `;
 (function() {
@@ -25,7 +26,7 @@ var css = `._container_1suhb_1 {
     }
   }
 })();
-var styles_module_css_default = { "container": "_container_1suhb_1", "text": "_text_1suhb_5" };
+var styles_module_css_default = { "container": "_container_1jtez_1", "text": "_text_1jtez_7" };
 
 // src/components/TextRoll/index.tsx
 import { jsx } from "react/jsx-runtime";
