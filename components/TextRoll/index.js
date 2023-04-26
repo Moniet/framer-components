@@ -3,17 +3,18 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-68669-9m2TebRSvoRb/code-components/src/components/TextRoll/styles.module.css.js
-var digest = "321566ef6b862fff085517442a4cb5ced4d465188c8defcd2c63a015d60d473b";
-var css = `._container_atb4s_1 {
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-74314-RqXvMCKxdmKo/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "20b224fc67ef670f1edc5b75b3181bc3424525a248f4e84d5efa1d8b12746e74";
+var css = `._container_e9816_1 {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-._text_atb4s_7 {
-  width: fit-content;
+._text_e9816_7 {
+  width: 100%;
   height: fit-content;
+  white-space: nowrap;
 }
 `;
 (function() {
@@ -26,7 +27,7 @@ var css = `._container_atb4s_1 {
     }
   }
 })();
-var styles_module_css_default = { "container": "_container_atb4s_1", "text": "_text_atb4s_7" };
+var styles_module_css_default = { "container": "_container_e9816_1", "text": "_text_e9816_7" };
 
 // src/components/TextRoll/index.tsx
 import { jsx } from "react/jsx-runtime";
@@ -58,7 +59,7 @@ var TextRoll = ({
       clearInterval(int);
     };
   }, [words]);
-  return /* @__PURE__ */ jsx("div", { className: styles_module_css_default.container, children: /* @__PURE__ */ jsx("div", { className: styles_module_css_default.text, children: /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("div", { className: styles_module_css_default.container, children: /* @__PURE__ */ jsx(
     AnimatePresence,
     {
       initial: initialAnimation,
@@ -66,20 +67,20 @@ var TextRoll = ({
       children: /* @__PURE__ */ jsx(
         motion.div,
         {
+          className: styles_module_css_default.text,
           style: {
             fontFamily: font || "inherit",
             fontSize: fontSize + "px",
             color
           },
-          initial: { y: offset, opacity: 1, dur: duration },
-          animate: { y: 0, opacity: 1, dur: duration },
+          animate: { y: [offset, 0], opacity: 1, dur: duration },
           exit: { opacity: fadeInOut ? 0 : 1, y: -offset, dur: duration },
           children: currentWord
         },
         index
       )
     }
-  ) }) });
+  ) });
 };
 var propControls = {
   animation: {
