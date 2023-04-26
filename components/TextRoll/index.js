@@ -3,7 +3,7 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-64438-h1jTGjqkW90u/code-components/src/components/TextRoll/styles.module.css.js
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-64828-zwiIF05Wa93p/code-components/src/components/TextRoll/styles.module.css.js
 var digest = "4b3ab9e611648fa4189fa04066c7e071d4f364daec93de9b49837cfd727554c1";
 var css = `._container_1jtez_1 {
   position: relative;
@@ -83,30 +83,32 @@ var TextRoll = ({
 };
 var propControls = {
   animation: {
-    duration: {
-      type: ControlType.Number,
-      defaultValue: 1e3
-    },
-    delay: {
-      type: ControlType.Number,
-      min: 100,
-      defaultValue: 2e3
-    },
-    offset: {
-      type: ControlType.Number,
-      defaultValue: 50
-    },
-    fadeInOut: {
-      type: ControlType.Boolean,
-      defaultValue: false
-    },
-    initialAnimation: {
-      type: ControlType.Boolean,
-      defaultValue: false
-    },
-    syncAnimations: {
-      type: ControlType.Boolean,
-      defaultValue: true
+    controls: {
+      duration: {
+        type: ControlType.Number,
+        defaultValue: 1e3
+      },
+      delay: {
+        type: ControlType.Number,
+        min: 100,
+        defaultValue: 2e3
+      },
+      offset: {
+        type: ControlType.Number,
+        defaultValue: 50
+      },
+      fadeInOut: {
+        type: ControlType.Boolean,
+        defaultValue: false
+      },
+      initialAnimation: {
+        type: ControlType.Boolean,
+        defaultValue: false
+      },
+      syncAnimations: {
+        type: ControlType.Boolean,
+        defaultValue: true
+      }
     }
   },
   fontSize: {
