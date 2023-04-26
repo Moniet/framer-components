@@ -55,9 +55,32 @@ var TextRoll = ({
   ) });
 };
 var propControls = {
-  duration: {
-    type: ControlType.Number,
-    defaultValue: 1e3
+  animation: {
+    duration: {
+      type: ControlType.Number,
+      defaultValue: 1e3
+    },
+    delay: {
+      type: ControlType.Number,
+      min: 100,
+      defaultValue: 2e3
+    },
+    offset: {
+      type: ControlType.Number,
+      defaultValue: 50
+    },
+    fadeInOut: {
+      type: ControlType.Boolean,
+      defaultValue: false
+    },
+    initialAnimation: {
+      type: ControlType.Boolean,
+      defaultValue: false
+    },
+    syncAnimations: {
+      type: ControlType.Boolean,
+      defaultValue: true
+    }
   },
   fontSize: {
     type: ControlType.Number,
@@ -73,30 +96,9 @@ var propControls = {
     type: ControlType.Color,
     default: "#555"
   },
-  delay: {
-    type: ControlType.Number,
-    min: 100,
-    defaultValue: 2e3
-  },
-  offset: {
-    type: ControlType.Number,
-    defaultValue: 50
-  },
   text: {
     type: ControlType.String,
     defaultValue: "Example Text, Created By, Comma Separating, These Words"
-  },
-  fadeInOut: {
-    type: ControlType.Boolean,
-    defaultValue: false
-  },
-  initialAnimation: {
-    type: ControlType.Boolean,
-    defaultValue: false
-  },
-  syncAnimations: {
-    type: ControlType.Boolean,
-    defaultValue: true
   }
 };
 export {

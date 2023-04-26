@@ -12,9 +12,32 @@ export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, init
     color?: string | undefined;
 }) => JSX.Element;
 export declare const propControls: {
-    duration: {
-        type: ControlType;
-        defaultValue: number;
+    animation: {
+        duration: {
+            type: ControlType;
+            defaultValue: number;
+        };
+        delay: {
+            type: ControlType;
+            min: number;
+            defaultValue: number;
+        };
+        offset: {
+            type: ControlType;
+            defaultValue: number;
+        };
+        fadeInOut: {
+            type: ControlType;
+            defaultValue: boolean;
+        };
+        initialAnimation: {
+            type: ControlType;
+            defaultValue: boolean;
+        };
+        syncAnimations: {
+            type: ControlType;
+            defaultValue: boolean;
+        };
     };
     fontSize: {
         type: ControlType;
@@ -30,29 +53,8 @@ export declare const propControls: {
         type: ControlType;
         default: string;
     };
-    delay: {
-        type: ControlType;
-        min: number;
-        defaultValue: number;
-    };
-    offset: {
-        type: ControlType;
-        defaultValue: number;
-    };
     text: {
         type: ControlType;
         defaultValue: string;
-    };
-    fadeInOut: {
-        type: ControlType;
-        defaultValue: boolean;
-    };
-    initialAnimation: {
-        type: ControlType;
-        defaultValue: boolean;
-    };
-    syncAnimations: {
-        type: ControlType;
-        defaultValue: boolean;
     };
 };
