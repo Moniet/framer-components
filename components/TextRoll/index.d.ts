@@ -1,18 +1,27 @@
 import { ControlType } from "framer";
-export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, initialAnimation, syncAnimations, fontWeight, fontSize, font, color }: {
-    text?: string | undefined;
-    fadeInOut?: boolean | undefined;
-    delay?: number | undefined;
-    duration?: number | undefined;
-    offset?: number | undefined;
-    initialAnimation?: boolean | undefined;
-    syncAnimations?: boolean | undefined;
-    fontWeight?: number | undefined;
-    fontSize?: number | undefined;
-    font: any;
-    color?: string | undefined;
-}) => JSX.Element;
+type Props = {
+    text: string;
+    animation: {
+        delay: number;
+        duration: number;
+        offset: number;
+        initialAnimation: boolean;
+        syncAnimations: boolean;
+        fadeInOut: boolean;
+    };
+    typography: {
+        font: string;
+        fontSize: number;
+        fontWeight: number;
+        color: string;
+    };
+};
+export declare const TextRoll: ({ text, typography: { fontWeight, fontSize, font, color }, animation: { fadeInOut, delay, duration, offset, initialAnimation, syncAnimations } }: Props) => JSX.Element;
 export declare const propControls: {
+    text: {
+        type: ControlType;
+        defaultValue: string;
+    };
     animation: {
         type: ControlType;
         Title: string;
@@ -51,26 +60,28 @@ export declare const propControls: {
             };
         };
     };
-    fontSize: {
+    typogaphy: {
         type: ControlType;
-        defaultValue: number;
-        min: number;
-        max: number;
-    };
-    fontWeight: {
-        type: ControlType;
-        defaultValue: number;
-    };
-    font: {
-        type: ControlType;
-        default: string;
-    };
-    color: {
-        type: ControlType;
-        default: string;
-    };
-    text: {
-        type: ControlType;
-        defaultValue: string;
+        controls: {
+            fontSize: {
+                type: ControlType;
+                defaultValue: number;
+                min: number;
+                max: number;
+            };
+            fontWeight: {
+                type: ControlType;
+                defaultValue: number;
+            };
+            font: {
+                type: ControlType;
+                default: string;
+            };
+            color: {
+                type: ControlType;
+                default: string;
+            };
+        };
     };
 };
+export {};

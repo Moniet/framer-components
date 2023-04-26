@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-34655-vXLxBhvBU3qq/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "c1bdcfb52648f9761e16bc56378487206d7e152152414775f070b697c2ee5fd9";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-41997-JmyuR9PV3gRi/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "7c94a9c458673527f2081aeea7818ad115a7da3cde03d66d48d5a52102322ef5";
 var css = `._container_hg2oa_1 {
   width: 100%;
   height: 100%;
@@ -57,7 +57,7 @@ var GradientBgAnimation = ({
             animate: {
               backgroundPositionY: ["0%", `100%`, "0%"],
               backgroundPositionX: ["0%", `100%`, "0%"],
-              ...animateAngle ? { "--angle": [0, angle, 0] } : {}
+              ...animateAngle ? { "--angle": [angle, angle + 180, angle] } : {}
             },
             style: {
               "--lg": `${angle}deg, ${colors}`,
@@ -87,9 +87,39 @@ var GradientBgAnimation = ({
   );
 };
 var propControls = {
-  startColor: {
-    title: "Start",
-    type: ControlType.Color
+  colorText: {
+    title: "Colors",
+    type: ControlType.Color,
+    defaultValue: defaultGradient
+  },
+  size: {
+    type: ControlType.Number,
+    min: 100,
+    max: 1e3,
+    default: 300
+  },
+  blur: {
+    type: ControlType.Number,
+    defaultValue: 0,
+    displaySteppr: true
+  },
+  angle: {
+    type: ControlType.Number,
+    defaultValue: 30
+  },
+  animation: {
+    title: "Animation",
+    type: ControlType.Object,
+    animateAngle: {
+      type: ControlType.Boolean,
+      defaultValue: false
+    },
+    duration: {
+      title: "Duration",
+      type: ControlType.Number,
+      defaultValue: 10,
+      displayStepper: true
+    }
   }
 };
 export {

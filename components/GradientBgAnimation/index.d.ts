@@ -1,7 +1,5 @@
 import { ControlType } from "framer";
 type Props = {
-    startColor?: string;
-    endColor?: string;
     borderRadius?: number;
     size?: number;
     angle?: number;
@@ -12,9 +10,39 @@ type Props = {
 };
 export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, duration, blur, animateAngle }: Props) => JSX.Element;
 export declare const propControls: {
-    startColor: {
+    colorText: {
         title: string;
         type: ControlType;
+        defaultValue: string;
+    };
+    size: {
+        type: ControlType;
+        min: number;
+        max: number;
+        default: number;
+    };
+    blur: {
+        type: ControlType;
+        defaultValue: number;
+        displaySteppr: boolean;
+    };
+    angle: {
+        type: ControlType;
+        defaultValue: number;
+    };
+    animation: {
+        title: string;
+        type: ControlType;
+        animateAngle: {
+            type: ControlType;
+            defaultValue: boolean;
+        };
+        duration: {
+            title: string;
+            type: ControlType;
+            defaultValue: number;
+            displayStepper: boolean;
+        };
     };
 };
 export {};

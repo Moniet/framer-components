@@ -3,8 +3,8 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-34655-vXLxBhvBU3qq/code-components/src/components/TextRoll/styles.module.css.js
-var digest = "e5961aede90098f224b2396d20b623062c582ab64b5095f2df8684e315acada0";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-41997-JmyuR9PV3gRi/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "4b3ab9e611648fa4189fa04066c7e071d4f364daec93de9b49837cfd727554c1";
 var css = `._container_e9816_1 {
   position: relative;
   width: 100%;
@@ -33,16 +33,15 @@ var styles_module_css_default = { "container": "_container_e9816_1", "text": "_t
 import { jsx } from "react/jsx-runtime";
 var TextRoll = ({
   text = "Example Text, Goes Here",
-  fadeInOut = true,
-  delay = 2e3,
-  duration = 1e3,
-  offset = 50,
-  initialAnimation = false,
-  syncAnimations = true,
-  fontWeight = 400,
-  fontSize = 20,
-  font,
-  color = "#555"
+  typography: { fontWeight = 400, fontSize = 20, font, color = "#555" },
+  animation: {
+    fadeInOut = true,
+    delay = 2e3,
+    duration = 1e3,
+    offset = 50,
+    initialAnimation = false,
+    syncAnimations = true
+  }
 }) => {
   const [index, setIndex] = useState(0);
   const words = text.split(",");
@@ -85,6 +84,10 @@ var TextRoll = ({
   ) });
 };
 var propControls = {
+  text: {
+    type: ControlType.String,
+    defaultValue: "Example Text, Created By, Comma Separating, These Words"
+  },
   animation: {
     type: ControlType.Object,
     Title: "Animation",
@@ -123,27 +126,28 @@ var propControls = {
       }
     }
   },
-  fontSize: {
-    type: ControlType.Number,
-    defaultValue: 20,
-    min: 1,
-    max: 100
-  },
-  fontWeight: {
-    type: ControlType.Number,
-    defaultValue: 400
-  },
-  font: {
-    type: ControlType.String,
-    default: "Helvetica, sans-serif"
-  },
-  color: {
-    type: ControlType.Color,
-    default: "#555"
-  },
-  text: {
-    type: ControlType.String,
-    defaultValue: "Example Text, Created By, Comma Separating, These Words"
+  typogaphy: {
+    type: ControlType.Object,
+    controls: {
+      fontSize: {
+        type: ControlType.Number,
+        defaultValue: 20,
+        min: 1,
+        max: 100
+      },
+      fontWeight: {
+        type: ControlType.Number,
+        defaultValue: 400
+      },
+      font: {
+        type: ControlType.String,
+        default: "Helvetica, sans-serif"
+      },
+      color: {
+        type: ControlType.Color,
+        default: "#555"
+      }
+    }
   }
 };
 export {
