@@ -1,8 +1,9 @@
 import { ControlType } from "framer";
-export declare const TextRoll: ({ text, fadeInOut, delay: duration, offset, initialAnimation, syncAnimations }: {
+export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, initialAnimation, syncAnimations }: {
     text?: string | undefined;
     fadeInOut?: boolean | undefined;
     delay?: number | undefined;
+    duration?: number | undefined;
     offset?: number | undefined;
     initialAnimation?: boolean | undefined;
     syncAnimations?: boolean | undefined;

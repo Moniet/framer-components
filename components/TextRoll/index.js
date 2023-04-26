@@ -6,7 +6,8 @@ import { jsx } from "react/jsx-runtime";
 var TextRoll = ({
   text = "Example Text, Goes Here",
   fadeInOut = true,
-  delay: duration = 1e3,
+  delay = 2e3,
+  duration = 1e3,
   offset = 50,
   initialAnimation = false,
   syncAnimations = true
@@ -22,7 +23,7 @@ var TextRoll = ({
       } else {
         setIndex(0);
       }
-    }, 2e3);
+    }, delay);
     return () => {
       clearInterval(int);
     };
