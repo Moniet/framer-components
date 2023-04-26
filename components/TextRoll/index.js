@@ -3,8 +3,8 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-74314-RqXvMCKxdmKo/code-components/src/components/TextRoll/styles.module.css.js
-var digest = "20b224fc67ef670f1edc5b75b3181bc3424525a248f4e84d5efa1d8b12746e74";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-10617-nqoH3vjtahGe/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "e5961aede90098f224b2396d20b623062c582ab64b5095f2df8684e315acada0";
 var css = `._container_e9816_1 {
   position: relative;
   width: 100%;
@@ -39,6 +39,7 @@ var TextRoll = ({
   offset = 50,
   initialAnimation = false,
   syncAnimations = true,
+  fontWeight = 400,
   fontSize = 20,
   font,
   color = "#555"
@@ -71,6 +72,7 @@ var TextRoll = ({
           style: {
             fontFamily: font || "inherit",
             fontSize: fontSize + "px",
+            fontWeight,
             color
           },
           animate: { y: [offset, 0], opacity: 1, dur: duration },
@@ -126,6 +128,10 @@ var propControls = {
     defaultValue: 20,
     min: 1,
     max: 100
+  },
+  fontWeight: {
+    type: ControlType.Number,
+    defaultValue: 400
   },
   font: {
     type: ControlType.String,
