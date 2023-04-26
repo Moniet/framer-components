@@ -19,9 +19,13 @@ export declare const propControls: {
             duration: {
                 type: ControlType;
                 defaultValue: number;
+                max: number;
+                min: number;
+                displayStepper: boolean;
             };
             delay: {
                 type: ControlType;
+                max: number;
                 min: number;
                 defaultValue: number;
             };
@@ -30,14 +34,17 @@ export declare const propControls: {
                 defaultValue: number;
             };
             fadeInOut: {
+                title: string;
                 type: ControlType;
                 defaultValue: boolean;
             };
             initialAnimation: {
+                title: string;
                 type: ControlType;
                 defaultValue: boolean;
             };
             syncAnimations: {
+                title: string;
                 type: ControlType;
                 defaultValue: boolean;
             };

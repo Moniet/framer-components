@@ -3,15 +3,15 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-67173-xt7CNqNr7twx/code-components/src/components/TextRoll/styles.module.css.js
-var digest = "4b3ab9e611648fa4189fa04066c7e071d4f364daec93de9b49837cfd727554c1";
-var css = `._container_1jtez_1 {
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-68669-9m2TebRSvoRb/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "321566ef6b862fff085517442a4cb5ced4d465188c8defcd2c63a015d60d473b";
+var css = `._container_atb4s_1 {
   position: relative;
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
 }
 
-._text_1jtez_7 {
+._text_atb4s_7 {
   width: fit-content;
   height: fit-content;
 }
@@ -26,7 +26,7 @@ var css = `._container_1jtez_1 {
     }
   }
 })();
-var styles_module_css_default = { "container": "_container_1jtez_1", "text": "_text_1jtez_7" };
+var styles_module_css_default = { "container": "_container_atb4s_1", "text": "_text_atb4s_7" };
 
 // src/components/TextRoll/index.tsx
 import { jsx } from "react/jsx-runtime";
@@ -88,10 +88,14 @@ var propControls = {
     controls: {
       duration: {
         type: ControlType.Number,
-        defaultValue: 1e3
+        defaultValue: 1e3,
+        max: 1e4,
+        min: 100,
+        displayStepper: true
       },
       delay: {
         type: ControlType.Number,
+        max: 1e4,
         min: 100,
         defaultValue: 2e3
       },
@@ -100,14 +104,17 @@ var propControls = {
         defaultValue: 50
       },
       fadeInOut: {
+        title: "Fade In/Out",
         type: ControlType.Boolean,
         defaultValue: false
       },
       initialAnimation: {
+        title: "Initial Anim",
         type: ControlType.Boolean,
         defaultValue: false
       },
       syncAnimations: {
+        title: "Sync",
         type: ControlType.Boolean,
         defaultValue: true
       }
