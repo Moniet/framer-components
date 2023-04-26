@@ -62,7 +62,7 @@ var propControls = {
   },
   font: {
     type: ControlType.String,
-    default: "Helevetica, sans-serif"
+    default: "Helvetica, sans-serif"
   },
   delay: {
     type: ControlType.Number,
