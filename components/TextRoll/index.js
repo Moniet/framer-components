@@ -11,7 +11,8 @@ var TextRoll = ({
   offset = 50,
   initialAnimation = false,
   syncAnimations = true,
-  fontSize = 20
+  fontSize = 20,
+  font
 }) => {
   const [index, setIndex] = useState(0);
   const words = text.split(",");
@@ -29,7 +30,7 @@ var TextRoll = ({
       clearInterval(int);
     };
   }, [words]);
-  return /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
     AnimatePresence,
     {
       initial: initialAnimation,
@@ -37,7 +38,7 @@ var TextRoll = ({
       children: /* @__PURE__ */ jsx(
         motion.div,
         {
-          style: { fontFamily: "inherit", fontSize: fontSize + "px" },
+          style: { fontFamily: font || "inherit", fontSize: fontSize + "px" },
           initial: { y: offset, opacity: 1, dur: duration },
           animate: { y: 0, opacity: 1, dur: duration },
           exit: { opacity: fadeInOut ? 0 : 1, y: -offset, dur: duration },
@@ -46,7 +47,7 @@ var TextRoll = ({
         index
       )
     }
-  );
+  ) });
 };
 var propControls = {
   duration: {
@@ -55,7 +56,13 @@ var propControls = {
   },
   fontSize: {
     type: ControlType.Number,
-    defaultValue: 20
+    defaultValue: 20,
+    min: 1,
+    max: 100
+  },
+  font: {
+    type: ControlType.String,
+    default: "Helevetica, sans-serif"
   },
   delay: {
     type: ControlType.Number,
