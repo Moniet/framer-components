@@ -10,7 +10,8 @@ var TextRoll = ({
   duration = 1e3,
   offset = 50,
   initialAnimation = false,
-  syncAnimations = true
+  syncAnimations = true,
+  fontSize = 20
 }) => {
   const [index, setIndex] = useState(0);
   const words = text.split(",");
@@ -36,7 +37,7 @@ var TextRoll = ({
       children: /* @__PURE__ */ jsx(
         motion.div,
         {
-          style: { fontFamily: "inherit" },
+          style: { fontFamily: "inherit", fontSize: fontSize + "px" },
           initial: { y: offset, opacity: 1, dur: duration },
           animate: { y: 0, opacity: 1, dur: duration },
           exit: { opacity: fadeInOut ? 0 : 1, y: -offset, dur: duration },
@@ -51,6 +52,10 @@ var propControls = {
   duration: {
     type: ControlType.Number,
     defaultValue: 1e3
+  },
+  fontSize: {
+    type: ControlType.Number,
+    defaultValue: 20
   },
   delay: {
     type: ControlType.Number,

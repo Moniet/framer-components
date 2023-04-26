@@ -1,5 +1,5 @@
 import { ControlType } from "framer";
-export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, initialAnimation, syncAnimations }: {
+export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, initialAnimation, syncAnimations, fontSize }: {
     text?: string | undefined;
     fadeInOut?: boolean | undefined;
     delay?: number | undefined;
@@ -7,9 +7,14 @@ export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, init
     offset?: number | undefined;
     initialAnimation?: boolean | undefined;
     syncAnimations?: boolean | undefined;
+    fontSize?: number | undefined;
 }) => JSX.Element;
 export declare const propControls: {
     duration: {
+        type: ControlType;
+        defaultValue: number;
+    };
+    fontSize: {
         type: ControlType;
         defaultValue: number;
     };
