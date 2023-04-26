@@ -49,7 +49,7 @@ var propControls = {
   curvature: {
     type: ControlType.Number,
     min: 0,
-    max: 0.7,
+    max: 0.55,
     step: 0.01,
     defaultValue: 0.3
   }
