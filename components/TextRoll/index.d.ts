@@ -13,6 +13,8 @@ export declare const TextRoll: ({ text, fadeInOut, delay, duration, offset, init
 }) => JSX.Element;
 export declare const propControls: {
     animation: {
+        type: ControlType;
+        Title: string;
         controls: {
             duration: {
                 type: ControlType;

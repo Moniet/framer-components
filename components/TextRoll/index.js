@@ -3,7 +3,7 @@ import { ControlType } from "framer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-64828-zwiIF05Wa93p/code-components/src/components/TextRoll/styles.module.css.js
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-67173-xt7CNqNr7twx/code-components/src/components/TextRoll/styles.module.css.js
 var digest = "4b3ab9e611648fa4189fa04066c7e071d4f364daec93de9b49837cfd727554c1";
 var css = `._container_1jtez_1 {
   position: relative;
@@ -83,6 +83,8 @@ var TextRoll = ({
 };
 var propControls = {
   animation: {
+    type: ControlType.Object,
+    Title: "Animation",
     controls: {
       duration: {
         type: ControlType.Number,
