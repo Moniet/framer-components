@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-41997-JmyuR9PV3gRi/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "7c94a9c458673527f2081aeea7818ad115a7da3cde03d66d48d5a52102322ef5";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-42594-i0LvEb9ZyukD/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "9d6954468e15e8bf5173b551be67069f0349e0362dd14e7ac6cc1a2f14045857";
 var css = `._container_hg2oa_1 {
   width: 100%;
   height: 100%;
@@ -32,9 +32,8 @@ var GradientBgAnimation = ({
   borderRadius = 20,
   size = 300,
   angle = 0,
-  duration = 2,
   blur = 0,
-  animateAngle = false
+  animation: { duration = 2, animateAngle = false }
 }) => {
   const colors = colorsText.split(",");
   return /* @__PURE__ */ jsxs(
@@ -105,7 +104,10 @@ var propControls = {
   },
   angle: {
     type: ControlType.Number,
-    defaultValue: 30
+    defaultValue: 30,
+    min: 0,
+    max: 360,
+    step: 5
   },
   animation: {
     title: "Animation",

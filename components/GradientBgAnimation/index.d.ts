@@ -4,11 +4,13 @@ type Props = {
     size?: number;
     angle?: number;
     colorsText?: string;
-    duration?: number;
     blur?: number;
-    animateAngle?: boolean;
+    animation: {
+        duration?: number;
+        animateAngle?: boolean;
+    };
 };
-export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, duration, blur, animateAngle }: Props) => JSX.Element;
+export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, blur, animation: { duration, animateAngle } }: Props) => JSX.Element;
 export declare const propControls: {
     colorText: {
         title: string;
@@ -29,6 +31,9 @@ export declare const propControls: {
     angle: {
         type: ControlType;
         defaultValue: number;
+        min: number;
+        max: number;
+        step: number;
     };
     animation: {
         title: string;
