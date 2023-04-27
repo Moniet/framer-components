@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-46559-z9FEgY3rdWED/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "77b27bf2a819e16b12baf52306c573469993f4c61eefd52ae7072819b018ebc7";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-66055-a255ayMRiLf4/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "442711787a7beb56f5d3036dcdb3b6e6ea2afa9694cefd59997ace55e010d400";
 var css = `._container_hg2oa_1 {
   width: 100%;
   height: 100%;
@@ -23,8 +23,39 @@ var css = `._container_hg2oa_1 {
 var styles_modules_css_default = { "container": "_container_hg2oa_1" };
 
 // src/components/GradientBgAnimation/index.tsx
-import { ControlType } from "framer";
+import { ControlType as ControlType2 } from "framer";
 import { motion } from "framer-motion";
+
+// src/utils/framerControlProps.ts
+import { ControlType } from "framer";
+var boxShadowProps = {
+  x: {
+    type: ControlType.Number,
+    displayStepper: true,
+    defaultValue: 0
+  },
+  y: {
+    type: ControlType.Number,
+    displayStepper: true,
+    defaultValue: 0
+  },
+  blur: {
+    type: ControlType.Number,
+    displayStepper: true,
+    defaultValue: 20
+  },
+  color: {
+    type: ControlType.Color,
+    defaultValue: "rgba(0,0,0,0.08)"
+  },
+  size: {
+    type: ControlType.Number,
+    displayStepper: true,
+    defaultValue: 0
+  }
+};
+
+// src/components/GradientBgAnimation/index.tsx
 import { jsx, jsxs } from "react/jsx-runtime";
 var defaultGradient = "hsl(243 90% 47%), hsl(286 95% 54%),hsl(333 100% 62%)";
 var GradientBgAnimation = ({
@@ -33,9 +64,11 @@ var GradientBgAnimation = ({
   size = 300,
   angle = 0,
   blur = 0,
-  animation: { duration = 2, animateAngle = false }
+  animation: { duration = 2, animateAngle = false },
+  shadow
 }) => {
   const colors = colorsText.split(",");
+  const boxShadow = shadow ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(",") : "none";
   return /* @__PURE__ */ jsxs(
     "div",
     {
@@ -62,7 +95,8 @@ var GradientBgAnimation = ({
               "--lg": `${angle}deg, ${colors}`,
               "--br": `${borderRadius}px`,
               "--background-size": size ? `${size}% ${size}%` : "300% 300%",
-              "--angle": angle || 0
+              "--angle": angle || 0,
+              "--box-shadow": boxShadow
             },
             className: styles_modules_css_default.container
           }
@@ -88,44 +122,60 @@ var GradientBgAnimation = ({
 var propControls = {
   colorText: {
     title: "Colors",
-    type: ControlType.Color,
+    type: ControlType2.Color,
     defaultValue: defaultGradient
   },
   size: {
-    type: ControlType.Number,
+    type: ControlType2.Number,
     min: 100,
     max: 1e3,
     default: 300
   },
   blur: {
-    type: ControlType.Number,
+    type: ControlType2.Number,
     defaultValue: 0,
     displaySteppr: true
   },
   angle: {
-    type: ControlType.Number,
+    type: ControlType2.Number,
     defaultValue: 30,
     min: 0,
     max: 360,
     step: 5
   },
   borderRadius: {
-    type: ControlType.Number,
+    type: ControlType2.Number,
     min: 0,
     max: 1e3
   },
   animation: {
     title: "Animation",
-    type: ControlType.Object,
+    type: ControlType2.Object,
     animateAngle: {
-      type: ControlType.Boolean,
+      type: ControlType2.Boolean,
       defaultValue: false
     },
     duration: {
       title: "Duration",
-      type: ControlType.Number,
+      type: ControlType2.Number,
       defaultValue: 10,
       displayStepper: true
+    }
+  },
+  applyBlur: {
+    type: ControlType2.Boolean,
+    defaultValue: true
+  },
+  withShadow: {
+    title: "With Shadow",
+    type: ControlType2.Boolean,
+    defaultValue: false
+  },
+  shadow: {
+    title: "Shadow",
+    type: ControlType2.Object,
+    controls: {
+      ...boxShadowProps
     }
   }
 };

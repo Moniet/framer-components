@@ -1,4 +1,5 @@
 import { ControlType } from "framer";
+import { BoxShadowProps } from "src/utils/framerControlProps";
 type Props = {
     borderRadius?: number;
     size?: number;
@@ -9,8 +10,9 @@ type Props = {
         duration?: number;
         animateAngle?: boolean;
     };
+    shadow: BoxShadowProps;
 };
-export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, blur, animation: { duration, animateAngle } }: Props) => JSX.Element;
+export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, blur, animation: { duration, animateAngle }, shadow }: Props) => JSX.Element;
 export declare const propControls: {
     colorText: {
         title: string;
@@ -52,6 +54,45 @@ export declare const propControls: {
             type: ControlType;
             defaultValue: number;
             displayStepper: boolean;
+        };
+    };
+    applyBlur: {
+        type: ControlType;
+        defaultValue: boolean;
+    };
+    withShadow: {
+        title: string;
+        type: ControlType;
+        defaultValue: boolean;
+    };
+    shadow: {
+        title: string;
+        type: ControlType;
+        controls: {
+            x: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            y: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            blur: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            color: {
+                type: ControlType;
+                defaultValue: string;
+            };
+            size: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
         };
     };
 };
