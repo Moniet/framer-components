@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br);
+  box-shadow: var(--box-shadow);
+  background: linear-gradient(var(--lg));
+  background-size: var(--background-size);
+  background-repeat: no-repeat;
+}

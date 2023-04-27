@@ -11,9 +11,24 @@ class StripeObserver {
 
   setItem = async (item: any) => {
     this.store = [...this.store, item]
+    this.publishChanges()
+  }
+
+  publishChanges = async () => {
     for (let listener of this.listeners) {
       listener(this.store)
     }
+  }
+
+  deleteItem = async (item: any) => {
+    const index = this.store.findIndex((d) => d?.id === item?.id)
+    if (index > -1) {
+      this.store = [
+        ...this.store.slice(0, index),
+        ...this.store.slice(index + 1)
+      ]
+    }
+    this.publishChanges()
   }
 
   listen = (listener: (state: any) => void) => {
@@ -61,6 +76,9 @@ export function useStripeState() {
   const handleSetState = (item: any) => {
     observer?.current.setItem(item)
   }
+  const handleRemoveState = (item: any) => {
+    observer?.current.deleteItem(item)
+  }
 
-  return [state, handleSetState, observer.current] as const
+  return [state, handleSetState, handleRemoveState, observer.current] as const
 }

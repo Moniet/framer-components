@@ -67,6 +67,9 @@ importers:
       '@preact/signals-react':
         specifier: ^1.3.1
         version: 1.3.1(react@18.2.0)
+      '@stripe/stripe-js':
+        specifier: ^1.52.1
+        version: 1.52.1
       '@swc/core':
         specifier: ^1.3.53
         version: 1.3.53
@@ -118,6 +121,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      squircleyjs:
+        specifier: ^1.1.0
+        version: 1.1.0
       swc-loader:
         specifier: ^0.2.3
         version: 0.2.3(@swc/core@1.3.53)(webpack@5.80.0)
@@ -2509,6 +2515,10 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
     dev: true
+
+  /@stripe/stripe-js@1.52.1:
+    resolution: {integrity: sha512-fza40OPSpGQlFxc5TZWiYC/6Lk89Sep1fLuv9ss33YS6lCAF8UZbfA1E6W+lwO4c7WRKZIZumHIEbPJfP/O9uw==}
+    dev: false
 
   /@swc/cli@0.1.62(@swc/core@1.3.53):
     resolution: {integrity: sha512-kOFLjKY3XH1DWLfXL1/B5MizeNorHR8wHKEi92S/Zi9Md/AK17KSqR8MgyRJ6C1fhKHvbBCl8wboyKAFXStkYw==}
@@ -9356,6 +9366,10 @@ packages:
   /split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
+    dev: false
+
+  /squircleyjs@1.1.0:
+    resolution: {integrity: sha512-sCDmxlceVMGa4DTK6uBERS7GOk4mbGoILM/m/jfzB3D3v4llNt5ZYORATPiwJsBW1qWktfpMN1AcLDvZkjkcdA==}
     dev: false
 
   /ssri@8.0.1:
