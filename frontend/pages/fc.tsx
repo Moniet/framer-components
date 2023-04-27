@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { StripeProductCard } from "code-components/dist/components/StripeProductCard/index"
 
 import { GradientBgAnimation } from "code-components/dist/components/GradientBgAnimation"
+import { CustomCursorOnHover } from "code-components/dist/components/CustomCursorOnHover/index"
 
 const FC = () => {
   const router = useRouter()
@@ -18,16 +19,11 @@ const FC = () => {
         fontFamily: "Helvetica, sans-serif"
       }}
     >
-      <div style={{ width: "200px", height: "200px" }}>
-        <GradientBgAnimation
-          angle={-90}
-          size={300}
-          blur={0}
-          animation={{
-            duration: 20
-          }}
-        />
-      </div>
+      <CustomCursorOnHover>
+        <div
+          style={{ width: "200px", height: "200px", border: "solid 1px red" }}
+        ></div>
+      </CustomCursorOnHover>
     </div>
   )
 }
