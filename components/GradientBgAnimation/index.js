@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-44024-Srn2MIuL9zGl/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "11aa804302759ba288cee9f5f47f7c889b8ae01843478e5a5b43719f2e048b8b";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-46559-z9FEgY3rdWED/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "77b27bf2a819e16b12baf52306c573469993f4c61eefd52ae7072819b018ebc7";
 var css = `._container_hg2oa_1 {
   width: 100%;
   height: 100%;
@@ -108,6 +108,11 @@ var propControls = {
     min: 0,
     max: 360,
     step: 5
+  },
+  borderRadius: {
+    type: ControlType.Number,
+    min: 0,
+    max: 1e3
   },
   animation: {
     title: "Animation",

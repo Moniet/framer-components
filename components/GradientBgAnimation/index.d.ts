@@ -35,6 +35,11 @@ export declare const propControls: {
         max: number;
         step: number;
     };
+    borderRadius: {
+        type: ControlType;
+        min: number;
+        max: number;
+    };
     animation: {
         title: string;
         type: ControlType;
