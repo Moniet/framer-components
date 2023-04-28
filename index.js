@@ -1,5 +1,1 @@
-// src/index.tsx
-import { Button } from "./components/Button.js";
-export {
-  Button
-};
+import{Button as r}from"./components/Button.js";export{r as Button};

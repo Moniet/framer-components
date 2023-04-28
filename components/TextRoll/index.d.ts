@@ -16,7 +16,7 @@ type Props = {
         color: string;
     };
 };
-export declare const TextRoll: ({ text, typography: { fontWeight, fontSize, font, color }, animation: { fadeInOut, delay, duration, offset, initialAnimation, syncAnimations } }: Props) => JSX.Element;
+export declare const TextRoll: ({ text, typography, animation }: Props) => JSX.Element;
 export declare const propControls: {
     text: {
         type: ControlType;
@@ -60,7 +60,7 @@ export declare const propControls: {
             };
         };
     };
-    typogaphy: {
+    typography: {
         type: ControlType;
         controls: {
             fontSize: {
