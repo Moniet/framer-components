@@ -85,7 +85,7 @@ export const GradientBgAnimation = ({
 export const propControls = {
   colorText: {
     title: "Colors",
-    type: ControlType.Color,
+    type: ControlType.String,
     defaultValue: defaultGradient
   },
   size: {
