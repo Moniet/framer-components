@@ -30,7 +30,7 @@ export const GradientBgAnimation = ({
 }: Props) => {
   const colors = colorsText.split(",")
   const boxShadow = shadow
-    ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(",")
+    ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(" ")
     : "none"
   return (
     <div
@@ -117,6 +117,7 @@ export const propControls = {
     defaultValue: false
   },
   shadow: {
+    hidden: (props) => !props.withShadow,
     title: "Shadow",
     type: ControlType.Object,
     controls: {
