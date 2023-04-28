@@ -114,31 +114,33 @@ export const propControls = {
   animation: {
     title: "Animation",
     type: ControlType.Object,
-    animateAngle: {
+    controls: {
+      animateAngle: {
+        type: ControlType.Boolean,
+        defaultValue: false
+      },
+      duration: {
+        title: "Duration",
+        type: ControlType.Number,
+        defaultValue: 10,
+        displayStepper: true
+      }
+    },
+    applyBlur: {
+      type: ControlType.Boolean,
+      defaultValue: true
+    },
+    withShadow: {
+      title: "With Shadow",
       type: ControlType.Boolean,
       defaultValue: false
     },
-    duration: {
-      title: "Duration",
-      type: ControlType.Number,
-      defaultValue: 10,
-      displayStepper: true
-    }
-  },
-  applyBlur: {
-    type: ControlType.Boolean,
-    defaultValue: true
-  },
-  withShadow: {
-    title: "With Shadow",
-    type: ControlType.Boolean,
-    defaultValue: false
-  },
-  shadow: {
-    title: "Shadow",
-    type: ControlType.Object,
-    controls: {
-      ...boxShadowProps
+    shadow: {
+      title: "Shadow",
+      type: ControlType.Object,
+      controls: {
+        ...boxShadowProps
+      }
     }
   }
 }
