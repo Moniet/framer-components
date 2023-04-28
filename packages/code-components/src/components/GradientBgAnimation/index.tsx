@@ -111,6 +111,18 @@ export const propControls = {
     min: 0,
     max: 1000
   },
+  withShadow: {
+    title: "With Shadow",
+    type: ControlType.Boolean,
+    defaultValue: false
+  },
+  shadow: {
+    title: "Shadow",
+    type: ControlType.Object,
+    controls: {
+      ...boxShadowProps
+    }
+  },
   animation: {
     title: "Animation",
     type: ControlType.Object,
@@ -124,22 +136,6 @@ export const propControls = {
         type: ControlType.Number,
         defaultValue: 10,
         displayStepper: true
-      }
-    },
-    applyBlur: {
-      type: ControlType.Boolean,
-      defaultValue: true
-    },
-    withShadow: {
-      title: "With Shadow",
-      type: ControlType.Boolean,
-      defaultValue: false
-    },
-    shadow: {
-      title: "Shadow",
-      type: ControlType.Object,
-      controls: {
-        ...boxShadowProps
       }
     }
   }
