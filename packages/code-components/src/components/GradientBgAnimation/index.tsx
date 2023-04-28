@@ -39,7 +39,7 @@ export const GradientBgAnimation = ({
         "--bs-spread": shadow.size,
         "--bs-color": shadow.color
       }
-    : "none"
+    : {}
   return (
     <div
       style={{
@@ -67,7 +67,7 @@ export const GradientBgAnimation = ({
             "--br": `${borderRadius}px`,
             "--background-size": size ? `${size}% ${size}%` : "300% 300%",
             "--angle": angle || 0,
-            "--box-shadow": boxShadow
+            ...boxShadow
           } as any
         }
         className={styles.container}
