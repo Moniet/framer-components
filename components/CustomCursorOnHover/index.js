@@ -1,4 +1,4 @@
-import*as r from"react";import{ControlType as o}from"framer";var v="1a81bc6505015131d399df4ac2f417c853e2d83044ac821569b8d8fba3b54568",L=`._container_xvrce_1 {
+import*as r from"react";import{ControlType as o}from"framer";var v="323642c948ae0430641677dc8fd25e21b140226097c4beff37ec9e6464fad304",L=`._container_xvrce_1 {
   cursor: none;
   position: relative;
   width: fit-content;
