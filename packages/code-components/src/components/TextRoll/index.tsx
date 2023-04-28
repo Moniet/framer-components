@@ -120,7 +120,7 @@ export const propControls = {
       }
     }
   },
-  typogaphy: {
+  typography: {
     type: ControlType.Object,
     controls: {
       fontSize: {
