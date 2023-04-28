@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-65629-AlqnV81UP7zx/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "f79672425c26497b92c04352f638668330e580cc7d104e96a1d7173bdf80d914";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-66263-b0hb32ioTdj0/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "834645d9aa339c039f71be9f34a491d8c0e241cd66bd7d3b0bcde74edee2ef3d";
 var css = `._container_1f8h4_1 {
   width: 100%;
   height: 100%;
@@ -76,7 +76,7 @@ var GradientBgAnimation = ({
     "--bs-blur": shadow.blur,
     "--bs-spread": shadow.size,
     "--bs-color": shadow.color
-  } : "none";
+  } : {};
   return /* @__PURE__ */ jsxs(
     "div",
     {
@@ -104,7 +104,7 @@ var GradientBgAnimation = ({
               "--br": `${borderRadius}px`,
               "--background-size": size ? `${size}% ${size}%` : "300% 300%",
               "--angle": angle || 0,
-              "--box-shadow": boxShadow
+              ...boxShadow
             },
             className: styles_modules_css_default.container
           }

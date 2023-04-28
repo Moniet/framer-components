@@ -2,7 +2,7 @@
 import * as React from "react";
 import { ControlType } from "framer";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-65629-AlqnV81UP7zx/code-components/src/components/CustomCursorOnHover/styles.modules.css.js
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-66263-b0hb32ioTdj0/code-components/src/components/CustomCursorOnHover/styles.modules.css.js
 var digest = "323642c948ae0430641677dc8fd25e21b140226097c4beff37ec9e6464fad304";
 var css = `._container_xvrce_1 {
   cursor: none;
