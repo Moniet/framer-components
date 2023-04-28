@@ -48,6 +48,7 @@ export declare const propControls: {
         defaultValue: boolean;
     };
     shadow: {
+        hidden: (props: any) => boolean;
         title: string;
         type: ControlType;
         controls: {

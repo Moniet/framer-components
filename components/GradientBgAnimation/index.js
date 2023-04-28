@@ -1,5 +1,5 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-59873-GMvevZd4HUyq/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "e43c456430c20c9cf8963635c61b279db3b658f439e5e2aabb8c065da58a6e5d";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-61366-VXRDdldfcJcy/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "c58acb989d34def5439484f91bfc23ea1584914e27312eeac19d89ee18d00343";
 var css = `._container_hg2oa_1 {
   width: 100%;
   height: 100%;
@@ -68,7 +68,7 @@ var GradientBgAnimation = ({
   shadow
 }) => {
   const colors = colorsText.split(",");
-  const boxShadow = shadow ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(",") : "none";
+  const boxShadow = shadow ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(" ") : "none";
   return /* @__PURE__ */ jsxs(
     "div",
     {
@@ -154,6 +154,7 @@ var propControls = {
     defaultValue: false
   },
   shadow: {
+    hidden: (props) => !props.withShadow,
     title: "Shadow",
     type: ControlType2.Object,
     controls: {
