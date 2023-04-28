@@ -1,21 +1,19 @@
 import * as React from "react"
 import { ControlType } from "framer"
 import styles from "./styles.modules.css"
-import { useRef } from "react"
-import { invariant, motion } from "framer-motion"
 
-// cursor can :
-// • scale in or fade in
-//•  show on a particular element hover
-
-let interval
+const defaultSrc =
+  "https://s3-alpha-sig.figma.com/img/e03c/2a53/d457b0d9cb93b7735873023f9f6f7691?Expires=1683504000&Signature=exgquu-lwlVoFNW~LVvKKdP0RMnDInLZ9VBToBR7VlrizcffwDRabWfPt7OX7KjasQc05RtbuPK7UMM0zzCpQnnXrv99rX0yd6t8jddCeWRcjPrDuWObgcj3duLhJ1J5mybS3r4V3LxzZLA5BZbxL98Sau2xw6xsaaKQIcUnl8F~BLkAPEvDKVKqor8dKGmcM1pnZ61E2L2oijo43sZSqeFvJzdH39dox8lt-AFVtSAJCsXYKsQSbD8cBVYFji9flCjOagzFaXxdBrIM91LURIcd3JORrYyMguqEFmUcY-L4GfJPbspyhLu1~FkgqLOrliBHedWpPjhJOv~MykIknw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
 
 export const CustomCursorOnHover = ({
   image = {
-    src: "https://s3-alpha-sig.figma.com/img/e03c/2a53/d457b0d9cb93b7735873023f9f6f7691?Expires=1683504000&Signature=exgquu-lwlVoFNW~LVvKKdP0RMnDInLZ9VBToBR7VlrizcffwDRabWfPt7OX7KjasQc05RtbuPK7UMM0zzCpQnnXrv99rX0yd6t8jddCeWRcjPrDuWObgcj3duLhJ1J5mybS3r4V3LxzZLA5BZbxL98Sau2xw6xsaaKQIcUnl8F~BLkAPEvDKVKqor8dKGmcM1pnZ61E2L2oijo43sZSqeFvJzdH39dox8lt-AFVtSAJCsXYKsQSbD8cBVYFji9flCjOagzFaXxdBrIM91LURIcd3JORrYyMguqEFmUcY-L4GfJPbspyhLu1~FkgqLOrliBHedWpPjhJOv~MykIknw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+    src: defaultSrc
   },
   children,
-  size = 45
+  size = 45,
+  delay = 0.3,
+  scaleIn = true,
+  fadeIn = true
 }) => {
   const container = React.useRef<HTMLDivElement>() //
   const cursor = React.useRef<HTMLDivElement>()
@@ -83,17 +81,21 @@ export const CustomCursorOnHover = ({
         cursorWrapper.current?.style.setProperty("--scale", "0")
       }}
       onMouseMove={(e) => {
-        // interval = setTimeout(() => {
-        // if (interval) clearInterval(interval)
         calculatePosition(e)
-        // }, 100)
       }}
     >
       {children}
       <div
         ref={cursorWrapper}
         className={styles.cursorWrapper}
-        style={{ "--size": `${size}px`, "--scale": 0, "--opacity": 0 } as any}
+        style={
+          {
+            "--size": `${size}px`,
+            "--scale": scaleIn ? 0 : 1,
+            "--opacity": fadeIn ? 0 : 1,
+            "--delay": `${delay}s`
+          } as any
+        }
       >
         <div
           ref={cursor as any}
@@ -119,10 +121,6 @@ export const propControls = {
     type: ControlType.Number,
     defaultValue: 45
   },
-  borderRadius: {
-    type: ControlType.Number,
-    defaultValue: 0
-  },
   scaleIn: {
     type: ControlType.Boolean,
     defaultValue: true
@@ -130,5 +128,12 @@ export const propControls = {
   fadeIn: {
     type: ControlType.Boolean,
     defaultValue: true
+  },
+  delay: {
+    type: ControlType.Number,
+    min: 0,
+    max: 2,
+    step: 0.05,
+    defaultValue: 0.3
   }
 }

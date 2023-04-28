@@ -25,5 +25,5 @@
   overflow: visible;
   opacity: var(--opacity);
   transform: translateX(var(--x)) translateY(var(--y)) scale(var(--scale));
-  transition: transform 0.3s ease-out;
+  transition: transform var(--delay) ease-out;
 }
