@@ -11,8 +11,9 @@ type Props = {
         animateAngle?: boolean;
     };
     shadow: BoxShadowProps;
+    withShadow?: boolean;
 };
-export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, blur, animation: { duration, animateAngle }, shadow }: Props) => JSX.Element;
+export declare const GradientBgAnimation: ({ colorsText, borderRadius, size, angle, blur, animation: { duration, animateAngle }, shadow, withShadow }: Props) => JSX.Element;
 export declare const propControls: {
     colorText: {
         title: string;
