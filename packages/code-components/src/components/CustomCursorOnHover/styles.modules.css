@@ -6,16 +6,24 @@
 }
 
 .cursor {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: var(--size);
   height: var(--size);
-  opacity: var(--opacity);
-  transform: translateX(var(--x)) translateY(var(--y));
-  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cursor > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cursorWrapper {
-  transform: translateY(var(--size) / 2) translateX(var(--size) / 2);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  opacity: var(--opacity);
+  transform: translateX(var(--x)) translateY(var(--y)) scale(var(--scale));
+  transition: transform 0.3s ease-out;
 }

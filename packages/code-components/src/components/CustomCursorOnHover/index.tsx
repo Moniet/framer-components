@@ -2,10 +2,13 @@ import * as React from "react"
 import { ControlType } from "framer"
 import styles from "./styles.modules.css"
 import { useRef } from "react"
+import { invariant, motion } from "framer-motion"
 
 // cursor can :
 // • scale in or fade in
-// • show on a particular element hover
+//•  show on a particular element hover
+
+let interval
 
 export const CustomCursorOnHover = ({
   image = {
@@ -14,17 +17,18 @@ export const CustomCursorOnHover = ({
   children,
   size = 45
 }) => {
-  const container = React.useRef<HTMLDivElement>()
+  const container = React.useRef<HTMLDivElement>() //
   const cursor = React.useRef<HTMLDivElement>()
+  const cursorWrapper = React.useRef<HTMLDivElement>(null)
   const dimensions = React.useRef({ left: 0, top: 0, height: 0, width: 0 })
 
-  const calculateSize = (clientX: number, clientY: number) => {
-    const { left, top } = dimensions.current
-    const x = clientX - left + "px"
-    const y = clientY - top + "px"
+  const calculatePosition = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { top, left } = dimensions.current
+    const y = e.clientY - top
+    const x = e.clientX - left
 
-    cursor.current?.style.setProperty("--x", x)
-    cursor.current?.style.setProperty("--y", y)
+    cursorWrapper.current?.style.setProperty("--x", x + "px")
+    cursorWrapper.current?.style.setProperty("--y", y + "px")
   }
 
   React.useEffect(() => {
@@ -33,25 +37,30 @@ export const CustomCursorOnHover = ({
     const onResize = () => {
       clearTimeout(timeout)
       timeout = setTimeout(() => {
-        // reset dimensions
+        // reset dimensions /
+        const { width, height, top, left } =
+          container.current?.getBoundingClientRect() || {}
         const newDims = {
-          left: container.current?.clientLeft as number,
-          top: container.current?.clientTop as number,
-          width: container.current?.clientWidth as number,
-          height: container.current?.clientHeight as number
+          left,
+          top,
+          width,
+          height
         }
-        dimensions.current = newDims
-        cursor.current?.style.setProperty("--x", "50%")
-        cursor.current?.style.setProperty("--y", "50%")
+
+        dimensions.current = newDims as any
+        cursorWrapper.current?.style.setProperty("--x", "50%")
+        cursorWrapper.current?.style.setProperty("--y", "50%")
       }, 150)
     }
 
     onResize()
 
+    window.addEventListener("resize", onResize)
+
     return () => {
       try {
         clearTimeout(timeout)
-      } catch {}
+      } catch {} ///
     }
   }, [])
 
@@ -59,26 +68,38 @@ export const CustomCursorOnHover = ({
     <div
       ref={container as any}
       className={styles.container}
-      onMouseOver={() => {
-        cursor.current?.style.setProperty("--opacity", "1")
+      onMouseOver={(e) => {
+        if (cursorWrapper.current) {
+          const prevTransition = cursorWrapper.current.style.transition
+          cursorWrapper.current.style.transition = "none"
+          calculatePosition(e)
+          cursorWrapper.current.style.transition = prevTransition
+          cursorWrapper.current?.style.setProperty("--opacity", "1")
+          cursorWrapper.current?.style.setProperty("--scale", "1") ///////
+        }
       }}
       onMouseLeave={() => {
-        cursor.current?.style.setProperty("--opacity", "0")
+        cursorWrapper.current?.style.setProperty("--opacity", "0")
+        cursorWrapper.current?.style.setProperty("--scale", "0")
       }}
       onMouseMove={(e) => {
-        calculateSize(e.clientX, e.clientY)
+        // interval = setTimeout(() => {
+        // if (interval) clearInterval(interval)
+        calculatePosition(e)
+        // }, 100)
       }}
     >
       {children}
       <div
+        ref={cursorWrapper}
         className={styles.cursorWrapper}
-        style={{ "--size": `${size}px` } as any}
+        style={{ "--size": `${size}px`, "--scale": 0, "--opacity": 0 } as any}
       >
         <div
           ref={cursor as any}
           className={styles.cursor}
-          style={{ "--size": `${size}px`, "--opacity": 0 } as any}
           aria-hidden={true}
+          style={{ "--size": `${size}px` } as any}
         >
           <img alt="cursor" src={image.src} />
         </div>
