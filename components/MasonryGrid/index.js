@@ -1,1 +1,8 @@
-import{jsx as r}from"react/jsx-runtime";var d=({children:o})=>r("div",{children:o});export{d as MasonryGrid};
+// src/components/MasonryGrid/index.tsx
+import { jsx } from "react/jsx-runtime";
+var MasonryGrid = ({ children }) => {
+  return /* @__PURE__ */ jsx("div", { children });
+};
+export {
+  MasonryGrid
+};

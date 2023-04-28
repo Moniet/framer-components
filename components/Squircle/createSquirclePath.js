@@ -1,6 +1,18 @@
-function a(h,r,o){let $=h,n=r,e=$/2,c=n/2,t=Math.min(e,c)*(1-o);return`
-      M 0 ${c}
-      C 0 ${t}, ${t} 0, ${e} 0
-      S ${$} ${t}, ${$} ${c}, ${$-t} ${n}
-        ${e} ${n}, 0 ${n-t}, 0 ${c}
-  `}export{a as createSquirclePath};
+// src/components/Squircle/createSquirclePath.ts
+function createSquirclePath(w, h, curvature) {
+  const width = w;
+  const height = h;
+  const halfWidth = width / 2;
+  const halfHeight = height / 2;
+  const arc = Math.min(halfWidth, halfHeight) * (1 - curvature);
+  const d = `
+      M 0 ${halfHeight}
+      C 0 ${arc}, ${arc} 0, ${halfWidth} 0
+      S ${width} ${arc}, ${width} ${halfHeight}, ${width - arc} ${height}
+        ${halfWidth} ${height}, 0 ${height - arc}, 0 ${halfHeight}
+  `;
+  return d;
+}
+export {
+  createSquirclePath
+};

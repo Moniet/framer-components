@@ -1,1 +1,117 @@
-var l="https://js.stripe.com/v3",f=/^https:\/\/js\.stripe\.com\/v3\/?(\?.*)?$/,d="loadStripe.setLoadParameters was called but an existing Stripe.js script already exists in the document; existing script parameters will be used",S=function(){for(var r=document.querySelectorAll('script[src^="'.concat(l,'"]')),t=0;t<r.length;t++){var e=r[t];if(f.test(e.src))return e}return null},v=function(r){var t=r&&!r.advancedFraudSignals?"?advancedFraudSignals=false":"",e=document.createElement("script");e.src="".concat(l).concat(t);var n=document.head||document.body;if(!n)throw new Error("Expected document.body not to be null. Stripe.js requires a <body> element.");return n.appendChild(e),e},w=function(r,t){!r||!r._registerWrapper||r._registerWrapper({name:"stripe-js",version:"1.52.1",startTime:t})},o=null,m=function(r){return o!==null||(o=new Promise(function(t,e){if(typeof window>"u"||typeof document>"u"){t(null);return}if(window.Stripe&&r&&console.warn(d),window.Stripe){t(window.Stripe);return}try{var n=S();n&&r?console.warn(d):n||(n=v(r)),n.addEventListener("load",function(){window.Stripe?t(window.Stripe):e(new Error("Stripe.js not available"))}),n.addEventListener("error",function(){e(new Error("Failed to load Stripe.js"))})}catch(a){e(a);return}})),o},g=function(r,t,e){if(r===null)return null;var n=r.apply(void 0,t);return w(n,e),n},c=Promise.resolve().then(function(){return m(null)}),s=!1;c.catch(function(i){s||console.warn(i)});var p=function(){for(var r=arguments.length,t=new Array(r),e=0;e<r;e++)t[e]=arguments[e];s=!0;var n=Date.now();return c.then(function(a){return g(a,t,n)})};var u,h=i=>(u||(u=p(i)),u),P=h;export{P as default};
+// ../../node_modules/.pnpm/@stripe+stripe-js@1.52.1/node_modules/@stripe/stripe-js/dist/stripe.esm.js
+var V3_URL = "https://js.stripe.com/v3";
+var V3_URL_REGEX = /^https:\/\/js\.stripe\.com\/v3\/?(\?.*)?$/;
+var EXISTING_SCRIPT_MESSAGE = "loadStripe.setLoadParameters was called but an existing Stripe.js script already exists in the document; existing script parameters will be used";
+var findScript = function findScript2() {
+  var scripts = document.querySelectorAll('script[src^="'.concat(V3_URL, '"]'));
+  for (var i = 0; i < scripts.length; i++) {
+    var script = scripts[i];
+    if (!V3_URL_REGEX.test(script.src)) {
+      continue;
+    }
+    return script;
+  }
+  return null;
+};
+var injectScript = function injectScript2(params) {
+  var queryString = params && !params.advancedFraudSignals ? "?advancedFraudSignals=false" : "";
+  var script = document.createElement("script");
+  script.src = "".concat(V3_URL).concat(queryString);
+  var headOrBody = document.head || document.body;
+  if (!headOrBody) {
+    throw new Error("Expected document.body not to be null. Stripe.js requires a <body> element.");
+  }
+  headOrBody.appendChild(script);
+  return script;
+};
+var registerWrapper = function registerWrapper2(stripe2, startTime) {
+  if (!stripe2 || !stripe2._registerWrapper) {
+    return;
+  }
+  stripe2._registerWrapper({
+    name: "stripe-js",
+    version: "1.52.1",
+    startTime
+  });
+};
+var stripePromise = null;
+var loadScript = function loadScript2(params) {
+  if (stripePromise !== null) {
+    return stripePromise;
+  }
+  stripePromise = new Promise(function(resolve, reject) {
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      resolve(null);
+      return;
+    }
+    if (window.Stripe && params) {
+      console.warn(EXISTING_SCRIPT_MESSAGE);
+    }
+    if (window.Stripe) {
+      resolve(window.Stripe);
+      return;
+    }
+    try {
+      var script = findScript();
+      if (script && params) {
+        console.warn(EXISTING_SCRIPT_MESSAGE);
+      } else if (!script) {
+        script = injectScript(params);
+      }
+      script.addEventListener("load", function() {
+        if (window.Stripe) {
+          resolve(window.Stripe);
+        } else {
+          reject(new Error("Stripe.js not available"));
+        }
+      });
+      script.addEventListener("error", function() {
+        reject(new Error("Failed to load Stripe.js"));
+      });
+    } catch (error) {
+      reject(error);
+      return;
+    }
+  });
+  return stripePromise;
+};
+var initStripe = function initStripe2(maybeStripe, args, startTime) {
+  if (maybeStripe === null) {
+    return null;
+  }
+  var stripe2 = maybeStripe.apply(void 0, args);
+  registerWrapper(stripe2, startTime);
+  return stripe2;
+};
+var stripePromise$1 = Promise.resolve().then(function() {
+  return loadScript(null);
+});
+var loadCalled = false;
+stripePromise$1["catch"](function(err) {
+  if (!loadCalled) {
+    console.warn(err);
+  }
+});
+var loadStripe = function loadStripe2() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+  loadCalled = true;
+  var startTime = Date.now();
+  return stripePromise$1.then(function(maybeStripe) {
+    return initStripe(maybeStripe, args, startTime);
+  });
+};
+
+// src/hooks/getStripe.ts
+var stripe;
+var getStripe = (key) => {
+  if (!stripe) {
+    stripe = loadStripe(key);
+  }
+  return stripe;
+};
+var getStripe_default = getStripe;
+export {
+  getStripe_default as default
+};

@@ -1,4 +1,6 @@
-var o="6c3f0c82475af255e97f45944837cd6a710debdb0a6fb448777cda9bea1b248d",p=`._container_1fkre_1 {
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-59873-GMvevZd4HUyq/code-components/src/components/StripeProductCard/styles.modules.css.js
+var digest = "b2f34237af61f1d8f5adc7fe1d348aea8f6ca1956d6e4311b7121e38dbac65d5";
+var css = `._container_1fkre_1 {
   font-size: 16px;
   position: relative;
   font-family: inherit;
@@ -33,4 +35,74 @@ var o="6c3f0c82475af255e97f45944837cd6a710debdb0a6fb448777cda9bea1b248d",p=`._co
   height: 50%;
   object-fit: cover;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var e=document.createElement("style");e.id=o,e.textContent=p,document.head.appendChild(e)}})();var t={container:"_container_1fkre_1",card:"_card_1fkre_10",selectedView:"_selectedView_1fkre_19",image:"_image_1fkre_31"};import{useStripeState as g}from"../../hooks/useStripeState.js";import{ControlType as c,addPropertyControls as _}from"framer";import{jsx as i,jsxs as s}from"react/jsx-runtime";var h=({productId:e,productTitle:d})=>{let[n,l,f]=g(),a=n.find(r=>r.id===e),m=()=>{a?f({id:e}):l({id:e,title:d})};return s("div",{className:t.container,onClick:r=>{r.preventDefault(),m()},children:[s("div",{className:t.card,children:[i("img",{className:t.image,src:"https://placehold.co/600x400.png",alt:""}),i("div",{className:t.title,children:i("b",{children:d})})]}),a&&i("div",{className:t.selectedView})]})};_(h,{productId:{type:c.String},productTitle:{type:c.String}});export{h as StripeProductCard};
+`;
+(function() {
+  if (globalThis.window) {
+    if (!document.getElementById(digest)) {
+      var ele = document.createElement("style");
+      ele.id = digest;
+      ele.textContent = css;
+      document.head.appendChild(ele);
+    }
+  }
+})();
+var styles_modules_css_default = { "container": "_container_1fkre_1", "card": "_card_1fkre_10", "selectedView": "_selectedView_1fkre_19", "image": "_image_1fkre_31" };
+
+// src/components/StripeProductCard/index.tsx
+import { useStripeState } from "../../hooks/useStripeState.js";
+import { ControlType, addPropertyControls } from "framer";
+import { jsx, jsxs } from "react/jsx-runtime";
+var StripeProductCard = ({
+  productId,
+  productTitle
+}) => {
+  const [items, setItem, removeItem] = useStripeState();
+  const isSelected = items.find((prod) => prod.id === productId);
+  const toggleProductInCart = () => {
+    if (isSelected) {
+      removeItem({
+        id: productId
+      });
+    } else {
+      setItem({
+        id: productId,
+        title: productTitle
+      });
+    }
+  };
+  return /* @__PURE__ */ jsxs(
+    "div",
+    {
+      className: styles_modules_css_default.container,
+      onClick: (e) => {
+        e.preventDefault();
+        toggleProductInCart();
+      },
+      children: [
+        /* @__PURE__ */ jsxs("div", { className: styles_modules_css_default.card, children: [
+          /* @__PURE__ */ jsx(
+            "img",
+            {
+              className: styles_modules_css_default.image,
+              src: "https://placehold.co/600x400.png",
+              alt: ""
+            }
+          ),
+          /* @__PURE__ */ jsx("div", { className: styles_modules_css_default.title, children: /* @__PURE__ */ jsx("b", { children: productTitle }) })
+        ] }),
+        isSelected && /* @__PURE__ */ jsx("div", { className: styles_modules_css_default.selectedView })
+      ]
+    }
+  );
+};
+addPropertyControls(StripeProductCard, {
+  productId: {
+    type: ControlType.String
+  },
+  productTitle: {
+    type: ControlType.String
+  }
+});
+export {
+  StripeProductCard
+};

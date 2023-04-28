@@ -42,24 +42,6 @@ export declare const propControls: {
         min: number;
         max: number;
     };
-    animation: {
-        title: string;
-        type: ControlType;
-        animateAngle: {
-            type: ControlType;
-            defaultValue: boolean;
-        };
-        duration: {
-            title: string;
-            type: ControlType;
-            defaultValue: number;
-            displayStepper: boolean;
-        };
-    };
-    applyBlur: {
-        type: ControlType;
-        defaultValue: boolean;
-    };
     withShadow: {
         title: string;
         type: ControlType;
@@ -92,6 +74,22 @@ export declare const propControls: {
                 type: ControlType;
                 displayStepper: boolean;
                 defaultValue: number;
+            };
+        };
+    };
+    animation: {
+        title: string;
+        type: ControlType;
+        controls: {
+            animateAngle: {
+                type: ControlType;
+                defaultValue: boolean;
+            };
+            duration: {
+                title: string;
+                type: ControlType;
+                defaultValue: number;
+                displayStepper: boolean;
             };
         };
     };

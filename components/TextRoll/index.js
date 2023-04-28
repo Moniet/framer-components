@@ -1,4 +1,11 @@
-import{ControlType as t}from"framer";import{AnimatePresence as v,motion as V}from"framer-motion";import{useEffect as w,useState as C}from"react";var u="cf7d709e72a04fba84346ff63c84ca1618d33f2b99b71093dab3ac8b9f107aff",S=`._container_e9816_1 {
+// src/components/TextRoll/index.tsx
+import { ControlType } from "framer";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-59873-GMvevZd4HUyq/code-components/src/components/TextRoll/styles.module.css.js
+var digest = "75eb09679fc9b7c283f91c7b3746357169ef1416fabf59ac67c218775b65df10";
+var css = `._container_e9816_1 {
   position: relative;
   width: 100%;
   height: 100%;
@@ -9,4 +16,155 @@ import{ControlType as t}from"framer";import{AnimatePresence as v,motion as V}fro
   height: fit-content;
   white-space: nowrap;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(u)){var e=document.createElement("style");e.id=u,e.textContent=S,document.head.appendChild(e)}})();var i={container:"_container_e9816_1",text:"_text_e9816_7"};import{jsx as a}from"react/jsx-runtime";var B=({text:e="Example Text, Goes Here",typography:d={fontWeight:400,fontSize:20,font:"Helvetica, sans-serif",color:"#555"},animation:m={fadeInOut:!0,delay:2e3,duration:1e3,offset:50,initialAnimation:!1,syncAnimations:!0}})=>{let{fontWeight:c,fontSize:p,font:y,color:x}=d,{fadeInOut:b,delay:h,duration:r,offset:l,initialAnimation:g,syncAnimations:A}=m,[n,s]=C(0),o=e.split(","),_=o[n];return w(()=>{let I=setInterval(()=>{let f=n+1;if(f<o.length)return s(f);s(0)},h);return()=>{clearInterval(I)}},[o]),a("div",{className:i.container,children:a(v,{initial:g,mode:A?"popLayout":"wait",children:a(V.div,{className:i.text,style:{fontFamily:y||"inherit",fontSize:p+"px",fontWeight:c,color:x},animate:{y:[l,0],opacity:1,dur:r},exit:{opacity:b?0:1,y:-l,dur:r},children:_},n)})})},E={text:{type:t.String,defaultValue:"Example Text, Created By, Comma Separating, These Words"},animation:{type:t.Object,Title:"Animation",controls:{duration:{type:t.Number,defaultValue:1e3,max:1e4,min:100,displayStepper:!0},delay:{type:t.Number,max:1e4,min:100,defaultValue:2e3},offset:{type:t.Number,defaultValue:50},fadeInOut:{title:"Fade In/Out",type:t.Boolean,defaultValue:!1},initialAnimation:{title:"Initial Anim",type:t.Boolean,defaultValue:!1},syncAnimations:{title:"Sync",type:t.Boolean,defaultValue:!0}}},typography:{type:t.Object,controls:{fontSize:{type:t.Number,defaultValue:20,min:1,max:100},fontWeight:{type:t.Number,defaultValue:400},font:{type:t.String,default:"Helvetica, sans-serif"},color:{type:t.Color,default:"#555"}}}};export{B as TextRoll,E as propControls};
+`;
+(function() {
+  if (globalThis.window) {
+    if (!document.getElementById(digest)) {
+      var ele = document.createElement("style");
+      ele.id = digest;
+      ele.textContent = css;
+      document.head.appendChild(ele);
+    }
+  }
+})();
+var styles_module_css_default = { "container": "_container_e9816_1", "text": "_text_e9816_7" };
+
+// src/components/TextRoll/index.tsx
+import { jsx } from "react/jsx-runtime";
+var TextRoll = ({
+  text = "Example Text, Goes Here",
+  typography = {
+    fontWeight: 400,
+    fontSize: 20,
+    font: "Helvetica, sans-serif",
+    color: "#555"
+  },
+  animation = {
+    fadeInOut: true,
+    delay: 2e3,
+    duration: 1e3,
+    offset: 50,
+    initialAnimation: false,
+    syncAnimations: true
+  }
+}) => {
+  const { fontWeight, fontSize, font, color } = typography;
+  const {
+    fadeInOut,
+    delay,
+    duration,
+    offset,
+    initialAnimation,
+    syncAnimations
+  } = animation;
+  const [index, setIndex] = useState(0);
+  const words = text.split(",");
+  const currentWord = words[index];
+  useEffect(() => {
+    const int = setInterval(() => {
+      const nextIndex = index + 1;
+      if (nextIndex < words.length) {
+        return setIndex(nextIndex);
+      } else {
+        setIndex(0);
+      }
+    }, delay);
+    return () => {
+      clearInterval(int);
+    };
+  }, [words]);
+  return /* @__PURE__ */ jsx("div", { className: styles_module_css_default.container, children: /* @__PURE__ */ jsx(
+    AnimatePresence,
+    {
+      initial: initialAnimation,
+      mode: syncAnimations ? "popLayout" : "wait",
+      children: /* @__PURE__ */ jsx(
+        motion.div,
+        {
+          className: styles_module_css_default.text,
+          style: {
+            fontFamily: font || "inherit",
+            fontSize: fontSize + "px",
+            fontWeight,
+            color
+          },
+          animate: { y: [offset, 0], opacity: 1, dur: duration },
+          exit: { opacity: fadeInOut ? 0 : 1, y: -offset, dur: duration },
+          children: currentWord
+        },
+        index
+      )
+    }
+  ) });
+};
+var propControls = {
+  text: {
+    type: ControlType.String,
+    defaultValue: "Example Text, Created By, Comma Separating, These Words"
+  },
+  animation: {
+    type: ControlType.Object,
+    Title: "Animation",
+    controls: {
+      duration: {
+        type: ControlType.Number,
+        defaultValue: 1e3,
+        max: 1e4,
+        min: 100,
+        displayStepper: true
+      },
+      delay: {
+        type: ControlType.Number,
+        max: 1e4,
+        min: 100,
+        defaultValue: 2e3
+      },
+      offset: {
+        type: ControlType.Number,
+        defaultValue: 50
+      },
+      fadeInOut: {
+        title: "Fade In/Out",
+        type: ControlType.Boolean,
+        defaultValue: false
+      },
+      initialAnimation: {
+        title: "Initial Anim",
+        type: ControlType.Boolean,
+        defaultValue: false
+      },
+      syncAnimations: {
+        title: "Sync",
+        type: ControlType.Boolean,
+        defaultValue: true
+      }
+    }
+  },
+  typography: {
+    type: ControlType.Object,
+    controls: {
+      fontSize: {
+        type: ControlType.Number,
+        defaultValue: 20,
+        min: 1,
+        max: 100
+      },
+      fontWeight: {
+        type: ControlType.Number,
+        defaultValue: 400
+      },
+      font: {
+        type: ControlType.String,
+        default: "Helvetica, sans-serif"
+      },
+      color: {
+        type: ControlType.Color,
+        default: "#555"
+      }
+    }
+  }
+};
+export {
+  TextRoll,
+  propControls
+};

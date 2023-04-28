@@ -1,1 +1,61 @@
-import{ControlType as i,addPropertyControls as d}from"framer";import{useMemo as h}from"react";import{createSquirclePath as m}from"./createSquirclePath.js";import{jsx as t,jsxs as w}from"react/jsx-runtime";var p=()=>Math.random()+"",u=({id:o=p(),curvature:r=.3,color:n="#333"})=>{let[s,a]=h(()=>{let l=[0,0,100,100],c=m(100,100,r);return[l,c]},[o,r]),e=`${o}-mask`;return w("div",{children:[t("svg",{viewBox:s.join(" "),xmlns:"http://www.w3.org/2000/svg",children:t("path",{d:a,id:e,transform:"rotate(45)",style:{transformOrigin:"center"},fill:n})}),t("div",{style:{width:"100%",height:"100%",background:"black",clipPath:`url(#${e})`}})]})},g={color:{type:i.Color,defaultValue:"#555"},curvature:{type:i.Number,min:0,max:.55,step:.01,defaultValue:.3}};d(u,g);export{u as Squircle,g as propControls};
+// src/components/Squircle/index.tsx
+import { ControlType, addPropertyControls } from "framer";
+import { useMemo } from "react";
+import { createSquirclePath } from "./createSquirclePath.js";
+import { jsx, jsxs } from "react/jsx-runtime";
+var getId = () => Math.random() + "";
+var Squircle = ({
+  id = getId(),
+  curvature = 0.3,
+  color = "#333"
+}) => {
+  const [viewBox, d] = useMemo(() => {
+    const height = 100;
+    const width = 100;
+    const viewBox2 = [0, 0, width, height];
+    const squirclePath = createSquirclePath(width, height, curvature);
+    return [viewBox2, squirclePath];
+  }, [id, curvature]);
+  const maskId = `${id}-mask`;
+  return /* @__PURE__ */ jsxs("div", { children: [
+    /* @__PURE__ */ jsx("svg", { viewBox: viewBox.join(" "), xmlns: "http://www.w3.org/2000/svg", children: /* @__PURE__ */ jsx(
+      "path",
+      {
+        d,
+        id: maskId,
+        transform: "rotate(45)",
+        style: { transformOrigin: "center" },
+        fill: color
+      }
+    ) }),
+    /* @__PURE__ */ jsx(
+      "div",
+      {
+        style: {
+          width: "100%",
+          height: "100%",
+          background: "black",
+          clipPath: `url(#${maskId})`
+        }
+      }
+    )
+  ] });
+};
+var propControls = {
+  color: {
+    type: ControlType.Color,
+    defaultValue: "#555"
+  },
+  curvature: {
+    type: ControlType.Number,
+    min: 0,
+    max: 0.55,
+    step: 0.01,
+    defaultValue: 0.3
+  }
+};
+addPropertyControls(Squircle, propControls);
+export {
+  Squircle,
+  propControls
+};

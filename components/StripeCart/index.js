@@ -1,4 +1,9 @@
-import{useStripeState as s}from"../../hooks/useStripeState.js";var n="1196db036673444ff7e0651dc0d9d15f929a7c068b723da90c96a442a3b337e9",d=`._container_12znn_1 {
+// src/components/StripeCart/index.tsx
+import { useStripeState } from "../../hooks/useStripeState.js";
+
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-59873-GMvevZd4HUyq/code-components/src/components/StripeCart/styles.module.css.js
+var digest = "c15171b127c83cedcb5371c1a95eca81fec4399cef40706dfecbf1251e1d7698";
+var css = `._container_12znn_1 {
   width: var(--fc-sc-width, 30px);
   height: var(--fc-sc-width, 30px);
   position: relative;
@@ -21,4 +26,63 @@ import{useStripeState as s}from"../../hooks/useStripeState.js";var n="1196db0366
   line-height: 0;
   aspect-ratio: 1/1;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(n)){var t=document.createElement("style");t.id=n,t.textContent=d,document.head.appendChild(t)}})();var o={container:"_container_12znn_1",badge:"_badge_12znn_7"};import{ControlType as c,addPropertyControls as l}from"framer";import{jsx as e,jsxs as a}from"react/jsx-runtime";var p=()=>a("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 512 512",children:[e("path",{d:"M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32",fill:"none",stroke:"currentColor",strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"32"}),e("path",{d:"M160 224v16a96 96 0 0096 96h0a96 96 0 0096-96v-16",fill:"none",stroke:"currentColor",strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"32"})]}),r=({Icon:t})=>{let[i]=s();return a("div",{className:o.container,children:[e(t,{}),e("div",{className:o.badge,children:i?.length})]})};l(r,{Icon:{title:"Icon",type:c.File,allowedFileTypes:[".svg",".png",".jpg"]}});r.defaultProps={Icon:p};export{r as StripeCart};
+`;
+(function() {
+  if (globalThis.window) {
+    if (!document.getElementById(digest)) {
+      var ele = document.createElement("style");
+      ele.id = digest;
+      ele.textContent = css;
+      document.head.appendChild(ele);
+    }
+  }
+})();
+var styles_module_css_default = { "container": "_container_12znn_1", "badge": "_badge_12znn_7" };
+
+// src/components/StripeCart/index.tsx
+import { ControlType, addPropertyControls } from "framer";
+import { jsx, jsxs } from "react/jsx-runtime";
+var CartIcon = () => /* @__PURE__ */ jsxs("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 512 512", children: [
+  /* @__PURE__ */ jsx(
+    "path",
+    {
+      d: "M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32",
+      fill: "none",
+      stroke: "currentColor",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "32"
+    }
+  ),
+  /* @__PURE__ */ jsx(
+    "path",
+    {
+      d: "M160 224v16a96 96 0 0096 96h0a96 96 0 0096-96v-16",
+      fill: "none",
+      stroke: "currentColor",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: "32"
+    }
+  )
+] });
+var StripeCart = ({ Icon }) => {
+  const [state] = useStripeState();
+  return /* @__PURE__ */ jsxs("div", { className: styles_module_css_default.container, children: [
+    /* @__PURE__ */ jsx(Icon, {}),
+    /* @__PURE__ */ jsx("div", { className: styles_module_css_default.badge, children: state?.length })
+  ] });
+};
+addPropertyControls(StripeCart, {
+  Icon: {
+    title: "Icon",
+    type: ControlType.File,
+    allowedFileTypes: [".svg", ".png", ".jpg"]
+  }
+});
+StripeCart.defaultProps = {
+  Icon: CartIcon
+};
+export {
+  StripeCart
+};
