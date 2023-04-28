@@ -15,6 +15,7 @@ type Props = {
     animateAngle?: boolean
   }
   shadow: BoxShadowProps
+  withShadow?: boolean
 }
 
 const defaultGradient = "hsl(243 90% 47%), hsl(286 95% 54%),hsl(333 100% 62%)"
@@ -26,11 +27,18 @@ export const GradientBgAnimation = ({
   angle = 0,
   blur = 0,
   animation: { duration = 2, animateAngle = false },
-  shadow
+  shadow,
+  withShadow = false
 }: Props) => {
   const colors = colorsText.split(",")
-  const boxShadow = shadow
-    ? [shadow.x, shadow.y, shadow.blur, shadow.size, shadow.color].join(" ")
+  const boxShadow = withShadow
+    ? {
+        "--bs-x": shadow.x,
+        "--bs-y": shadow.y,
+        "--bs-blur": shadow.blur,
+        "--bs-spread": shadow.size,
+        "--bs-color": shadow.color
+      }
     : "none"
   return (
     <div
