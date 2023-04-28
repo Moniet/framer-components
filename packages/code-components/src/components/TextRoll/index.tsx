@@ -23,16 +23,31 @@ type Props = {
 
 export const TextRoll = ({
   text = "Example Text, Goes Here",
-  typography: { fontWeight = 400, fontSize = 20, font, color = "#555" },
-  animation: {
-    fadeInOut = true,
-    delay = 2000,
-    duration = 1000,
-    offset = 50,
-    initialAnimation = false,
-    syncAnimations = true
+  typography = {
+    fontWeight: 400,
+    fontSize: 20,
+    font: "Helvetica, sans-serif",
+    color: "#555"
+  },
+  animation = {
+    fadeInOut: true,
+    delay: 2000,
+    duration: 1000,
+    offset: 50,
+    initialAnimation: false,
+    syncAnimations: true
   }
 }: Props) => {
+  const { fontWeight, fontSize, font, color } = typography
+  const {
+    fadeInOut,
+    delay,
+    duration,
+    offset,
+    initialAnimation,
+    syncAnimations
+  } = animation
+
   const [index, setIndex] = useState(0)
   const words = text.split(",")
   const currentWord = words[index]
