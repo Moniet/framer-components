@@ -3,6 +3,9 @@
   position: relative;
   width: fit-content;
   height: fit-content;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: var(--bg-color, #fff);
 }
 
 .cursor {

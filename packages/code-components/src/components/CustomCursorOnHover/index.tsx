@@ -11,7 +11,8 @@ export const CustomCursorOnHover = ({
   size = 45,
   delay = 0.3,
   scaleIn = true,
-  fadeIn = true
+  fadeIn = true,
+  backgroundColor = "#fff"
 }) => {
   const container = React.useRef<HTMLDivElement>() //
   const cursor = React.useRef<HTMLDivElement>()
@@ -71,7 +72,7 @@ export const CustomCursorOnHover = ({
           calculatePosition(e)
           cursorWrapper.current.style.transition = prevTransition
           cursorWrapper.current?.style.setProperty("--opacity", "1")
-          cursorWrapper.current?.style.setProperty("--scale", "1") ///////
+          cursorWrapper.current?.style.setProperty("--scale", "1")
         }
       }}
       onMouseLeave={() => {
@@ -81,6 +82,11 @@ export const CustomCursorOnHover = ({
       onMouseMove={(e) => {
         calculatePosition(e)
       }}
+      style={
+        {
+          "--bg-color": backgroundColor
+        } as any
+      }
     >
       {children}
       <div
@@ -133,5 +139,9 @@ export const propControls = {
     max: 2,
     step: 0.05,
     defaultValue: 0.3
+  },
+  backgroundColor: {
+    type: ControlType.Color,
+    defaultValue: "#fff"
   }
 }
