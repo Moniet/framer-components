@@ -1,4 +1,4 @@
-import{memo as a}from"react";var i="225942e1b88a881caf3bc7c11f00abd25d1734621f9c488612ac905759260da3",e=`._blinkingCursor_12xzj_1 {
+import{memo as a}from"react";var o="916153273f1594fb1c8b5bb0c9538015c9fdbe2f7a367b2c2c7f437ec73e8007",e=`._blinkingCursor_3ri72_1 {
   position: relative;
   line-height: inherit;
   left: 3px;
@@ -6,20 +6,23 @@ import{memo as a}from"react";var i="225942e1b88a881caf3bc7c11f00abd25d1734621f9c
   opacity: 1;
 }
 
-._container_12xzj_9 {
+._container_3ri72_9 {
   color: var(--color);
   font-family: var(--font);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
 }
 
-._blinking_12xzj_1 {
-  animation-name: _blink_12xzj_1;
+._blinking_3ri72_1 {
+  animation-name: _blink_3ri72_1;
   animation-duration: 0.8s;
   animation-iteration-count: infinite;
 }
 
-@keyframes _blink_12xzj_1 {
+@keyframes _blink_3ri72_1 {
   0% {
     opacity: 1;
   }
@@ -28,4 +31,4 @@ import{memo as a}from"react";var i="225942e1b88a881caf3bc7c11f00abd25d1734621f9c
     opacity: 0;
   }
 }
-`;(function(){if(globalThis.window&&!document.getElementById(i)){var n=document.createElement("style");n.id=i,n.textContent=e,document.head.appendChild(n)}})();var o={blinkingCursor:"_blinkingCursor_12xzj_1",container:"_container_12xzj_9",blinking:"_blinking_12xzj_1",blink:"_blink_12xzj_1"};import{jsx as l}from"react/jsx-runtime";var s=({cursorBlinking:n=!0,cursorStyle:t="|",cursorColor:r="inherit"})=>l("span",{style:{color:r},className:`${o.blinkingCursor} ${n?o.blinking:""}`,children:t}),p=a(s);export{p as Cursor};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var i=document.createElement("style");i.id=o,i.textContent=e,document.head.appendChild(i)}})();var n={blinkingCursor:"_blinkingCursor_3ri72_1",container:"_container_3ri72_9",blinking:"_blinking_3ri72_1",blink:"_blink_3ri72_1"};import{jsx as s}from"react/jsx-runtime";var l=({cursorBlinking:i=!0,cursorStyle:t="|",cursorColor:r="inherit"})=>s("span",{style:{color:r},className:`${n.blinkingCursor} ${i?n.blinking:""}`,children:t}),m=a(l);export{m as Cursor};
