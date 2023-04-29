@@ -40,7 +40,7 @@ export const Typewriter = ({
     onDelay,
     onDelete
   })
-
+  //
   return (
     <div
       className={styles.container}

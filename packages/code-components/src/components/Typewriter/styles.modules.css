@@ -11,6 +11,9 @@
   font-family: var(--font);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
 }
 
 .blinking {
