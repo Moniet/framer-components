@@ -1,11 +1,12 @@
 import { ControlType } from "framer";
-export declare const CustomCursorOnHover: ({ cursor: cursorProps, children, size, delay, scaleIn, fadeIn }: {
+export declare const CustomCursorOnHover: ({ cursor: cursorProps, children, size, delay, scaleIn, fadeIn, backgroundColor }: {
     cursor: any;
     children: any;
     size?: number | undefined;
     delay?: number | undefined;
     scaleIn?: boolean | undefined;
     fadeIn?: boolean | undefined;
+    backgroundColor?: string | undefined;
 }) => JSX.Element;
 export declare const propControls: {
     cursor: {
@@ -32,5 +33,9 @@ export declare const propControls: {
         max: number;
         step: number;
         defaultValue: number;
+    };
+    backgroundColor: {
+        type: ControlType;
+        defaultValue: string;
     };
 };
