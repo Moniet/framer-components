@@ -1,6 +1,6 @@
 import { ControlType } from "framer";
-export declare const CustomCursorOnHover: ({ image, children, size, delay, scaleIn, fadeIn }: {
-    image: any;
+export declare const CustomCursorOnHover: ({ cursor: cursorProps, children, size, delay, scaleIn, fadeIn }: {
+    cursor: any;
     children: any;
     size?: number | undefined;
     delay?: number | undefined;
@@ -10,6 +10,7 @@ export declare const CustomCursorOnHover: ({ image, children, size, delay, scale
 export declare const propControls: {
     cursor: {
         type: ControlType;
+        defaultValue: string;
     };
     children: {
         type: ControlType;
