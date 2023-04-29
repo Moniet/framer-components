@@ -10,7 +10,6 @@ export declare const CustomCursorOnHover: ({ cursor: cursorProps, children, size
 export declare const propControls: {
     cursor: {
         type: ControlType;
-        defaultValue: string;
     };
     children: {
         type: ControlType;
