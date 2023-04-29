@@ -2,8 +2,8 @@
 import * as React from "react";
 import { ControlType } from "framer";
 
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-84962-2e3kiCRMJJyK/code-components/src/components/CustomCursorOnHover/styles.modules.css.js
-var digest = "f9456320a4457335e36b50ed40669b1880b8eb41da7b517b276e60d236522fee";
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-89345-23VgSXEfjtSs/code-components/src/components/CustomCursorOnHover/styles.modules.css.js
+var digest = "323642c948ae0430641677dc8fd25e21b140226097c4beff37ec9e6464fad304";
 var css = `._container_xvrce_1 {
   cursor: none;
   position: relative;
@@ -152,10 +152,7 @@ var propControls = {
     type: ControlType.ResponsiveImage
   },
   children: {
-    type: ControlType.Array,
-    control: {
-      type: ControlType.ComponentInstance
-    }
+    type: ControlType.ComponentInstance
   },
   size: {
     type: ControlType.Number,
