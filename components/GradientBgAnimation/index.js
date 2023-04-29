@@ -1,11 +1,10 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-66263-b0hb32ioTdj0/code-components/src/components/GradientBgAnimation/styles.modules.css.js
-var digest = "834645d9aa339c039f71be9f34a491d8c0e241cd66bd7d3b0bcde74edee2ef3d";
-var css = `._container_1f8h4_1 {
+// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-82207-f2A6gdJJuO2I/code-components/src/components/GradientBgAnimation/styles.modules.css.js
+var digest = "c58acb989d34def5439484f91bfc23ea1584914e27312eeac19d89ee18d00343";
+var css = `._container_1jgju_1 {
   width: 100%;
   height: 100%;
   border-radius: var(--br);
-  box-shadow: var(--bs-x) var(--bs-y) var(--bs-blur) var(--bs-spread)
-    var(--bs-color);
+  box-shadow: var(--bs-x) var(--bs-y) var(--bs-blur) var(--bs-color);
   background: linear-gradient(var(--lg));
   background-size: var(--background-size);
   background-repeat: no-repeat;
@@ -21,7 +20,7 @@ var css = `._container_1f8h4_1 {
     }
   }
 })();
-var styles_modules_css_default = { "container": "_container_1f8h4_1" };
+var styles_modules_css_default = { "container": "_container_1jgju_1" };
 
 // src/components/GradientBgAnimation/index.tsx
 import { ControlType as ControlType2 } from "framer";
@@ -71,10 +70,10 @@ var GradientBgAnimation = ({
 }) => {
   const colors = colorsText.split(",");
   const boxShadow = withShadow ? {
-    "--bs-x": shadow.x,
-    "--bs-y": shadow.y,
-    "--bs-blur": shadow.blur,
-    "--bs-spread": shadow.size,
+    "--bs-x": shadow.x + "px",
+    "--bs-y": shadow.y + "px",
+    "--bs-blur": shadow.blur + "px",
+    "--bs-spread": shadow.size + "px",
     "--bs-color": shadow.color
   } : {};
   return /* @__PURE__ */ jsxs(
