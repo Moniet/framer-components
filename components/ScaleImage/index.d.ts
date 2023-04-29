@@ -22,6 +22,10 @@ export declare const propsControls: {
         title: string;
         type: ControlType;
         default: number;
+        min: number;
+        max: number;
+        step: number;
+        displayStepper: boolean;
     };
     width: {
         type: ControlType;
