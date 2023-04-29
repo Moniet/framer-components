@@ -15,6 +15,9 @@ export declare const propControls: {
     };
     children: {
         type: ControlType;
+        control: {
+            type: ControlType;
+        };
     };
     size: {
         type: ControlType;
