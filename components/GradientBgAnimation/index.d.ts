@@ -24,7 +24,7 @@ export declare const propControls: {
         type: ControlType;
         min: number;
         max: number;
-        default: number;
+        defaultValue: number;
     };
     blur: {
         type: ControlType;
