@@ -9,7 +9,7 @@
     "serve": "PORT=3006 serve ./dist",
     "build": "node esmbuild/esmbuild.cjs;tsc;",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ghpages": "node publish.mjs",
+    "ghpages": "pnpm build; node publish.mjs",
     "build-watch": "node esmbuild/esmbuild.cjs watch"
   },
   "keywords": [],

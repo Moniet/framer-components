@@ -6,9 +6,7 @@ const defaultSrc =
   "https://s3-alpha-sig.figma.com/img/e03c/2a53/d457b0d9cb93b7735873023f9f6f7691?Expires=1683504000&Signature=exgquu-lwlVoFNW~LVvKKdP0RMnDInLZ9VBToBR7VlrizcffwDRabWfPt7OX7KjasQc05RtbuPK7UMM0zzCpQnnXrv99rX0yd6t8jddCeWRcjPrDuWObgcj3duLhJ1J5mybS3r4V3LxzZLA5BZbxL98Sau2xw6xsaaKQIcUnl8F~BLkAPEvDKVKqor8dKGmcM1pnZ61E2L2oijo43sZSqeFvJzdH39dox8lt-AFVtSAJCsXYKsQSbD8cBVYFji9flCjOagzFaXxdBrIM91LURIcd3JORrYyMguqEFmUcY-L4GfJPbspyhLu1~FkgqLOrliBHedWpPjhJOv~MykIknw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
 
 export const CustomCursorOnHover = ({
-  image = {
-    src: defaultSrc
-  },
+  cursor: cursorProps,
   children,
   size = 45,
   delay = 0.3,
@@ -103,7 +101,7 @@ export const CustomCursorOnHover = ({
           aria-hidden={true}
           style={{ "--size": `${size}px` } as any}
         >
-          <img alt="cursor" src={image.src} />
+          <img alt="cursor" src={cursorProps?.src || defaultSrc} />
         </div>
       </div>
     </div>

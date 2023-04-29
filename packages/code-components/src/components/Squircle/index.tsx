@@ -10,6 +10,8 @@ const getId = () => Math.random() + ""
  * @framerSupportedLayoutHeight auto
  */
 
+//TODO: make viewbox dynamic to the size of the card
+
 export const Squircle = ({
   id = getId(),
   curvature = 0.3,

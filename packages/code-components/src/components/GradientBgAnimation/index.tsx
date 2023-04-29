@@ -33,41 +33,40 @@ export const GradientBgAnimation = ({
   const colors = colorsText.split(",")
   const boxShadow = withShadow
     ? {
-        "--bs-x": shadow.x,
-        "--bs-y": shadow.y,
-        "--bs-blur": shadow.blur,
-        "--bs-spread": shadow.size,
+        "--bs-x": shadow.x + "px",
+        "--bs-y": shadow.y + "px",
+        "--bs-blur": shadow.blur + "px",
+        "--bs-spread": shadow.size + "px",
         "--bs-color": shadow.color
       }
     : {}
   return (
     <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-        overflow: "hidden"
-      }}
+      style={
+        {
+          "--br": `${borderRadius}px`,
+          ...boxShadow
+        } as any
+      }
+      className={styles.wrapper}
     >
       <motion.div
         transition={{
           duration,
           repeat: Infinity
         }}
+        style={
+          {
+            "--lg": `${angle}deg, ${colors}`,
+            "--angle": angle || 0,
+            "--background-size": size ? `${size}% ${size}%` : "300% 300%"
+          } as any
+        }
         animate={
           {
             backgroundPositionY: ["0%", `100%`, "0%"],
             backgroundPositionX: ["0%", `100%`, "0%"],
             ...(animateAngle ? { "--angle": [angle, angle + 180, angle] } : {})
-          } as any
-        }
-        style={
-          {
-            "--lg": `${angle}deg, ${colors}`,
-            "--br": `${borderRadius}px`,
-            "--background-size": size ? `${size}% ${size}%` : "300% 300%",
-            "--angle": angle || 0,
-            ...boxShadow
           } as any
         }
         className={styles.container}
@@ -100,7 +99,7 @@ export const propControls = {
     type: ControlType.Number,
     min: 100,
     max: 1000,
-    default: 300
+    defaultValue: 300
   },
   blur: {
     type: ControlType.Number,

@@ -14,11 +14,9 @@ async function getBuildOptions(path) {
     glob.sync(join(__dirname, "../src/**/*.ts"))
   ].flat()
 
-  console.log("entry points", entryPoints)
-
   return {
     entryPoints,
-    // minify: true,
+    minify: true,
     format: "esm",
     bundle: true,
     external: [
@@ -56,5 +54,6 @@ let [a, b, command, path, option] = process.argv
     await ctx.watch()
   } else {
     await build()
+    console.log("build completed")
   }
 })()
