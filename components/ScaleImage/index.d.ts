@@ -4,8 +4,8 @@ export declare const ScaleImage: ({ image, alt, easing, dur, width, height, br, 
     alt?: string | undefined;
     easing?: string | undefined;
     dur?: number | undefined;
-    width?: string | undefined;
-    height?: string | undefined;
+    width?: number | undefined;
+    height?: number | undefined;
     br?: number | undefined;
     scale?: number | undefined;
 }) => JSX.Element;
