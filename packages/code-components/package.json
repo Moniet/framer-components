@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "serve": "PORT=3006 serve ./dist",
-    "build": "node esmbuild/esmbuild.cjs;tsc;",
+    "build": "node esmbuild/esmbuild.cjs;tsc;zsh scripts/moveAssets.sh ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ghpages": "pnpm build; node publish.mjs",
     "build-watch": "node esmbuild/esmbuild.cjs watch"
