@@ -1,0 +1,30 @@
+.blinkingCursor {
+  position: relative;
+  line-height: inherit;
+  left: 3px;
+  top: 0;
+  opacity: 1;
+}
+
+.container {
+  color: var(--color);
+  font-family: var(--font);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+}
+
+.blinking {
+  animation-name: blink;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
