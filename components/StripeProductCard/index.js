@@ -1,6 +1,4 @@
-// esbuild-css-modules-plugin-namespace:/var/folders/07/kf6jf5m12g53trp7qpjtjg1m0000gn/T/tmp-89345-23VgSXEfjtSs/code-components/src/components/StripeProductCard/styles.modules.css.js
-var digest = "6c3f0c82475af255e97f45944837cd6a710debdb0a6fb448777cda9bea1b248d";
-var css = `._container_1fkre_1 {
+var o="c9dbe774dc6d82c59d75a33efb826df20200ceaedce943d8a71d1191f37f0928",p=`._container_1fkre_1 {
   font-size: 16px;
   position: relative;
   font-family: inherit;
@@ -35,74 +33,4 @@ var css = `._container_1fkre_1 {
   height: 50%;
   object-fit: cover;
 }
-`;
-(function() {
-  if (globalThis.window) {
-    if (!document.getElementById(digest)) {
-      var ele = document.createElement("style");
-      ele.id = digest;
-      ele.textContent = css;
-      document.head.appendChild(ele);
-    }
-  }
-})();
-var styles_modules_css_default = { "container": "_container_1fkre_1", "card": "_card_1fkre_10", "selectedView": "_selectedView_1fkre_19", "image": "_image_1fkre_31" };
-
-// src/components/StripeProductCard/index.tsx
-import { useStripeState } from "../../hooks/useStripeState.js";
-import { ControlType, addPropertyControls } from "framer";
-import { jsx, jsxs } from "react/jsx-runtime";
-var StripeProductCard = ({
-  productId,
-  productTitle
-}) => {
-  const [items, setItem, removeItem] = useStripeState();
-  const isSelected = items.find((prod) => prod.id === productId);
-  const toggleProductInCart = () => {
-    if (isSelected) {
-      removeItem({
-        id: productId
-      });
-    } else {
-      setItem({
-        id: productId,
-        title: productTitle
-      });
-    }
-  };
-  return /* @__PURE__ */ jsxs(
-    "div",
-    {
-      className: styles_modules_css_default.container,
-      onClick: (e) => {
-        e.preventDefault();
-        toggleProductInCart();
-      },
-      children: [
-        /* @__PURE__ */ jsxs("div", { className: styles_modules_css_default.card, children: [
-          /* @__PURE__ */ jsx(
-            "img",
-            {
-              className: styles_modules_css_default.image,
-              src: "https://placehold.co/600x400.png",
-              alt: ""
-            }
-          ),
-          /* @__PURE__ */ jsx("div", { className: styles_modules_css_default.title, children: /* @__PURE__ */ jsx("b", { children: productTitle }) })
-        ] }),
-        isSelected && /* @__PURE__ */ jsx("div", { className: styles_modules_css_default.selectedView })
-      ]
-    }
-  );
-};
-addPropertyControls(StripeProductCard, {
-  productId: {
-    type: ControlType.String
-  },
-  productTitle: {
-    type: ControlType.String
-  }
-});
-export {
-  StripeProductCard
-};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var e=document.createElement("style");e.id=o,e.textContent=p,document.head.appendChild(e)}})();var t={container:"_container_1fkre_1",card:"_card_1fkre_10",selectedView:"_selectedView_1fkre_19",image:"_image_1fkre_31"};import{useStripeState as g}from"../../hooks/useStripeState.js";import{ControlType as c,addPropertyControls as _}from"framer";import{jsx as i,jsxs as s}from"react/jsx-runtime";var h=({productId:e,productTitle:r})=>{let[n,l,f]=g(),a=n.find(d=>d.id===e),m=()=>{a?f({id:e}):l({id:e,title:r})};return s("div",{className:t.container,onClick:d=>{d.preventDefault(),m()},children:[s("div",{className:t.card,children:[i("img",{className:t.image,src:"https://placehold.co/600x400.png",alt:""}),i("div",{className:t.title,children:i("b",{children:r})})]}),a&&i("div",{className:t.selectedView})]})};_(h,{productId:{type:c.String},productTitle:{type:c.String}});export{h as StripeProductCard};

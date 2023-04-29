@@ -1,8 +1,6 @@
 import { ControlType } from "framer";
 export declare const CustomCursorOnHover: ({ image, children, size, delay, scaleIn, fadeIn }: {
-    image?: {
-        src: string;
-    } | undefined;
+    image: any;
     children: any;
     size?: number | undefined;
     delay?: number | undefined;
