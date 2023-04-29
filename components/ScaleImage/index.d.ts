@@ -18,4 +18,27 @@ export declare const propsControls: {
         type: ControlType;
         defaultValue: number;
     };
+    dur: {
+        title: string;
+        type: ControlType;
+        default: number;
+    };
+    width: {
+        type: ControlType;
+        displayStepper: boolean;
+        step: number;
+        defaultValue: number;
+    };
+    height: {
+        type: ControlType;
+        displayStepper: boolean;
+        step: number;
+        defaultValue: number;
+    };
+    easing: {
+        type: ControlType;
+        options: string[];
+        optionTitles: string[];
+        defaultValue: string;
+    };
 };

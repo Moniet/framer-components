@@ -1,4 +1,4 @@
-import{ControlType as r}from"framer";var a="48383ef6f0266e8664a4699afda3bbe2d2ba4050d40c01a96ff73019128df51c",p=`._img_horsk_1 {
+import{ControlType as e}from"framer";var r="dd5ccd1fab7bc01461d4b92ebde00a51465b5c852b8b9aeba2a761d5a12e280a",m=`._img_horsk_1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -16,4 +16,4 @@ import{ControlType as r}from"framer";var a="48383ef6f0266e8664a4699afda3bbe2d2ba
 ._container_horsk_9:hover ._img_horsk_1 {
   transform: scale(var(--scale, 1.2));
 }
-`;(function(){if(globalThis.window&&!document.getElementById(a)){var e=document.createElement("style");e.id=a,e.textContent=p,document.head.appendChild(e)}})();var t={img:"_img_horsk_1",container:"_container_horsk_9"};import{jsx as o}from"react/jsx-runtime";var s="https://labs.moniet.dev/framer-components/public/france.png",u=({image:e,alt:n="",easing:i="ease",dur:d=.3,width:c="200px",height:m="200px",br:l=10,scale:h=1.2})=>o("div",{className:t.container,style:{"--dur":d,"--easing":i,"--br":l,"--height":m,"--width":c,"--scale":h},children:o("img",{className:t.img,src:e?.src||s,alt:n})}),v={image:{type:r.ResponsiveImage,defaultValue:s},radius:{type:r.Number,defaultValue:10}};export{u as ScaleImage,v as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(r)){var t=document.createElement("style");t.id=r,t.textContent=m,document.head.appendChild(t)}})();var a={img:"_img_horsk_1",container:"_container_horsk_9"};import{jsx as s}from"react/jsx-runtime";var i="https://labs.moniet.dev/framer-components/public/france.png",b=({image:t,alt:o="",easing:n="ease",dur:d=.3,width:p="200px",height:l="200px",br:u=10,scale:c=1.2})=>s("div",{className:a.container,style:{"--dur":d,"--easing":n,"--br":u,"--height":l+"px","--width":p+"px","--scale":c},children:s("img",{className:a.img,src:t?.src||i,alt:o})}),_={image:{type:e.ResponsiveImage,defaultValue:i},radius:{type:e.Number,defaultValue:10},dur:{title:"Duration",type:e.Number,default:.3},width:{type:e.Number,displayStepper:!0,step:10,defaultValue:200},height:{type:e.Number,displayStepper:!0,step:10,defaultValue:200},easing:{type:e.Enum,options:["ease","ease-in-out","ease-out","ease-in","linear"],optionTitles:["Ease","Ease-In-Out","Ease-Out","Ease-In","Linear"],defaultValue:"ease"}};export{b as ScaleImage,_ as propsControls};
