@@ -25,6 +25,13 @@ export const getSingleChild = () => ({
   type: ControlType.ComponentInstance
 })
 
+export const getMultipleChildren = () => ({
+  type: ControlType.Array,
+  control: {
+    type: ControlType.ComponentInstance
+  }
+})
+
 export type BoxShadowProps = {
   x: number
   y: number

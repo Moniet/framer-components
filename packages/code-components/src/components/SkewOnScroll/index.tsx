@@ -1,5 +1,9 @@
 import * as React from "react"
 import {
+  getMultipleChildren,
+  getNumProps
+} from "../../utils/framerControlProps"
+import {
   useScroll,
   useSpring,
   useTransform,
@@ -7,12 +11,17 @@ import {
   motion
 } from "framer-motion"
 
-export const SkewOnScroll = ({ children, duration = 0.4 }) => {
+export const SkewOnScroll = ({
+  children,
+  duration = 0.4,
+  stretch = 1.2,
+  skew = 3
+}) => {
   const { scrollY } = useScroll()
   const velocity = useVelocity(scrollY)
-  const scaleY = useTransform(velocity, [0, 1000], [1, 1.2])
-  const skew = useTransform(velocity, [0, 1000], [0, 3])
-  const finalSkew = useTransform(skew, (num) => `${num}deg`)
+  const scaleY = useTransform(velocity, [0, 1000], [1, stretch])
+  const s = useTransform(velocity, [0, 1000], [0, skew])
+  const finalSkew = useTransform(s, (num) => `${num}deg`)
 
   return (
     <motion.div
@@ -28,4 +37,11 @@ export const SkewOnScroll = ({ children, duration = 0.4 }) => {
       {children}
     </motion.div>
   )
+}
+
+export const propsControls = {
+  skew: getNumProps(3, true, 1, { min: 0, max: 10 }),
+  stretchiness: getNumProps(1.2, true, 0.1, { min: 1, max: 2 }),
+  duration: getNumProps(0.4, true, 0.1, { min: 0, max: 2 }),
+  children: getMultipleChildren()
 }
