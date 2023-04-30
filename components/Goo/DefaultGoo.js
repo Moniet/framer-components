@@ -1,4 +1,4 @@
-var a="2e8bd0abe056940feee7a56fa9cf72030904cd8a0e96dc8fc82b697a9c10074d",r=`@keyframes _fc-oscillate_fijmv_1 {
+var n="a9378fa2ed9d88c80040499ab4c18f9d62a723a17250e39c122e90af2c3936e7",r=`@keyframes _fc-oscillate_z8lwo_1 {
   0% {
     transform: translateY(var(--from));
   }
@@ -7,7 +7,7 @@ var a="2e8bd0abe056940feee7a56fa9cf72030904cd8a0e96dc8fc82b697a9c10074d",r=`@key
   }
 }
 
-@keyframes _fc-spin_fijmv_1 {
+@keyframes _fc-spin_z8lwo_1 {
   0% {
     transform: rotate(0deg);
   }
@@ -16,28 +16,30 @@ var a="2e8bd0abe056940feee7a56fa9cf72030904cd8a0e96dc8fc82b697a9c10074d",r=`@key
   }
 }
 
-._dot_fijmv_19 {
-  animation: _fc-oscillate_fijmv_1 1.5s ease-in-out alternate infinite;
+._dot_z8lwo_19 {
+  animation: _fc-oscillate_z8lwo_1 1.5s ease-in-out alternate infinite;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: #000;
 }
 
-._defaultContainer_fijmv_27 {
+._defaultContainer_z8lwo_27 {
   padding: 1rem;
   transform-origin: center;
-  animation: _fc-spin_fijmv_1 3s ease-in-out infinite;
+  animation: _fc-spin_z8lwo_1 3s ease-in-out infinite;
 }
 
-._container_fijmv_33 {
+._container_z8lwo_33 {
   width: 100%;
   height: 100%;
   border-radius: var(--br, 0px);
 }
 
-._children_fijmv_39 {
-  width: 100%;
-  height: 100%;
+._children_z8lwo_39 {
+  width: fit-content;
+  height: fit-content;
+  min-width: 100px;
+  min-height: 100px;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(a)){var t=document.createElement("style");t.id=a,t.textContent=r,document.head.appendChild(t)}})();var e={dot:"_dot_fijmv_19",fcOscillate:"_fc-oscillate_fijmv_1",defaultContainer:"_defaultContainer_fijmv_27",fcSpin:"_fc-spin_fijmv_1",container:"_container_fijmv_33",children:"_children_fijmv_39"};import{jsx as i,jsxs as f}from"react/jsx-runtime";var n=({from:t,to:o})=>i("div",{style:{"--from":t,"--to":o},className:e.dot}),s=()=>f("div",{className:e.defaultContainer,children:[i(n,{from:"0px",to:"-25px"}),i(n,{from:"0px",to:"25px"})]});export{s as DefaultGoo};
+`;(function(){if(globalThis.window&&!document.getElementById(n)){var t=document.createElement("style");t.id=n,t.textContent=r,document.head.appendChild(t)}})();var e={dot:"_dot_z8lwo_19",fcOscillate:"_fc-oscillate_z8lwo_1",defaultContainer:"_defaultContainer_z8lwo_27",fcSpin:"_fc-spin_z8lwo_1",container:"_container_z8lwo_33",children:"_children_z8lwo_39"};import{jsx as o,jsxs as l}from"react/jsx-runtime";var a=({from:t,to:i})=>o("div",{style:{"--from":t,"--to":i},className:e.dot}),s=()=>l("div",{className:e.defaultContainer,children:[o(a,{from:"0px",to:"-25px"}),o(a,{from:"0px",to:"25px"})]});export{s as DefaultGoo};
