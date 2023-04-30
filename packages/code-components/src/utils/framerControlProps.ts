@@ -16,7 +16,7 @@ export const getNumProps = (
   ...(step ? { step } : {})
 })
 
-export const getStrProps = (defaultValue: number) => ({
+export const getStrProps = (defaultValue: string) => ({
   type: ControlType.String,
   defaultValue
 })
