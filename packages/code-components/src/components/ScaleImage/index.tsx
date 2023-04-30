@@ -10,7 +10,7 @@ type Props = {
     src?: string
   }
   alt?: string
-  easing: string
+  easing?: string
   dur?: number
   width?: number
   height?: number
@@ -23,7 +23,7 @@ export const ScaleImage = ({
   image,
   alt = "",
   easing = "ease",
-  dur = 0.3,
+  dur = 1,
   br = 10,
   scaleImage = 1.1,
   scaleContainer = 0.95
@@ -72,7 +72,7 @@ export const propsControls = {
   dur: {
     title: "Duration",
     type: ControlType.Number,
-    default: 0.3,
+    default: 1,
     min: 0.1,
     max: 2,
     step: 0.1,
