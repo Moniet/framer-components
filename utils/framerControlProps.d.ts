@@ -1,4 +1,22 @@
 import { ControlType } from "framer";
+export declare const getNumProps: (defaultValue: number, stepper: boolean, step?: number, minmax?: {
+    min: number;
+    max: number;
+}) => {
+    step?: number | undefined;
+    min?: number | undefined;
+    max?: number | undefined;
+    type: ControlType;
+    defaultValue: number;
+    displayStepper: boolean;
+};
+export declare const getStrProps: (defaultValue: number) => {
+    type: ControlType;
+    defaultValue: number;
+};
+export declare const getSingleChild: () => {
+    type: ControlType;
+};
 export type BoxShadowProps = {
     x: number;
     y: number;
@@ -31,4 +49,10 @@ export declare const boxShadowProps: {
         displayStepper: boolean;
         defaultValue: number;
     };
+};
+export declare const easingProps: {
+    type: ControlType;
+    options: string[];
+    optionTitles: string[];
+    defaultValue: string;
 };
