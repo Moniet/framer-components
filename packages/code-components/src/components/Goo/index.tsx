@@ -45,9 +45,8 @@ export const Goo = ({ children, br = 0, id = "123" }: Props) => {
 export const propsControls = {
   children: {
     type: ControlType.Array,
-    controls: {
+    control: {
       type: ControlType.ComponentInstance
     }
-  },
-  br: {}
+  }
 }
