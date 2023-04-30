@@ -1,14 +1,18 @@
 import { ControlType } from "framer";
-export declare const ScaleImage: ({ image, alt, easing, dur, width, height, br, scale }: {
-    image: any;
-    alt?: string | undefined;
-    easing?: string | undefined;
-    dur?: number | undefined;
-    width?: number | undefined;
-    height?: number | undefined;
-    br?: number | undefined;
-    scale?: number | undefined;
-}) => JSX.Element;
+type Props = {
+    image?: {
+        src?: string;
+    };
+    alt?: string;
+    easing: string;
+    dur?: number;
+    width?: number;
+    height?: number;
+    br?: number;
+    scaleImage?: number;
+    scaleContainer?: number;
+};
+export declare const ScaleImage: ({ image, alt, easing, dur, width, height, br, scaleImage, scaleContainer }: Props) => JSX.Element;
 export declare const propsControls: {
     image: {
         type: ControlType;
@@ -16,6 +20,20 @@ export declare const propsControls: {
     };
     radius: {
         type: ControlType;
+        defaultValue: number;
+    };
+    scaleContainer: {
+        type: ControlType;
+        min: number;
+        max: number;
+        step: number;
+        defaultValue: number;
+    };
+    scaleImage: {
+        type: ControlType;
+        min: number;
+        max: number;
+        step: number;
         defaultValue: number;
     };
     dur: {
@@ -46,3 +64,4 @@ export declare const propsControls: {
         defaultValue: string;
     };
 };
+export {};
