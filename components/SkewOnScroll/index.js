@@ -1,0 +1,1 @@
+import{useScroll as n,useTransform as a,useVelocity as c,motion as l}from"framer-motion";import{jsx as i}from"react/jsx-runtime";var u=({children:o,duration:s=.4})=>{let{scrollY:r}=n(),t=c(r),e=a(t,[0,1e3],[1,1.2]);return i(l.div,{style:{"--scaleY":e,transform:"scaleY(var(--scaleY))",transition:`transform ${s}s ease-out`},children:o})};export{u as SkewOnScroll};
