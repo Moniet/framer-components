@@ -11,8 +11,14 @@
   height: var(--height, 200px);
   border-radius: var(--br, 10px);
   overflow: hidden;
+  transform: scale(1);
+  transition: transform var(--dur, 0.3s) var(--easing);
 }
 
 .container:hover .img {
-  transform: scale(var(--scale, 1.2));
+  transform: scale(var(--scale-img, 1.2));
+}
+
+.container:hover {
+  transform: scale(var(--scale-container, 0.9));
 }

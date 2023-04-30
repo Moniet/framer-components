@@ -5,6 +5,20 @@ import styles from "./styles.module.css"
 const defaultImg =
   "https://labs.moniet.dev/framer-components/public/france.jpeg"
 
+type Props = {
+  image?: {
+    src?: string
+  }
+  alt?: string
+  easing: string
+  dur?: number
+  width?: number
+  height?: number
+  br?: number
+  scaleImage?: number
+  scaleContainer?: number
+}
+
 export const ScaleImage = ({
   image,
   alt = "",
@@ -13,8 +27,9 @@ export const ScaleImage = ({
   width = 200,
   height = 200,
   br = 10,
-  scale = 1.2
-}) => {
+  scaleImage = 1.1,
+  scaleContainer = 0.95
+}: Props) => {
   return (
     <div
       className={styles.container}
@@ -25,7 +40,8 @@ export const ScaleImage = ({
           "--br": br + "px",
           "--height": height + "px",
           "--width": width + "px",
-          "--scale": scale
+          "--scale-img": scaleImage,
+          "--scale-container": scaleContainer
         } as any
       }
     >
@@ -42,6 +58,20 @@ export const propsControls = {
   radius: {
     type: ControlType.Number,
     defaultValue: 10
+  },
+  scaleContainer: {
+    type: ControlType.Number,
+    min: 0,
+    max: 5,
+    step: 1,
+    defaultValue: 0.95
+  },
+  scaleImage: {
+    type: ControlType.Number,
+    min: 0,
+    max: 5,
+    step: 1,
+    defaultValue: 1.1
   },
   dur: {
     title: "Duration",
