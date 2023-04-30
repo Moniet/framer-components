@@ -1,1 +1,1 @@
-import{jsx as e}from"react/jsx-runtime";var t=()=>e("div",{style:{width:"auto",height:"auto",padding:"5px",borderRadius:"5px",background:"#f1f1f1",display:"flex",alignItems:"center",fontFamily:"Helvetica, sans-serif",fontSize:"18px"},children:"Copy"});export{t as CopyTextExample};
+import{jsx as e}from"react/jsx-runtime";var t=()=>e("div",{style:{width:"fit-content",height:"auto",padding:"10px",borderRadius:"5px",background:"#f1f1f1",display:"flex",alignItems:"center",fontFamily:"Helvetica, sans-serif",fontSize:"18px"},children:"Copy"});export{t as CopyTextExample};

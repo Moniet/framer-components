@@ -10,9 +10,9 @@ export declare const getNumProps: (defaultValue: number, stepper: boolean, step?
     defaultValue: number;
     displayStepper: boolean;
 };
-export declare const getStrProps: (defaultValue: number) => {
+export declare const getStrProps: (defaultValue: string) => {
     type: ControlType;
-    defaultValue: number;
+    defaultValue: string;
 };
 export declare const getSingleChild: () => {
     type: ControlType;
