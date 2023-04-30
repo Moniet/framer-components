@@ -24,8 +24,6 @@ export const ScaleImage = ({
   alt = "",
   easing = "ease",
   dur = 0.3,
-  width = 200,
-  height = 200,
   br = 10,
   scaleImage = 1.1,
   scaleContainer = 0.95
@@ -38,8 +36,6 @@ export const ScaleImage = ({
           "--dur": dur + "s",
           "--easing": easing,
           "--br": br + "px",
-          "--height": height + "px",
-          "--width": width + "px",
           "--scale-img": scaleImage,
           "--scale-container": scaleContainer
         } as any
@@ -81,18 +77,6 @@ export const propsControls = {
     max: 2,
     step: 0.1,
     displayStepper: true
-  },
-  width: {
-    type: ControlType.Number,
-    displayStepper: true,
-    step: 10,
-    defaultValue: 200
-  },
-  height: {
-    type: ControlType.Number,
-    displayStepper: true,
-    step: 10,
-    defaultValue: 200
   },
   easing: {
     type: ControlType.Enum,
