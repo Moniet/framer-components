@@ -1,4 +1,4 @@
-import{memo as a}from"react";var o="39641c092482ce08bda12d35596ca61d6d62e283dadccde2c5a4153ea35e96f9",e=`._blinkingCursor_3ri72_1 {
+import{memo as a}from"react";var o="dd1f4b810a41c672c562b63d98c15916ff14ef648f0b528aa8b0fd0d9f04e443",e=`._blinkingCursor_3ri72_1 {
   position: relative;
   line-height: inherit;
   left: 3px;
@@ -31,4 +31,4 @@ import{memo as a}from"react";var o="39641c092482ce08bda12d35596ca61d6d62e283dadc
     opacity: 0;
   }
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var i=document.createElement("style");i.id=o,i.textContent=e,document.head.appendChild(i)}})();var n={blinkingCursor:"_blinkingCursor_3ri72_1",container:"_container_3ri72_9",blinking:"_blinking_3ri72_1",blink:"_blink_3ri72_1"};import{jsx as s}from"react/jsx-runtime";var l=({cursorBlinking:i=!0,cursorStyle:t="|",cursorColor:r="inherit"})=>s("span",{style:{color:r},className:`${n.blinkingCursor} ${i?n.blinking:""}`,children:t}),p=a(l);export{p as Cursor};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var i=document.createElement("style");i.id=o,i.textContent=e,document.head.appendChild(i)}})();var n={blinkingCursor:"_blinkingCursor_3ri72_1",container:"_container_3ri72_9",blinking:"_blinking_3ri72_1",blink:"_blink_3ri72_1"};import{jsx as s}from"react/jsx-runtime";var l=({cursorBlinking:i=!0,cursorStyle:t="|",cursorColor:r="inherit"})=>s("span",{style:{color:r},className:`${n.blinkingCursor} ${i?n.blinking:""}`,children:t}),m=a(l);export{m as Cursor};
