@@ -9,9 +9,6 @@ export declare const Goo: ({ children, br, id }: Props) => JSX.Element;
 export declare const propsControls: {
     children: {
         type: ControlType;
-        control: {
-            type: ControlType;
-        };
     };
 };
 export {};

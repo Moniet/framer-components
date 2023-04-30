@@ -25,5 +25,11 @@ export declare const propsControls: {
         displayStepper: boolean;
         step: number;
     };
+    children: {
+        type: ControlType;
+        control: {
+            type: ControlType;
+        };
+    };
 };
 export {};
