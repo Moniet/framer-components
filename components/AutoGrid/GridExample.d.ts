@@ -1,1 +1,1 @@
-export declare const DefaultGrid: () => JSX.Element;
+export declare const GridExample: () => JSX.Element;

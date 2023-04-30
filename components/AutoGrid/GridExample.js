@@ -1,1 +1,1 @@
-import{Fragment as d,jsx as e}from"react/jsx-runtime";var t=()=>e("div",{style:{width:"100%",height:"100%",backgroundColor:"deepskyblue",borderRadius:"10px"}}),l=()=>e(d,{children:Array(20).fill("").map((o,r)=>e(t,{},r))});export{l as DefaultGrid};
+import{Fragment as o,jsx as e}from"react/jsx-runtime";var d=()=>e("div",{style:{width:"100%",height:"100%",backgroundColor:"deepskyblue",borderRadius:"10px"}}),l=()=>e(o,{children:Array(20).fill("").map((t,r)=>e(d,{},r))});export{l as GridExample};
