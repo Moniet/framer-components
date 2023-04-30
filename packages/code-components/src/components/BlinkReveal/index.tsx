@@ -1,10 +1,12 @@
-import { ControlType, useInView } from "framer"
+import { useInView } from "framer"
 import { useEffect, useRef } from "react"
+import styles from "./styles.module.css"
 import {
   easingProps,
   getNumProps,
   getSingleChild
 } from "../../utils/framerControlProps"
+import BlinkRevealExample from "./BlinkRevealExample"
 
 export const BlinkReveal = ({
   children,
@@ -25,7 +27,7 @@ export const BlinkReveal = ({
       { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }
     ]
     const seq2 = [
-      { transform: `scale(${scaleFrom}})` },
+      { transform: `scale(${scaleFrom})` },
       { transform: `scale(${scaleTo})` }
     ]
 
@@ -42,8 +44,8 @@ export const BlinkReveal = ({
   }, [inView])
 
   return (
-    <div ref={ref}>
-      <div ref={child}>{children}</div>
+    <div ref={ref} className={styles.container}>
+      <div ref={child}>{children || <BlinkRevealExample />}</div>
     </div>
   )
 }
@@ -54,6 +56,6 @@ export const propsControls = {
     ...easingProps
   },
   scaleFrom: getNumProps(1.3, true, 0.1, { min: 1, max: 2 }),
-  scaleTo: getNumProps(1.3, true, 0.1, { min: 1, max: 2 }),
+  scaleTo: getNumProps(1, true, 0.1, { min: 1, max: 2 }),
   children: getSingleChild()
 }
