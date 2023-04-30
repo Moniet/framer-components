@@ -17,6 +17,12 @@ export declare const getStrProps: (defaultValue: string) => {
 export declare const getSingleChild: () => {
     type: ControlType;
 };
+export declare const getMultipleChildren: () => {
+    type: ControlType;
+    control: {
+        type: ControlType;
+    };
+};
 export type BoxShadowProps = {
     x: number;
     y: number;

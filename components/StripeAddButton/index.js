@@ -1,4 +1,4 @@
-var e="1d5ece3a6daf8541224f02684cd8ed132fd77d26a4f4ffd01f253fa0f36d3f5d",n=`._btn_1ek6r_1 {
+var e="4c8448ea13f60a5077b0fe7bc1650b3ed8154422f00aaf6321fe9547ba1405bb",i=`._btn_1ek6r_1 {
   background: #222;
   color: white;
   border-radius: 10px;
@@ -6,4 +6,4 @@ var e="1d5ece3a6daf8541224f02684cd8ed132fd77d26a4f4ffd01f253fa0f36d3f5d",n=`._bt
   font-family: Helvetica, sans-serif;
   width: fit-content;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(e)){var t=document.createElement("style");t.id=e,t.textContent=n,document.head.appendChild(t)}})();var o={btn:"_btn_1ek6r_1"};import{useStripeState as i}from"../../hooks/useStripeState.js";import{jsx as r}from"react/jsx-runtime";var m=({label:t="Button"})=>{let[a,d]=i();return r("div",{className:o.btn,onClick:()=>d("item"),children:t})};export{m as Button};
+`;(function(){if(globalThis.window&&!document.getElementById(e)){var t=document.createElement("style");t.id=e,t.textContent=i,document.head.appendChild(t)}})();var o={btn:"_btn_1ek6r_1"};import{useStripeState as r}from"../../hooks/useStripeState.js";import{jsx as a}from"react/jsx-runtime";var m=({label:t="Button"})=>{let[s,n]=r();return a("div",{className:o.btn,onClick:()=>n("item"),children:t})};export{m as Button};
