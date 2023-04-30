@@ -4,7 +4,7 @@ type Props = {
         src?: string;
     };
     alt?: string;
-    easing: string;
+    easing?: string;
     dur?: number;
     width?: number;
     height?: number;
@@ -12,7 +12,7 @@ type Props = {
     scaleImage?: number;
     scaleContainer?: number;
 };
-export declare const ScaleImage: ({ image, alt, easing, dur, width, height, br, scaleImage, scaleContainer }: Props) => JSX.Element;
+export declare const ScaleImage: ({ image, alt, easing, dur, br, scaleImage, scaleContainer }: Props) => JSX.Element;
 export declare const propsControls: {
     image: {
         type: ControlType;
@@ -44,18 +44,6 @@ export declare const propsControls: {
         max: number;
         step: number;
         displayStepper: boolean;
-    };
-    width: {
-        type: ControlType;
-        displayStepper: boolean;
-        step: number;
-        defaultValue: number;
-    };
-    height: {
-        type: ControlType;
-        displayStepper: boolean;
-        step: number;
-        defaultValue: number;
     };
     easing: {
         type: ControlType;
