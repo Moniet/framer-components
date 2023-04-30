@@ -1,4 +1,3 @@
-import { ControlType } from "framer";
 export declare const BlinkReveal: ({ children, scaleFrom, scaleTo, easing, duration }: {
     children: any;
     scaleFrom?: number | undefined;
@@ -11,12 +10,12 @@ export declare const propsControls: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
-        type: ControlType;
+        type: import("framer").ControlType;
         defaultValue: number;
         displayStepper: boolean;
     };
     easing: {
-        type: ControlType;
+        type: import("framer").ControlType;
         options: string[];
         optionTitles: string[];
         defaultValue: string;
@@ -25,7 +24,7 @@ export declare const propsControls: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
-        type: ControlType;
+        type: import("framer").ControlType;
         defaultValue: number;
         displayStepper: boolean;
     };
@@ -33,11 +32,11 @@ export declare const propsControls: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
-        type: ControlType;
+        type: import("framer").ControlType;
         defaultValue: number;
         displayStepper: boolean;
     };
     children: {
-        type: ControlType;
+        type: import("framer").ControlType;
     };
 };
