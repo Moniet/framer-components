@@ -12,6 +12,8 @@
   width: var(--size);
   height: var(--size);
   pointer-events: none;
+  margin-top: calc(-1 * (var(--size) / 2));
+  margin-left: calc(-1 * (var(--size) / 2));
 }
 
 .cursor > img {
