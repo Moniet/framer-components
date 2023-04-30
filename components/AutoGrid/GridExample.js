@@ -1,0 +1,1 @@
+import{Fragment as d,jsx as e}from"react/jsx-runtime";var t=()=>e("div",{style:{width:"100%",height:"100%",backgroundColor:"deepskyblue",borderRadius:"10px"}}),l=()=>e(d,{children:Array(20).fill("").map((o,r)=>e(t,{},r))});export{l as DefaultGrid};
