@@ -57,7 +57,7 @@ export const CustomCursorOnHover = ({
     return () => {
       try {
         clearTimeout(timeout)
-      } catch {} ///
+      } catch {}
     }
   }, [])
 
