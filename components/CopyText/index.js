@@ -1,6 +1,6 @@
-import{getSingleChild as d,getStrProps as a}from"../../utils/framerControlProps.js";import{CopyTextExample as l}from"./CopyTextExample.js";var o="9cdb0477033da267162bd6d7bb322373eea9b373618d3bb680b66eab43437d8f",i=`._copyText_mcnc2_1 {
+import{getSingleChild as a,getStrProps as d}from"../../utils/framerControlProps.js";import{CopyTextExample as l}from"./CopyTextExample.js";var o="31e604b859aaa7b6091f6f29934727d4a5b82a4aee1220ae041a6df46b735645",i=`._copyText_mcnc2_1 {
   cursor: pointer;
   width: fit-content;
   height: fit-content;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=i,document.head.appendChild(t)}})();var n={copyText:"_copyText_mcnc2_1"};import{jsx as c}from"react/jsx-runtime";var f=({text:t="Example text",children:p})=>{let r=()=>navigator.clipboard.writeText(t);return c("div",{className:n.copyText,role:"button",onClick:e=>{e.preventDefault(),e.stopPropagation(),r()},children:p||c(l,{})})},y={children:d(),text:a("Example Text To Copy!")};export{f as CopyText,y as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=i,document.head.appendChild(t)}})();var n={copyText:"_copyText_mcnc2_1"};import{jsx as p}from"react/jsx-runtime";var y=({text:t="Example text",children:r})=>{let c=()=>navigator.clipboard.writeText(t);return p("div",{className:n.copyText,role:"button",onClick:e=>{e.preventDefault(),e.stopPropagation(),c()},children:r||p(l,{})})},g={children:a(),text:d("Example Text To Copy!")};export{y as CopyText,g as propsControls};
