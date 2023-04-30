@@ -14,7 +14,7 @@ export const Goo = ({ children, br = 0, id = "123" }: Props) => {
 
   return (
     <>
-      <svg xmlns="http://www.w3.org/2000/svg">
+      <svg xmlns="http://www.w3.org/2000/svg" width={0} height={0}>
         <defs>
           <filter id={filterId}>
             <feGaussianBlur
@@ -44,9 +44,6 @@ export const Goo = ({ children, br = 0, id = "123" }: Props) => {
 
 export const propsControls = {
   children: {
-    type: ControlType.Array,
-    control: {
-      type: ControlType.ComponentInstance
-    }
+    type: ControlType.ComponentInstance
   }
 }
