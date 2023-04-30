@@ -4,8 +4,9 @@ type Props = {
     minWidth: number;
     maxWidth: number;
     gap: number;
+    justify: string;
 };
-export declare const AutoGrid: ({ children, minWidth, maxWidth, gap }: Partial<Props>) => JSX.Element;
+export declare const AutoGrid: ({ children, minWidth, maxWidth, gap, justify }: Partial<Props>) => JSX.Element;
 export declare const propsControls: {
     minWidth: {
         type: ControlType;
@@ -30,6 +31,12 @@ export declare const propsControls: {
         control: {
             type: ControlType;
         };
+    };
+    justify: {
+        type: ControlType;
+        defaultValue: string;
+        options: string[];
+        optionTitles: string[];
     };
 };
 export {};
