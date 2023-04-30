@@ -1,6 +1,7 @@
 import { ControlType } from "framer"
 //
 import styles from "./styles.module.css"
+import { easingProps } from "../../utils/framerControlProps"
 
 const defaultImg =
   "https://labs.moniet.dev/framer-components/public/france.jpeg"
@@ -79,9 +80,6 @@ export const propsControls = {
     displayStepper: true
   },
   easing: {
-    type: ControlType.Enum,
-    options: ["ease", "ease-in-out", "ease-out", "ease-in", "linear"],
-    optionTitles: ["Ease", "Ease-In-Out", "Ease-Out", "Ease-In", "Linear"],
-    defaultValue: "ease"
+    ...easingProps
   }
 }

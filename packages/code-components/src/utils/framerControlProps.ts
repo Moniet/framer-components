@@ -1,5 +1,30 @@
 import { ControlType } from "framer"
 
+export const getNumProps = (
+  defaultValue: number,
+  stepper: boolean,
+  step?: number,
+  minmax?: {
+    min: number
+    max: number
+  }
+) => ({
+  type: ControlType.Number,
+  defaultValue,
+  displayStepper: stepper,
+  ...(minmax ?? {}),
+  ...(step ? { step } : {})
+})
+
+export const getStrProps = (defaultValue: number) => ({
+  type: ControlType.String,
+  defaultValue
+})
+
+export const getSingleChild = () => ({
+  type: ControlType.ComponentInstance
+})
+
 export type BoxShadowProps = {
   x: number
   y: number
@@ -33,4 +58,11 @@ export const boxShadowProps = {
     displayStepper: true,
     defaultValue: 0
   }
+}
+
+export const easingProps = {
+  type: ControlType.Enum,
+  options: ["ease", "ease-in-out", "ease-out", "ease-in", "linear"],
+  optionTitles: ["Ease", "Ease-In-Out", "Ease-Out", "Ease-In", "Linear"],
+  defaultValue: "ease"
 }
