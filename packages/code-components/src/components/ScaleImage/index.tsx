@@ -67,7 +67,7 @@ export const propsControls = {
     type: ControlType.Number,
     min: 0,
     max: 5,
-    step: 1,
+    step: 0.1,
     defaultValue: 1.1
   },
   dur: {
