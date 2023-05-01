@@ -1,8 +1,8 @@
 import { ControlType } from "framer";
-export declare const SkewOnScroll: ({ children, duration, stretch, skew, gap, direction }: {
+export declare const SkewOnScroll: ({ children, duration, stretchiness, skew, gap, direction }: {
     children: any;
     duration?: number | undefined;
-    stretch?: number | undefined;
+    stretchiness?: number | undefined;
     skew?: number | undefined;
     gap?: number | undefined;
     direction?: string | undefined;
