@@ -1,1 +1,6 @@
-import{jsx as o}from"react/jsx-runtime";var r=()=>o("div",{});export{r as FollowCursor};
+import{motion as E,useMotionValue as f,useSpring as d,useTransform as u,transform as p}from"framer";import{useRef as X}from"react";import{useCachedRect as Y}from"../../hooks/useCachedRect.js";var c="eb8dfd72995e53a34e562176a98a8e1aef485e4b4d26f5ab3cfa0ad1e0231967",z=`._container_1ecyz_1 {
+  width: "fit-content";
+  height: "fit-content";
+  transition: transform var(--duration) ease;
+}
+`;(function(){if(globalThis.window&&!document.getElementById(c)){var e=document.createElement("style");e.id=c,e.textContent=z,document.head.appendChild(e)}})();var m={container:"_container_1ecyz_1"};import{getNumProps as r}from"../../utils/framerControlProps.js";import{jsx as A}from"react/jsx-runtime";var k=({children:e,duration:l=.3,sensitivity:y=2,movement:v=3})=>{let s=f(0),i=f(0),o=p(y,[1,10],[50,300]),n=p(v,[1,10],[5,100]),h=u(s,[-o,o],[-n,n]),x=u(i,[-o,o],[-n,n]),a=X(null),g=Y(a),P=d(h),b=d(x);return A(E.div,{ref:a,className:m.container,style:{x:P,y:b,"--duration":`${l}s`},onMouseMove:t=>{t.preventDefault(),t.stopPropagation();let{left:_,top:w,height:C,width:D}=g,M=_+D/2,R=w+C/2,T=t.clientX-M,N=t.clientY-R;s.set(T),i.set(N)},onMouseLeave:t=>{t.preventDefault(),t.stopPropagation(),s.set(0),i.set(0)},children:e})},q={movement:r(3,!1,.5,{min:1,max:10}),sensitivity:r(2,!1,.5,{min:1,max:10}),duration:r(.3,!1,.1,{min:.1,max:2})};export{k as FollowCursor,q as propsControls};

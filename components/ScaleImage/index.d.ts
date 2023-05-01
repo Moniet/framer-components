@@ -11,10 +11,8 @@ type Props = {
     br?: number;
     scaleImage?: number;
     scaleContainer?: number;
-    direction?: "column" | "row";
-    gap: number;
 };
-export declare const ScaleImage: ({ image, alt, easing, dur, br, scaleImage, scaleContainer, direction, gap }: Props) => JSX.Element;
+export declare const ScaleImage: ({ image, alt, easing, dur, br, scaleImage, scaleContainer }: Props) => JSX.Element;
 export declare const propsControls: {
     image: {
         type: ControlType;
