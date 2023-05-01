@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 type Props = {
     sensitivity: number;
     movement: number;
