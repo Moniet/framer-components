@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useInView } from "framer-motion"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { getSingleChild } from "src/utils/framerControlProps"
 import { getNumProps } from "../../utils/framerControlProps"
 
