@@ -1,4 +1,4 @@
-import{ControlType as t}from"framer";var r="ca4c350301161156fc76bcd53107ce1ece850ae885500d02e245abeacd746da3",u=`._img_16xft_1 {
+import{ControlType as t}from"framer";var r="5f3a8e2b149ccd3e16d751cf3bed5bc352a9d406bed9c6ec7b2fdbc75514a678",u=`._img_16xft_1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
