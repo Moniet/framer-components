@@ -31,5 +31,8 @@ export declare const propsControls: {
         defaultValue: number;
         displayStepper: boolean;
     };
+    children: {
+        type: import("framer").ControlType;
+    };
 };
 export {};
