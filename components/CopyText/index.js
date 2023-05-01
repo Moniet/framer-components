@@ -1,4 +1,4 @@
-import{getSingleChild as d,getStrProps as a}from"../../utils/framerControlProps.js";import{CopyTextExample as l}from"./CopyTextExample.js";var o="6cc0e52f2a05ead25360ec5204570d076fdef4c0bf387875eee859ebbd12e31f",i=`._copyText_mcnc2_1 {
+import{getSingleChild as d,getStrProps as a}from"../../utils/framerControlProps.js";import{CopyTextExample as l}from"./CopyTextExample.js";var o="a85f4165de9b81eebc4d372dcb119525f3a313ffc6d468b501ee826c0df55db0",i=`._copyText_mcnc2_1 {
   cursor: pointer;
   width: fit-content;
   height: fit-content;
