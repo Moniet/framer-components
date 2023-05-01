@@ -1,0 +1,7 @@
+.container {
+  width: "fit-content";
+  height: "fit-content";
+  transition: transform var(--duration) ease;
+  min-width: 100px;
+  min-height: 100px;
+}
