@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: var(--direction, column);
+  gap: var(--gap, 100px);
+  min-width: 100px;
+  min-height: 100px;
+  height: auto;
+  width: auto;
+}
