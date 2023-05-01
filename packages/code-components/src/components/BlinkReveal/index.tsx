@@ -17,7 +17,9 @@ export const BlinkReveal = ({
 }) => {
   const ref = useRef(null)
   const child = useRef(null)
-  const inView = useInView(ref)
+  const inView = useInView(ref, {
+    once: true
+  })
 
   useEffect(() => {
     const el = ref.current as any
