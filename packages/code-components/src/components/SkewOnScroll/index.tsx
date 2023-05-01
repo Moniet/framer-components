@@ -3,13 +3,7 @@ import {
   getMultipleChildren,
   getNumProps
 } from "../../utils/framerControlProps"
-import {
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-  motion
-} from "framer-motion"
+import { useScroll, useTransform, useVelocity, motion } from "framer-motion"
 
 export const SkewOnScroll = ({
   children,
