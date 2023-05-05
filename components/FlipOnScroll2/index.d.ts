@@ -1,10 +1,9 @@
-export declare const FlipOnScroll: ({ children, initialScale, offsetTop, offsetBottom, rotateX, rotateY }: {
+export declare const FlipOnScroll: ({ children, initialScale, offsetTop, offsetBottom, rotate }: {
     children: any;
     initialScale?: number | undefined;
     offsetTop?: number | undefined;
     offsetBottom?: number | undefined;
-    rotateX?: number | undefined;
-    rotateY?: number | undefined;
+    rotate?: number | undefined;
 }) => JSX.Element;
 export declare const propsControls: {
     scale: {
@@ -15,15 +14,7 @@ export declare const propsControls: {
         defaultValue: number;
         displayStepper: boolean;
     };
-    rotateX: {
-        step?: number | undefined;
-        min?: number | undefined;
-        max?: number | undefined;
-        type: import("framer").ControlType;
-        defaultValue: number;
-        displayStepper: boolean;
-    };
-    rotateY: {
+    rotate: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
