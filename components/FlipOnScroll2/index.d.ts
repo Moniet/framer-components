@@ -14,7 +14,15 @@ export declare const propsControls: {
         defaultValue: number;
         displayStepper: boolean;
     };
-    rotate: {
+    rotateX: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: import("framer").ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    rotateY: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
