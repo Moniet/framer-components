@@ -1,7 +1,6 @@
-import * as React from "react";
 import { ControlType } from "framer";
 type Props = {
-    children: React.ReactNode;
+    children: JSX.Element;
     delay: number;
     scale: number;
     hideDefaultCursor: boolean;
