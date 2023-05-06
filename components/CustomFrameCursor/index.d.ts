@@ -10,6 +10,7 @@ export declare const CustomFrameCursor: ({ children, delay, scale, hideDefaultCu
 export declare const propControls: {
     children: {
         type: ControlType;
+        defaultValue: JSX.Element;
     };
     scale: {
         title: string;
