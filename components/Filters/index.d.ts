@@ -13,6 +13,7 @@ export declare const propsControls: {
     filter: {
         type: ControlType;
         options: string[];
+        optionTitles: string[];
         defaultValue: string;
     };
     amount: {
@@ -23,8 +24,5 @@ export declare const propsControls: {
     children: {
         hidden: (props: any) => boolean;
         type: ControlType;
-        control: {
-            type: ControlType;
-        };
     };
 };
