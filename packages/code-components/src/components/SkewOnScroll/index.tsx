@@ -10,14 +10,14 @@ import styles from "./styles.module.css"
 export const SkewOnScroll = ({
   children,
   duration = 0.4,
-  stretch = 1.2,
+  stretchiness = 1.2,
   skew = 3,
   gap = 100,
   direction = "column"
 }) => {
   const { scrollY } = useScroll()
   const velocity = useVelocity(scrollY)
-  const scaleY = useTransform(velocity, [0, 1000], [1, stretch])
+  const scaleY = useTransform(velocity, [0, 1000], [1, stretchiness])
   const s = useTransform(velocity, [0, 1000], [0, skew])
   const finalSkew = useTransform(s, (num) => `${num}deg`)
 

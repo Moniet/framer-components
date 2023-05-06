@@ -5,10 +5,11 @@ import { useRef } from "react"
 type Props = {
   scale?: number
   image?: {
-    src: string
-    alt: string
+    src?: string
+    alt?: string
   }
   borderRadius?: number
+  startAnimationFrom?: "screen-center" | "screen-end"
 }
 
 const fallbackImg =
@@ -19,21 +20,29 @@ const fallbackImg =
     @framerSupportedLayoutHeight fixed
 */
 
-export default function ImageScaleOnScroll({
+export function ImageScaleOnScroll({
   scale = 1.3,
   image,
-  borderRadius = 10
+  borderRadius = 10,
+  startAnimationFrom = "screen-end"
 }: Props) {
   const ref = useRef(null)
+  const offsetValues = (() => {
+    if (startAnimationFrom === "screen-end") {
+      return ["start end", "end start"] as any
+    }
+    return ["start center", "end start"] as any
+  })()
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["100px"]
+    offset: offsetValues
   })
   const scroll = useTransform(scrollYProgress, [0, 1], [1, scale])
   const scaleValue = useSpring(scroll, { duration: 5 })
 
   return (
     <motion.div
+      ref={ref}
       style={{
         width: "100%",
         height: "100%",
@@ -49,20 +58,20 @@ export default function ImageScaleOnScroll({
           width: "100%",
           height: "100%",
           scale: scaleValue
-          // transition: "transform 1s ease",
         }}
       />
     </motion.div>
   )
 }
 
-addPropertyControls(ImageScaleOnScroll, {
+export const propsControls = {
   scale: {
     type: ControlType.Number,
     defaultValue: 1,
     min: 1,
     max: 2,
-    step: 0.1
+    step: 0.1,
+    description: "Value to scale image to on scroll"
   },
   borderRadius: {
     type: ControlType.Number,
@@ -71,7 +80,11 @@ addPropertyControls(ImageScaleOnScroll, {
     max: 20
   },
   image: {
-    type: ControlType.ResponsiveImage,
-    defaultValue: fallbackImg
+    type: ControlType.ResponsiveImage
+  },
+  startAnimationFrom: {
+    type: ControlType.Enum,
+    options: ["screen-end", "screen-center"],
+    optionTitles: ["Screen End", "Screen Start"]
   }
-})
+}

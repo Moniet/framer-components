@@ -2,6 +2,7 @@ import { motion, useMotionValue, useInView } from "framer-motion"
 import { useRef } from "react"
 import { getSingleChild } from "src/utils/framerControlProps"
 import { getNumProps } from "../../utils/framerControlProps"
+import styles from "./styles.module.css"
 
 export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
   const ref = useRef(null)
@@ -18,7 +19,7 @@ export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
               type="turbulence"
               result="turbulence"
               baseFrequency={turb}
-              numOctaves="0.05"
+              numOctaves="1"
               id="turb"
               animate={{
                 baseFrequency: inView ? [0.2, 0] : [0.2]
@@ -39,7 +40,9 @@ export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
           </filter>
         </defs>
       </svg>
-      <div style={{ filter: `url(#${filterId})` }}>{children}</div>
+      <div style={{ filter: `url(#${filterId})` }} className={styles.container}>
+        {children}
+      </div>
     </div>
   )
 }

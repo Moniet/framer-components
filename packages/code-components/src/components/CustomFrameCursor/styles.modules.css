@@ -1,0 +1,21 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  transition: transform var(--delay) ease-out;
+  pointer-events: none;
+}
+
+.example {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: deepskyblue;
+}
+
+.wrapper {
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+}

@@ -1,5 +1,5 @@
+// image scale on hover
 import { ControlType } from "framer"
-//
 import styles from "./styles.module.css"
 import { easingProps } from "../../utils/framerControlProps"
 
