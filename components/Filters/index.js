@@ -1,4 +1,4 @@
-import{ControlType as r}from"framer";import{useEffect as d,useRef as m}from"react";var c="c75bda670387ce713610c8425636126479e707b69a02fd915a3a72935a75b28a",u=`._container_1br66_1 {
+import{ControlType as r}from"framer";import{useEffect as d,useRef as m}from"react";var c="49b775c47bfd2c49be59279865dc7a6c26a9525634081ee3307c58de0212fe55",u=`._container_1br66_1 {
   width: 100%;
   height: 100%;
 }
