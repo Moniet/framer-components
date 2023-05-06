@@ -25,6 +25,7 @@ export declare const propControls: {
         min: number;
         max: number;
         step: number;
+        defaultValue: number;
     };
     hideDefaultCursor: {
         type: ControlType;
