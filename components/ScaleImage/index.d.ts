@@ -8,11 +8,11 @@ type Props = {
     dur?: number;
     width?: number;
     height?: number;
-    br?: number;
+    radius?: number;
     scaleImage?: number;
     scaleContainer?: number;
 };
-export declare const ScaleImage: ({ image, alt, easing, dur, br, scaleImage, scaleContainer }: Props) => JSX.Element;
+export declare const ScaleImage: ({ image, alt, easing, dur, radius, scaleImage, scaleContainer }: Props) => JSX.Element;
 export declare const propsControls: {
     image: {
         type: ControlType;
