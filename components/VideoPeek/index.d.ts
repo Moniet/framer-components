@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ControlType } from "framer";
+import { BoxShadowProps } from "../../utils/framerControlProps";
 type Props = {
     children?: React.ReactNode;
     width?: number;
@@ -8,8 +9,10 @@ type Props = {
     videoSrc?: string;
     margin?: number;
     align: "top" | "bottom" | "left" | "right";
+    id?: string;
+    shadows: BoxShadowProps[];
 };
-export declare const VideoPeek: ({ children, videoSrc, width, height, radius, margin, align }: Props) => JSX.Element;
+export declare const VideoPeek: ({ children, videoSrc, width, height, radius, margin, align, id, shadows }: Props) => JSX.Element;
 export declare const propsControls: {
     videoSrc: {
         title: string;
@@ -46,6 +49,35 @@ export declare const propsControls: {
     };
     children: {
         type: ControlType;
+    };
+    shadows: {
+        type: ControlType;
+        control: {
+            x: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            y: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            blur: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+            color: {
+                type: ControlType;
+                defaultValue: string;
+            };
+            size: {
+                type: ControlType;
+                displayStepper: boolean;
+                defaultValue: number;
+            };
+        };
     };
 };
 export {};

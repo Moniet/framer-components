@@ -1,28 +1,34 @@
-var s="68a04f62e50c7eb11586c59f1f5c64422c7f23011cb1b13c8a1968e694d23733",h=`._wrapper_1k06u_1 {
+var p="e44b3b740f2635caeac4380f59a06529ebdf4ac28c9f2de1f9508b047e140102",P=`._wrapper_1fr6e_1 {
   position: relative;
   width: fit-content;
   height: fit-content;
 }
 
-._alignTop_1k06u_7 {
+._alignTop_1fr6e_7 {
   position: absolute;
   top: 0%;
   left: 50%;
-  transform: translateX(-50%) translateY(calc(-1 * var(--margin)));
+  transform: translateX(-50%)
+    translateY(calc(-1 * (var(--width) + var(--margin))));
 }
 
-._alignBottom_1k06u_14 {
+._alignBottom_1fr6e_15 {
   position: absolute;
   bottom: 0%;
   left: 50%;
   transform: translateX(-50%) translateY(calc(var(--width) + var(--margin)));
 }
 
-._video_1k06u_21 {
-  width: var(--width);
-  height: var(--height);
+._videoWrapper_1fr6e_22 {
+  width: fit-content;
+  height: fit-content;
   border-radius: var(--border-radius);
   overflow: hidden;
-  object-fit: contain;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(s)){var e=document.createElement("style");e.id=s,e.textContent=h,document.head.appendChild(e)}})();var t={wrapper:"_wrapper_1k06u_1",alignTop:"_alignTop_1k06u_7",alignBottom:"_alignBottom_1k06u_14",video:"_video_1k06u_21"};import{AnimatePresence as f,ControlType as m}from"framer";import{getNumProps as o,getSingleChild as v}from"../../utils/framerControlProps.js";import{ExampleChild as _}from"./ExampleChild.js";import{motion as b}from"framer-motion";import{useState as w}from"react";import{jsx as r,jsxs as y}from"react/jsx-runtime";var x="https://labs.moniet.dev/framer-components/public/screen-rec.mov",S=({children:e,videoSrc:l=x,width:i=200,height:n=200,radius:p=10,margin:d=40,align:c})=>{let u=(()=>{switch(c){case"top":return t.alignTop;case"bottom":return t.alignBottom;default:return t.top}})(),g=`${t.video} ${u}`,[k,a]=w(!1);return y("div",{className:t.wrapper,onMouseOver:()=>a(!0),onMouseLeave:()=>a(!1),children:[e||r(_,{}),r(f,{children:r(b.video,{style:{"--border-radius":`${p}px`,"--margin":`${d}px`,"--width":`${i}px`,"--height":`${n}px`},src:l,width:i,height:n,className:g})})]})},R={videoSrc:{title:"Video",type:m.File,allowedFileTypes:["mov","mp4"]},width:o(250,!0,10,{min:100,max:500}),height:o(250,!0,10,{min:100,max:500}),margin:o(40,!0,10,{min:10,max:100}),align:{type:m.Enum,options:["top","bottom","left","right"]},children:v()};export{S as VideoPeek,R as propsControls};
+
+._video_1fr6e_22 {
+  width: var(--width);
+  height: var(--height);
+  object-fit: cover;
+}
+`;(function(){if(globalThis.window&&!document.getElementById(p)){var e=document.createElement("style");e.id=p,e.textContent=P,document.head.appendChild(e)}})();var t={wrapper:"_wrapper_1fr6e_1",alignTop:"_alignTop_1fr6e_7",alignBottom:"_alignBottom_1fr6e_15",videoWrapper:"_videoWrapper_1fr6e_22",video:"_video_1fr6e_22"};import{AnimatePresence as C,ControlType as i}from"framer";import{getNumProps as a,getSingleChild as S,boxShadowProps as B}from"../../utils/framerControlProps.js";import{ExampleChild as T}from"./ExampleChild.js";import{motion as N}from"framer-motion";import{useState as E}from"react";import{variants as R}from"./variants.js";import{jsx as o,jsxs as A}from"react/jsx-runtime";var W="https://labs.moniet.dev/framer-components/public/screen-rec.mov",H=({children:e,videoSrc:m=W,width:n=200,height:s=200,radius:l=10,margin:c=40,align:f,id:h="1234",shadows:v})=>{let g=(()=>{switch(f){case"top":return t.alignTop;case"bottom":return t.alignBottom;default:return t.top}})(),u=v?.map(({x:r,y:b,blur:x,color:y,size:$})=>`${r}px ${b}px ${x} ${$} ${y}`).join(","),_=`${t.video} ${g}`,[w,d]=E(!1);return A("div",{className:t.wrapper,onMouseOver:()=>d(!0),onMouseLeave:()=>d(!1),children:[e||o(T,{}),o(C,{children:w&&o(N.div,{variants:R,exit:"fadeOut",animate:"fadeIn",initial:"initial",transition:{duration:.3},style:{boxShadow:u,"--border-radius":`${l}px`},className:t.videoWrapper,children:o("video",{id:`fc-video${h}`,muted:!0,style:{"--margin":`${c}px`,"--width":`${n}px`,"--height":`${s}px`},src:m,width:n,height:s,className:_,loop:!0,autoPlay:!0,onCanPlay:r=>{r.target.play()}})})})]})},L={videoSrc:{title:"Video",type:i.File,allowedFileTypes:["mov","mp4"]},width:a(250,!0,10,{min:100,max:500}),height:a(250,!0,10,{min:100,max:500}),margin:a(40,!0,10,{min:10,max:100}),align:{type:i.Enum,options:["top","bottom","left","right"]},children:S(),shadows:{type:i.Array,control:B}};export{H as VideoPeek,L as propsControls};
