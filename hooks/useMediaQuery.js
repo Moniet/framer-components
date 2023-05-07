@@ -1,0 +1,1 @@
+import{useState as c,useEffect as h}from"react";var o=r=>{let[s,n]=c(!1);return h(()=>{let e=window.matchMedia(r),t=a=>{n(a.matches)};try{e.addEventListener("change",t)}catch{e.addListener("change",t)}return n(e.matches),()=>{try{e.removeEventListener("change",t)}catch{e.removeListener("change",t)}}},[r]),s},i=o;export{i as default};
