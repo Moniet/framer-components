@@ -46,5 +46,6 @@ export declare const propsControls: {
     };
     color: {
         type: ControlType;
+        defaultValue: string;
     };
 };
