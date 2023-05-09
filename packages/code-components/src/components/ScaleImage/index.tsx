@@ -15,7 +15,7 @@ type Props = {
   dur?: number
   width?: number
   height?: number
-  br?: number
+  radius?: number
   scaleImage?: number
   scaleContainer?: number
 }
@@ -25,7 +25,7 @@ export const ScaleImage = ({
   alt = "",
   easing = "ease",
   dur = 1,
-  br = 10,
+  radius = 10,
   scaleImage = 1.1,
   scaleContainer = 0.95
 }: Props) => {
@@ -36,7 +36,7 @@ export const ScaleImage = ({
         {
           "--dur": dur + "s",
           "--easing": easing,
-          "--br": br + "px",
+          "--br": radius + "px",
           "--scale-img": scaleImage,
           "--scale-container": scaleContainer
         } as any

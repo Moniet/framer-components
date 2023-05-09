@@ -1,0 +1,14 @@
+.wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.star {
+  pointer-events: none;
+}
+
+.starSvgWrapper {
+  z-index: 1;
+  transform-origin: center center;
+}

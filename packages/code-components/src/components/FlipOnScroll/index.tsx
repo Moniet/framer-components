@@ -31,7 +31,7 @@ export const FlipOnScroll = ({
         transformStyle: "preserve-3d",
         transformOrigin: "50% 100%",
         width: "100%",
-        height: "100%",
+        height: "300px",
         overflow: "hidden"
       }}
     >
