@@ -10,6 +10,7 @@ type Props = {
   image?: ImageProps
   effect?: number
   duration?: number
+  radius?: number
 }
 
 const components = {
@@ -19,7 +20,8 @@ const components = {
 export const ImageRepeatOnHover = ({
   image,
   effect = 1,
-  duration = 1
+  duration = 1,
+  radius = 10
 }: Props) => {
   const Comp = components[effect || 1]
   const [isHovering, setIsHovering] = useState(false)
@@ -29,7 +31,8 @@ export const ImageRepeatOnHover = ({
       className={styles.container}
       style={
         {
-          "--dur": duration + "s"
+          "--dur": duration + "s",
+          "--border-radius": radius + "px"
         } as any
       }
     >
@@ -53,5 +56,6 @@ export const propsControls = {
     type: ControlType.ResponsiveImage,
     defaultValue: defaultImage
   },
-  duration: getNumProps(1, false, 0.1, { min: 0.1, max: 2 })
+  duration: getNumProps(1, false, 0.1, { min: 0.1, max: 2 }),
+  radius: getNumProps(10, true, 1, { min: 0, max: 20 })
 }

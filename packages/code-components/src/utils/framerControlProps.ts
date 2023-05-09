@@ -78,3 +78,27 @@ export type ImageProps = {
   src?: string
   alt?: string
 }
+
+export const typography = {
+  type: ControlType.Object,
+  controls: {
+    fontSize: {
+      type: ControlType.Number,
+      defaultValue: 20,
+      min: 1,
+      max: 100
+    },
+    fontWeight: {
+      type: ControlType.Number,
+      defaultValue: 400
+    },
+    font: {
+      type: ControlType.String,
+      default: "Helvetica, sans-serif"
+    },
+    color: {
+      type: ControlType.Color,
+      default: "#555"
+    }
+  }
+}

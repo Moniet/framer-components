@@ -1,0 +1,15 @@
+.text {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  width: fit-content;
+  height: fit-content;
+  transform-origin: 0% 0%;
+}
+
+.container {
+  overflow: hidden;
+  white-space: nowrap;
+  height: max-content;
+  width: max-content;
+}
