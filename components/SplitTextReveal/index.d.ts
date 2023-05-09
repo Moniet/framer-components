@@ -8,26 +8,6 @@ export declare const SplitTextReveal: ({ text, space, typography, fadeIn, offset
     duration?: number | undefined;
 }) => JSX.Element;
 export declare const propsControls: {
-    space: {
-        step?: number | undefined;
-        min?: number | undefined;
-        max?: number | undefined;
-        type: import("framer").ControlType;
-        defaultValue: number;
-        displayStepper: boolean;
-    };
-    text: {
-        type: import("framer").ControlType;
-        defaultValue: string;
-    };
-    duration: {
-        step?: number | undefined;
-        min?: number | undefined;
-        max?: number | undefined;
-        type: import("framer").ControlType;
-        defaultValue: number;
-        displayStepper: boolean;
-    };
     typography: {
         type: import("framer").ControlType;
         controls: {
@@ -50,6 +30,26 @@ export declare const propsControls: {
                 default: string;
             };
         };
+    };
+    space: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: import("framer").ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    text: {
+        type: import("framer").ControlType;
+        defaultValue: string;
+    };
+    duration: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: import("framer").ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
     };
     offsetX: {
         step?: number | undefined;
