@@ -1,4 +1,4 @@
-import*as n from"react";import{createPortal as h}from"react-dom";import{motion as _}from"framer-motion";import{ControlType as l,useMotionValue as m}from"framer";var f="d630690254947b7394bc754b6bca36cab8ed56a73d92ddd7a4263a4acb216017",b=`._cursor_1apt8_1 {
+import*as n from"react";import{createPortal as h}from"react-dom";import{motion as _}from"framer-motion";import{ControlType as l,useMotionValue as m}from"framer";var f="47bc7675ec01e27c00c5ca3d3e511ad40952bd65c4fac43de0d1bfb9dd591ac5",b=`._cursor_1apt8_1 {
   position: fixed;
   top: 0;
   left: 0;

@@ -1,4 +1,4 @@
-import{motion as a,useScroll as u,useTransform as b}from"framer-motion";import{useRef as g}from"react";import{ControlType as t}from"framer";var s="76eb2ce5ed0901b241301e5e26000c76c595d889f2145ebd4d9db4c18c0f8f56",p=`._container_1wmzq_1 {
+import{motion as a,useScroll as u,useTransform as b}from"framer-motion";import{useRef as g}from"react";import{ControlType as t}from"framer";var s="7acd5ea3500bc5093ad2b07c8e806b63010709d1d9f5ad94d03e7feb31dc2402",p=`._container_1wmzq_1 {
   width: 100%;
   height: 100%;
   border-radius: var(--br);
