@@ -53,7 +53,7 @@ export declare const propsControls: {
     children: {
         type: ControlType;
     };
-    shadows: {
+    boxShadow: {
         type: ControlType;
         control: {
             x: {

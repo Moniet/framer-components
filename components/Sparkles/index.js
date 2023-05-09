@@ -1,4 +1,4 @@
-import{useEffect as y,useRef as _}from"react";import S from"../../hooks/useMediaQuery.js";var f="bb5431ad1ef5b9bec1d34c9deb2754be37e312c18c64f0cf9f57d0fb9df43aea",g=`._wrapper_qd4p2_1 {
+import{useEffect as y,useRef as _}from"react";import S from"../../hooks/useMediaQuery.js";var f="1df8c5b64ab8acca626ba06d6c3d789804944bf5da69573b201a384e8c5a9f58",g=`._wrapper_qd4p2_1 {
   position: relative;
   width: fit-content;
   height: fit-content;
