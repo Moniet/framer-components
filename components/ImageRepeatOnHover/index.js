@@ -1,4 +1,4 @@
-import{ControlType as u}from"framer";import{useState as l}from"react";var i="471741f61d64dc62d9245f99ef42c41e7e597d90e9df455506513f78a92a503d",c=`._container_1ft2e_1 {
+import{ControlType as u}from"framer";import{useState as l}from"react";var i="d4da274b432ed2d631395fd32abe8959f78a29a2618384930e004435f4ac622e",c=`._container_1ft2e_1 {
   width: 100%;
   height: 100%;
   overflow: hidden;
