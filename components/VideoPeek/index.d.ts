@@ -3,8 +3,8 @@ import { ControlType } from "framer";
 import { BoxShadowProps } from "../../utils/framerControlProps";
 type Props = {
     children?: React.ReactNode;
-    width?: number;
-    height?: number;
+    w?: number | string;
+    h?: number | string;
     radius?: number;
     videoSrc?: string;
     margin?: number;
@@ -12,14 +12,15 @@ type Props = {
     id?: string;
     shadows: BoxShadowProps[];
 };
-export declare const VideoPeek: ({ children, videoSrc, width, height, radius, margin, align, id, shadows }: Props) => JSX.Element;
+export declare const VideoPeek: ({ children, videoSrc, w: width, h: height, radius, margin, align, id, shadows }: Props) => JSX.Element;
 export declare const propsControls: {
     videoSrc: {
         title: string;
         type: ControlType;
         allowedFileTypes: string[];
     };
-    width: {
+    w: {
+        title: string;
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
@@ -27,7 +28,8 @@ export declare const propsControls: {
         defaultValue: number;
         displayStepper: boolean;
     };
-    height: {
+    h: {
+        title: string;
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
