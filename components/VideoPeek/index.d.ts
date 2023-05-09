@@ -46,6 +46,7 @@ export declare const propsControls: {
     align: {
         type: ControlType;
         options: string[];
+        defaultValue: string;
     };
     children: {
         type: ControlType;
