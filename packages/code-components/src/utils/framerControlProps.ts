@@ -102,3 +102,16 @@ export const typography = {
     }
   }
 }
+
+export const getTypeographyStyles = (typography) =>
+  ({
+    "--font-family": typography?.font || "inherit",
+    "--font-size": (typography?.fontSize || 50) + "px",
+    "--font-weight": typography?.fontWeight || 600,
+    "--color": typography?.color || "#222"
+  } as any)
+
+export const getBoolProps = (defaultValue) => ({
+  type: ControlType.Boolean,
+  defaultValue: defaultValue
+})

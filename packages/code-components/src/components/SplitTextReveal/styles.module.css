@@ -1,0 +1,11 @@
+.container {
+  white-space: nowrap;
+}
+
+.container span {
+  display: inline-block;
+}
+
+.container [data-component="fc-space"] {
+  width: var(--space, 10px);
+}
