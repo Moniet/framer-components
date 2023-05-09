@@ -3,8 +3,9 @@ import { ImageProps } from "../../../dist/utils/framerControlProps";
 type Props = {
     image?: ImageProps;
     effect?: number;
+    duration?: number;
 };
-export declare const ImageRepeatOnHover: ({ image, effect }: Props) => JSX.Element;
+export declare const ImageRepeatOnHover: ({ image, effect, duration }: Props) => JSX.Element;
 export declare const propsControls: {
     image: {
         type: ControlType;
