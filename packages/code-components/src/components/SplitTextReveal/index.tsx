@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import styles from "./styles.module.css"
 import { motion, useInView } from "framer-motion"
+import { useSplitText } from "../../hooks/useSplitText"
 import {
   getBoolProps,
   getNumProps,
@@ -10,18 +11,18 @@ import {
 } from "../../utils/framerControlProps"
 
 export const SplitTextReveal = ({
-  text = "Example Text",
-  space = 5,
   typography,
+  text = "Example Text",
+  space = 20,
   fadeIn = true,
   offsetY = 0,
-  offsetX = 10,
-  duration = 0.5
+  offsetX = 5,
+  duration = 1
 }) => {
   const splitWords = text.split(" ").map((word) => word.split(""))
-
   const ref = useRef(null)
   const inView = useInView(ref)
+  const staggerBy = duration / splitWords.flat().length
 
   const variants = {
     reveal: {
@@ -36,37 +37,44 @@ export const SplitTextReveal = ({
     }
   }
 
+  const splitText = useSplitText(text)
+
   return (
     <div
       className={styles.container}
-      style={{ ...getTypeographyStyles(typography) } as any}
+      style={
+        {
+          ...getTypeographyStyles(typography),
+          "--letter-spacing": typography?.letterSpacing
+            ? typography.letterSpacing + "px"
+            : "10px"
+        } as any
+      }
       ref={ref}
     >
-      {splitWords.map((word, i) => {
-        return (
-          <React.Fragment key={i}>
-            {word.map((l, y) => (
-              <motion.span
-                variants={variants}
-                animate={inView ? "reveal" : "initial"}
-                initial="initial"
-                transition={{
-                  delay: i + y / 10,
-                  duration
-                }}
-              >
-                {l}
-              </motion.span>
-            ))}
-            {i < splitWords.length && (
-              <span
-                data-component={"fc-space"}
-                style={{ "--space": space + "px" } as any}
-              ></span>
-            )}
-          </React.Fragment>
+      {splitText?.map(({ isSpace, letter, position }) =>
+        isSpace ? (
+          <span
+            data-component={"fc-space"}
+            style={{ "--space": space + "px" } as any}
+          ></span>
+        ) : (
+          <motion.span
+            variants={variants}
+            animate={inView ? "reveal" : "initial"}
+            initial="initial"
+            transition={{
+              delay: position * staggerBy, // stagger * no. of previous letters
+              duration: staggerBy,
+              type: "spring",
+              damping: 20,
+              bounce: 0.1
+            }}
+          >
+            {letter}
+          </motion.span>
         )
-      })}
+      )}
     </div>
   )
 }

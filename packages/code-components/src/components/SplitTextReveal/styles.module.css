@@ -1,5 +1,11 @@
 .container {
   white-space: nowrap;
+  width: fit-content;
+  height: fit-content;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
 }
 
 .container span {

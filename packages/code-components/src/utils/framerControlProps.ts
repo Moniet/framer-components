@@ -82,6 +82,7 @@ export type ImageProps = {
 export const typography = {
   type: ControlType.Object,
   controls: {
+    letterSpacing: getNumProps(0, false, 1, { min: 0, max: 100 }),
     fontSize: {
       type: ControlType.Number,
       defaultValue: 20,

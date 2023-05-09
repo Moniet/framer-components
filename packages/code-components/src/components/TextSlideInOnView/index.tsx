@@ -40,11 +40,12 @@ export const TextSlideInOnView = ({
         animate={inView ? "slideIn" : "initial"}
         transition={{
           type: "spring",
-          damping: 15
+          damping: 20,
+          bounce: 0
         }}
         style={
           {
-            "--font-amily": typography?.font || "inherit",
+            "--font-family": typography?.font || "inherit",
             "--font-size": (typography?.fontSize || 50) + "px",
             "--font-weight": typography?.fontWeight || 600,
             "--color": typography?.color || "#222"
