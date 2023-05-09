@@ -62,3 +62,7 @@ export declare const easingProps: {
     optionTitles: string[];
     defaultValue: string;
 };
+export type ImageProps = {
+    src?: string;
+    alt?: string;
+};
