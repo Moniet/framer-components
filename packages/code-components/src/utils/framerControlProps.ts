@@ -73,3 +73,8 @@ export const easingProps = {
   optionTitles: ["Ease", "Ease-In-Out", "Ease-Out", "Ease-In", "Linear"],
   defaultValue: "ease"
 }
+
+export type ImageProps = {
+  src?: string
+  alt?: string
+}
