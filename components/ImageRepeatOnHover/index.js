@@ -1,4 +1,4 @@
-import{ControlType as c}from"framer";import{useState as p}from"react";var i="1ec910e131e0c5fa40c51c767164490c20c332437a24f66e09c5dff625b5a4b3",n=`._container_1ft2e_1 {
+import{ControlType as f}from"framer";import{useState as p}from"react";var i="cc0191d744adda8e420213f8d419cc40f1a72b481a7533eb9e6cc59fff29c964",c=`._container_1ft2e_1 {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -20,4 +20,4 @@ import{ControlType as c}from"framer";import{useState as p}from"react";var i="1ec
   width: 100%;
   height: 100%;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(i)){var e=document.createElement("style");e.id=i,e.textContent=n,document.head.appendChild(e)}})();var t={container:"_container_1ft2e_1",img:"_img_1ft2e_9",capture:"_capture_1ft2e_15"};import{Effect1 as f}from"./Effect1.js";import{defaultImage as m}from"./contstants.js";import{jsx as o,jsxs as g}from"react/jsx-runtime";var d={1:f},I=({image:e,effect:l=1})=>{let s=d[1],[a,r]=p(!1);return g("div",{className:t.container,children:[o("img",{className:t.img,src:e?.src||m,alt:e?.alt||""}),o(s,{image:e,isHovering:a}),o("div",{onMouseOver:()=>r(!0),onMouseLeave:()=>r(!1),className:t.capture})]})},w={image:{type:c.ResponsiveImage}};export{I as ImageRepeatOnHover,w as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(i)){var e=document.createElement("style");e.id=i,e.textContent=c,document.head.appendChild(e)}})();var t={container:"_container_1ft2e_1",img:"_img_1ft2e_9",capture:"_capture_1ft2e_15"};import{Effect1 as d}from"./Effect1.js";import{defaultImage as a}from"./contstants.js";import{getNumProps as l}from"../../utils/framerControlProps.js";import{jsx as o,jsxs as g}from"react/jsx-runtime";var u={1:d},y=({image:e,effect:s=1})=>{let n=u[s||1],[m,r]=p(!1);return g("div",{className:t.container,children:[o("img",{className:t.img,src:e?.src||a,alt:e?.alt||""}),o(n,{image:e,isHovering:m}),o("div",{onMouseOver:()=>r(!0),onMouseLeave:()=>r(!1),className:t.capture})]})},C={image:{type:f.ResponsiveImage,defaultValue:a},duration:l(1,!1,.1,{min:.1,max:2})};export{y as ImageRepeatOnHover,C as propsControls};

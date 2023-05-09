@@ -8,6 +8,15 @@ export declare const ImageRepeatOnHover: ({ image, effect }: Props) => JSX.Eleme
 export declare const propsControls: {
     image: {
         type: ControlType;
+        defaultValue: string;
+    };
+    duration: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
     };
 };
 export {};
