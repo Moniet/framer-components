@@ -10,9 +10,9 @@ type Props = {
     margin?: number;
     align: "top" | "bottom" | "left" | "right";
     id?: string;
-    shadows: BoxShadowProps[];
+    boxShadow: BoxShadowProps[];
 };
-export declare const VideoPeek: ({ children, videoSrc, w: width, h: height, radius, margin, align, id, shadows }: Props) => JSX.Element;
+export declare const VideoPeek: ({ children, videoSrc, w: width, h: height, radius, margin, align, id, boxShadow: shadows }: Props) => JSX.Element;
 export declare const propsControls: {
     videoSrc: {
         title: string;
