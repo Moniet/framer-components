@@ -1,7 +1,7 @@
-export declare const SplitTextReveal: ({ text, space, typography, fadeIn, offsetY, offsetX, duration }: {
+export declare const SplitTextReveal: ({ typography, text, space, fadeIn, offsetY, offsetX, duration }: {
+    typography: any;
     text?: string | undefined;
     space?: number | undefined;
-    typography: any;
     fadeIn?: boolean | undefined;
     offsetY?: number | undefined;
     offsetX?: number | undefined;
@@ -11,6 +11,14 @@ export declare const propsControls: {
     typography: {
         type: import("framer").ControlType;
         controls: {
+            letterSpacing: {
+                step?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                type: import("framer").ControlType;
+                defaultValue: number;
+                displayStepper: boolean;
+            };
             fontSize: {
                 type: import("framer").ControlType;
                 defaultValue: number;

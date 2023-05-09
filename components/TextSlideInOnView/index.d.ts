@@ -12,6 +12,14 @@ export declare const propsControls: {
     typography: {
         type: import("framer").ControlType;
         controls: {
+            letterSpacing: {
+                step?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                type: import("framer").ControlType;
+                defaultValue: number;
+                displayStepper: boolean;
+            };
             fontSize: {
                 type: import("framer").ControlType;
                 defaultValue: number;
