@@ -1,8 +1,7 @@
 import { motion, useInView } from "framer-motion"
 import styles from "./styles.module.css"
-import { ControlType, withMeasuredSize } from "framer"
 import { useRef } from "react"
-import { getNumProps, typography } from "../../utils/framerControlProps"
+import { typography } from "../../utils/framerControlProps"
 
 type Props = {
   text: string
