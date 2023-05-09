@@ -1,4 +1,3 @@
-import { ControlType } from "framer";
 type Props = {
     text: string;
     typography: {
@@ -11,24 +10,24 @@ type Props = {
 export declare const TextSlideInOnView: ({ text, typography }: Partial<Props>) => JSX.Element;
 export declare const propsControls: {
     typography: {
-        type: ControlType;
+        type: import("framer").ControlType;
         controls: {
             fontSize: {
-                type: ControlType;
+                type: import("framer").ControlType;
                 defaultValue: number;
                 min: number;
                 max: number;
             };
             fontWeight: {
-                type: ControlType;
+                type: import("framer").ControlType;
                 defaultValue: number;
             };
             font: {
-                type: ControlType;
+                type: import("framer").ControlType;
                 default: string;
             };
             color: {
-                type: ControlType;
+                type: import("framer").ControlType;
                 default: string;
             };
         };

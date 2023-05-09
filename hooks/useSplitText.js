@@ -1,0 +1,1 @@
+import s,{useId as o}from"react";import{jsx as t,jsxs as c}from"react/jsx-runtime";var l=(p="Example Split Text")=>{let e=o();return p.split(" ").map((a,n)=>c(s.Fragment,{children:[t("span",{"data-component":"fc-word",children:a}),t("span",{"data-component":"fc-space",children:" "})]},`${n}-${e}`))};export{l as useSplitText};
