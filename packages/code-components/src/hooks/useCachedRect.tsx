@@ -1,11 +1,12 @@
-import React, { MutableRefObject, Ref } from "react"
-
-let timeout: NodeJS.Timeout
+import React, { MutableRefObject } from "react"
 
 export const useCachedRect = (ref: MutableRefObject<any>) => {
-  const dimensions = React.useRef()
+  const dimensions = React.useRef(null)
 
   React.useEffect(() => {
+    console.log(ref)
+    let timeout: NodeJS.Timeout
+
     const getSize = () => {
       if (timeout) clearTimeout(timeout)
 
@@ -35,7 +36,5 @@ export const useCachedRect = (ref: MutableRefObject<any>) => {
     }
   }, [ref.current])
 
-  return dimensions.current
-    ? dimensions.current
-    : { left: 0, top: 0, height: 0, width: 0 }
+  return dimensions.current || { left: 0, top: 0, height: 0, width: 0 }
 }
