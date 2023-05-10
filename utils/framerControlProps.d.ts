@@ -66,3 +66,39 @@ export type ImageProps = {
     src?: string;
     alt?: string;
 };
+export declare const typography: {
+    type: ControlType;
+    controls: {
+        letterSpacing: {
+            step?: number | undefined;
+            min?: number | undefined;
+            max?: number | undefined;
+            type: ControlType;
+            defaultValue: number;
+            displayStepper: boolean;
+        };
+        fontSize: {
+            type: ControlType;
+            defaultValue: number;
+            min: number;
+            max: number;
+        };
+        fontWeight: {
+            type: ControlType;
+            defaultValue: number;
+        };
+        font: {
+            type: ControlType;
+            default: string;
+        };
+        color: {
+            type: ControlType;
+            default: string;
+        };
+    };
+};
+export declare const getTypeographyStyles: (typography: any) => any;
+export declare const getBoolProps: (defaultValue: any) => {
+    type: ControlType;
+    defaultValue: any;
+};
