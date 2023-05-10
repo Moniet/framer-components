@@ -1,5 +1,8 @@
 import { ControlType } from "framer";
-import { ImageProps } from "../../../dist/utils/framerControlProps";
+type ImageProps = {
+    src?: string;
+    alt?: string;
+};
 type Props = {
     image?: ImageProps;
     effect?: number;
