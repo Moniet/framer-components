@@ -1,4 +1,4 @@
-import{motion as f,useInView as c}from"framer-motion";var o="324b892f74b0915e31fd25a5a527f4c030e0649365da4a0a74fbf5f50754b66f",s=`._text_s0yx6_1 {
+import{motion as f,useInView as c}from"framer-motion";var o="731d7aad1b717226fedf162d7d96429b0d124f8bcbc07ca3afb1143dec6c46c5",s=`._text_s0yx6_1 {
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -13,4 +13,4 @@ import{motion as f,useInView as c}from"framer-motion";var o="324b892f74b0915e31f
   height: max-content;
   width: max-content;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=s,document.head.appendChild(t)}})();var e={text:"_text_s0yx6_1",container:"_container_s0yx6_10"};import{useRef as l}from"react";import{typography as m}from"../../utils/framerControlProps.js";import{jsx as r}from"react/jsx-runtime";var d={initial:{rotateZ:90},slideIn:{rotateZ:0}},u=({text:t="Example Text Here",typography:n})=>{let i=l(null),a=c(i,{once:!0});return r("div",{className:e.container,ref:i,children:r(f.div,{variants:d,className:e.text,initial:"initial",animate:a?"slideIn":"initial",transition:{type:"spring",damping:20,bounce:0},style:{"--font-family":n?.font||"inherit","--font-size":(n?.fontSize||50)+"px","--font-weight":n?.fontWeight||600,"--color":n?.color||"#222"},children:t})})},y={typography:m};export{u as TextSlideInOnView,y as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=s,document.head.appendChild(t)}})();var e={text:"_text_s0yx6_1",container:"_container_s0yx6_10"};import{useRef as d}from"react";import{typography as l}from"../../utils/framerControlProps.js";import{jsx as r}from"react/jsx-runtime";var m={initial:{rotateZ:90},slideIn:{rotateZ:0}},u=({text:t="Example Text Here",typography:n})=>{let i=d(null),a=c(i,{once:!0});return r("div",{className:e.container,ref:i,children:r(f.div,{variants:m,className:e.text,initial:"initial",animate:a?"slideIn":"initial",transition:{type:"spring",damping:20,bounce:0},style:{"--font-family":n?.font||"inherit","--font-size":(n?.fontSize||50)+"px","--font-weight":n?.fontWeight||600,"--color":n?.color||"#222"},children:t})})},y={typography:l};export{u as TextSlideInOnView,y as propsControls};
