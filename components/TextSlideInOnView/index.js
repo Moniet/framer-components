@@ -1,4 +1,4 @@
-import{motion as f,useInView as c}from"framer-motion";var o="60baa999e2973b7f5c91970eae7db70feafc12ab21f05fd7b9b5c7f0652a2f89",s=`._text_s0yx6_1 {
+import{motion as f,useInView as c}from"framer-motion";var o="fc001d663af184887f7f42b733a1fdd44bab682c1c526599b6994fb0b26eb285",s=`._text_s0yx6_1 {
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
