@@ -10,22 +10,18 @@ type Props = {
     width?: number | string;
     height?: number | string;
 };
-export declare const HorizontalScroll: ({ children, align, gap }: Props) => JSX.Element;
+export declare const ScrollSnap: ({ children, snap, align, gap, direction }: Props) => JSX.Element;
 export declare const propsControls: {
     children: {
         type: ControlType;
-        control: {
-            type: ControlType;
-        };
+        control: any;
     };
-    gap: {
-        step?: number | undefined;
-        min?: number | undefined;
-        max?: number | undefined;
+    direction: {
         type: ControlType;
-        defaultValue: number;
-        displayStepper: boolean;
+        options: string[];
+        optionTitles: string[];
     };
+    gap: any;
     align: {
         type: ControlType;
         options: string[];
