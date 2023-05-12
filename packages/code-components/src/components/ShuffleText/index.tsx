@@ -8,6 +8,7 @@ import { useEffect } from "react"
 import { useSplitText } from "../../hooks/useSplitText"
 import styles from "./styles.module.css"
 import { useMemo } from "react"
+import { useInView } from "framer-motion"
 
 const getRandomChar = () => {
   const num = Math.floor(Math.max(33, Math.random() * 126))
@@ -50,6 +51,8 @@ export const ShuffleText = ({
   typography
 }: any) => {
   const splitText = useSplitText(text)
+  const ref = useRef(null)
+  const inView = useInView(ref)
   const letters = splitText.map(({ letter, isSpace }, i: number) => (
     <Letter
       key={i}
@@ -60,10 +63,11 @@ export const ShuffleText = ({
 
   return (
     <div
+      ref={ref}
       style={{ ...getTypeographyStyles(typography) }}
       className={styles.container}
     >
-      {letters}
+      {inView ? letters : null}
     </div>
   )
 }
