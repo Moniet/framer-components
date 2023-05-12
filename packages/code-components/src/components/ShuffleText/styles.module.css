@@ -2,6 +2,8 @@
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+  color: var(--color);
+  letter-spacing: var(--letter-spacing, 0);
   width: fit-content;
   height: fit-content;
 }
