@@ -1,4 +1,4 @@
-import{ControlType as i}from"framer";import{getSingleChild as r}from"../../utils/framerControlProps.js";var t="8b3c3a4d7e7545d78f5a88099cb55cfee016954a6ad5c7b4c61dd662458ef39e",n=`._container_w1opf_1 {
+import{ControlType as r}from"framer";import{getSingleChild as l}from"../../utils/framerControlProps.js";var n="8bc34c42c86f7db5e56370630748bc4581226355ecf933fb3ab6e03df7bcd259",i=`._container_w1opf_1 {
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -19,4 +19,4 @@ import{ControlType as i}from"framer";import{getSingleChild as r}from"../../utils
   overflow-x: scroll !important;
   overflow-y: hidden;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(t)){var o=document.createElement("style");o.id=t,o.textContent=n,document.head.appendChild(o)}})();var e={container:"_container_w1opf_1",containerSingle:"_containerSingle_w1opf_12"};import{jsx as a}from"react/jsx-runtime";var f=({children:o})=>a("div",{className:e.container,children:o}),m={children:{type:i.Array,control:r()}};export{f as HorizontalScroll,m as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(n)){var o=document.createElement("style");o.id=n,o.textContent=i,document.head.appendChild(o)}})();var t={container:"_container_w1opf_1",containerSingle:"_containerSingle_w1opf_12"};import{Children as a}from"react";import{jsx as c}from"react/jsx-runtime";var s=({children:o})=>{let e=a.count(o);return c("div",{className:e===1?t.containerSingle:t.container,children:o})},w={children:{type:r.Array,control:l()}};export{s as HorizontalScroll,w as propsControls};
