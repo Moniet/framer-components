@@ -1,4 +1,4 @@
-import*as o from"react";import{createPortal as E}from"react-dom";import{motion as b}from"framer-motion";import{ControlType as v,useMotionValue as y}from"framer";var f="1e7a1b2396ca05454621f9ae0edf063b3988f6db6664ddcb15bb0f4ee3595a29",P=`._cursorWrapper_10tzq_1 {
+import*as o from"react";import{createPortal as E}from"react-dom";import{motion as b}from"framer-motion";import{ControlType as v,useMotionValue as y}from"framer";var f="9bb57c98e9172ccfe3b98ad356e7ae06ac5d42e36d179b1e19d7b1b2d49c6d40",P=`._cursorWrapper_10tzq_1 {
   position: fixed;
   top: 0;
   left: 0;
