@@ -1,4 +1,4 @@
-var o="00a3e892bf285b991dea2493ef3a2e7a6917835050ad1311213b3ba8a3f4f1a8",p=`._container_1fkre_1 {
+var d="2168ef7e8bf125ac3aeb37a267779e02486a906291ea76bf4e926534f63f8a3a",p=`._container_1fkre_1 {
   font-size: 16px;
   position: relative;
   font-family: inherit;
@@ -33,4 +33,4 @@ var o="00a3e892bf285b991dea2493ef3a2e7a6917835050ad1311213b3ba8a3f4f1a8",p=`._co
   height: 50%;
   object-fit: cover;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var e=document.createElement("style");e.id=o,e.textContent=p,document.head.appendChild(e)}})();var t={container:"_container_1fkre_1",card:"_card_1fkre_10",selectedView:"_selectedView_1fkre_19",image:"_image_1fkre_31"};import{useStripeState as g}from"../../hooks/useStripeState.js";import{ControlType as s,addPropertyControls as _}from"framer";import{jsx as i,jsxs as n}from"react/jsx-runtime";var h=({productId:e,productTitle:r})=>{let[c,l,f]=g(),d=c.find(a=>a.id===e),m=()=>{d?f({id:e}):l({id:e,title:r})};return n("div",{className:t.container,onClick:a=>{a.preventDefault(),m()},children:[n("div",{className:t.card,children:[i("img",{className:t.image,src:"https://placehold.co/600x400.png",alt:""}),i("div",{className:t.title,children:i("b",{children:r})})]}),d&&i("div",{className:t.selectedView})]})};_(h,{productId:{type:s.String},productTitle:{type:s.String}});export{h as StripeProductCard};
+`;(function(){if(globalThis.window&&!document.getElementById(d)){var e=document.createElement("style");e.id=d,e.textContent=p,document.head.appendChild(e)}})();var t={container:"_container_1fkre_1",card:"_card_1fkre_10",selectedView:"_selectedView_1fkre_19",image:"_image_1fkre_31"};import{useStripeState as g}from"../../hooks/useStripeState.js";import{ControlType as s,addPropertyControls as _}from"framer";import{jsx as i,jsxs as c}from"react/jsx-runtime";var h=({productId:e,productTitle:r})=>{let[n,l,f]=g(),o=n.find(a=>a.id===e),m=()=>{o?f({id:e}):l({id:e,title:r})};return c("div",{className:t.container,onClick:a=>{a.preventDefault(),m()},children:[c("div",{className:t.card,children:[i("img",{className:t.image,src:"https://placehold.co/600x400.png",alt:""}),i("div",{className:t.title,children:i("b",{children:r})})]}),o&&i("div",{className:t.selectedView})]})};_(h,{productId:{type:s.String},productTitle:{type:s.String}});export{h as StripeProductCard};

@@ -1,4 +1,4 @@
-import{useTypewriter as V}from"./useTypewriter.js";import{Cursor as S}from"./Cursor.js";import{ControlType as e}from"framer";var o="1ac428c71ed0cb893dbda4f3aba48118e848a510f6384d4648a4b8669eaf0750",x=`._blinkingCursor_3ri72_1 {
+import{useTypewriter as V}from"./useTypewriter.js";import{Cursor as S}from"./Cursor.js";import{ControlType as e}from"framer";var o="04894ee9303839c64e5a7846956fc75aa51471ff82d79d1da14c96beb68f28d9",x=`._blinkingCursor_3ri72_1 {
   position: relative;
   line-height: inherit;
   left: 3px;
