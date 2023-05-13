@@ -1,21 +1,20 @@
-.cursor {
+.cursorWrapper {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000000;
   transition: transform var(--delay) ease-out;
   pointer-events: none;
-}
-
-.example {
-  width: 10px;
-  height: 10px;
-  border-radius: 50px;
-  background-color: deepskyblue;
-}
-
-.wrapper {
   width: fit-content;
   height: fit-content;
+}
+
+.cursor {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--color);
+  pointer-events: none;
   transform: translate(-50%, -50%);
+  border: solid var(--border-width) var(--border-color);
 }

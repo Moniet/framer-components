@@ -6,7 +6,7 @@ export const getNumProps = (
   step?: number,
   minmax?: {
     min: number
-    max: number
+    max?: number
   }
 ) => ({
   type: ControlType.Number,
@@ -118,4 +118,9 @@ export const getTypeographyStyles = (typography) =>
 export const getBoolProps = (defaultValue) => ({
   type: ControlType.Boolean,
   defaultValue: defaultValue
+})
+
+export const getColorProps = (defaultValue = "#000") => ({
+  type: ControlType.Color,
+  defaultValue
 })
