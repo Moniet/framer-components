@@ -1,4 +1,4 @@
-import*as i from"react";var n="713b1b8cacb45a132b89f8b61f4bba0dd229b244945105fad22c236d91e556d3",d=`._container_4btui_1 {
+import*as i from"react";var o="bbd2ea42cf427bb0a4f56e163ade54625eb82f6e00247723efd95d881c8c2285",d=`._container_hs4px_1 {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: var(--direction, column);
@@ -9,7 +9,7 @@ import*as i from"react";var n="713b1b8cacb45a132b89f8b61f4bba0dd229b244945105fad
   width: 100%;
 }
 
-._wrapper_4btui_12 > div {
+._wrapper_hs4px_12 > div {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: var(--direction, column);
@@ -20,17 +20,17 @@ import*as i from"react";var n="713b1b8cacb45a132b89f8b61f4bba0dd229b244945105fad
   width: 100%;
 }
 
-._xScroll_4btui_23 {
+._xScroll_hs4px_23 {
   overflow-x: auto;
   max-width: 100%;
 }
 
-._yScroll_4btui_28 {
+._yScroll_hs4px_28 {
   overflow-y: auto;
   max-height: 100%;
 }
 
-._container_4btui_1 > * {
+._wrapper_hs4px_12 > div > * {
   scroll-snap-align: var(--snap);
   height: 100%;
   width: 100%;
@@ -38,4 +38,13 @@ import*as i from"react";var n="713b1b8cacb45a132b89f8b61f4bba0dd229b244945105fad
   min-width: 100%;
   overflow: hidden;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(n)){var t=document.createElement("style");t.id=n,t.textContent=d,document.head.appendChild(t)}})();var r={container:"_container_4btui_1",wrapper:"_wrapper_4btui_12",xScroll:"_xScroll_4btui_23",yScroll:"_yScroll_4btui_28"};import{ControlType as e}from"framer";import{getSingleChild as m,getNumProps as u}from"../../utils/framerControlProps.js";import{Example as g}from"./Example.js";import{jsx as a}from"react/jsx-runtime";var f=({children:t,snap:l="start",align:c="center",gap:p=0,direction:o="column"})=>{let s=`${(t?i.Children.count(t):2)===1?r.wrapper:r.container} ${o==="column"?r.yScroll:r.xScroll}`;return a("div",{className:s,style:{"--snap":l,"--align":c,"--gap":p+"px","--direction":o,"--axis":o==="row"?"x":"y"},children:t||a(g,{})})},v={children:{type:e.Array,control:m()},direction:{type:e.Enum,options:["column","row"],optionTitles:["Column","Row"]},gap:u(0,!0,10),align:{type:e.Enum,options:["start","center","end"]}};export{f as ScrollSnap,v as propsControls};
+
+._container_hs4px_1 > * {
+  scroll-snap-align: var(--snap);
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+}
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=d,document.head.appendChild(t)}})();var e={container:"_container_hs4px_1",wrapper:"_wrapper_hs4px_12",xScroll:"_xScroll_hs4px_23",yScroll:"_yScroll_hs4px_28"};import{ControlType as n}from"framer";import{getSingleChild as h,getNumProps as m}from"../../utils/framerControlProps.js";import{Example as x}from"./Example.js";import{jsx as a}from"react/jsx-runtime";var v=({children:t,snap:p="start",align:l="center",gap:s=0,direction:r="column"})=>{let c=`${(t?i.Children.count(t):2)===1?e.wrapper:e.container} ${r==="column"?e.yScroll:e.xScroll}`;return a("div",{className:c,style:{"--snap":p,"--align":l,"--gap":s+"px","--direction":r,"--axis":r==="row"?"x":"y"},children:t||a(x,{})})},S={children:{type:n.Array,control:h()},direction:{type:n.Enum,options:["column","row"],optionTitles:["Column","Row"]},gap:m(0,!0,10),align:{type:n.Enum,options:["start","center","end"]}};export{v as ScrollSnap,S as propsControls};
