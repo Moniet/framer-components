@@ -20,6 +20,9 @@ export declare const propsControls: {
             fontWeight: {
                 type: import("framer").ControlType;
                 defaultValue: number;
+                step: number;
+                min: number;
+                max: number;
             };
             font: {
                 type: import("framer").ControlType;

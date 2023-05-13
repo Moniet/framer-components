@@ -86,6 +86,9 @@ export declare const typography: {
         fontWeight: {
             type: ControlType;
             defaultValue: number;
+            step: number;
+            min: number;
+            max: number;
         };
         font: {
             type: ControlType;
