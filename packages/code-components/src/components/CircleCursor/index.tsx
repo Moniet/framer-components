@@ -14,7 +14,6 @@ const useMousePosition = () => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX)
       mouseY.set(e.clientY)
-      console.log((e.target as any)?.nodeName)
 
       const t = (e.target as HTMLDivElement).nodeName
 
