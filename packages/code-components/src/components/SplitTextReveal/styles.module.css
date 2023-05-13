@@ -6,6 +6,7 @@
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   letter-spacing: var(--letter-spacing);
+  color: var(--color);
 }
 
 .container span {
