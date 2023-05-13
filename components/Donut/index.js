@@ -1,0 +1,1 @@
+import{motion as o}from"framer";import{jsx as t}from"react/jsx-runtime";var h=()=>t("svg",{width:100,height:100,children:t(o.circle,{cx:50,cy:50,r:100-10,strokeWidth:10,style:{pathLength:50/10}})});export{h as Donut};
