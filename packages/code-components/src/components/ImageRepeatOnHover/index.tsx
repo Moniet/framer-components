@@ -1,10 +1,14 @@
 import { ControlType } from "framer"
 import { useState } from "react"
-import { ImageProps } from "../../../dist/utils/framerControlProps"
 import styles from "./styles.module.css"
 import { Effect1 } from "./Effect1"
 import { defaultImage } from "./contstants"
 import { getNumProps } from "../../utils/framerControlProps"
+
+type ImageProps = {
+  src?: string
+  alt?: string
+}
 
 type Props = {
   image?: ImageProps
