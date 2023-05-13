@@ -1,5 +1,7 @@
 .wrapper {
   position: relative;
+  min-width: 20px;
+  min-height: 20px;
   width: fit-content;
   height: fit-content;
 }
@@ -9,6 +11,11 @@
 }
 
 .starSvgWrapper {
+  position: relative;
   z-index: 1;
   transform-origin: center center;
+}
+
+.starSvgWrapper svg path {
+  fill: var(--path-fill, yellow);
 }
