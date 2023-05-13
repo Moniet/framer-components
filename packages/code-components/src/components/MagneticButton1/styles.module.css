@@ -32,4 +32,5 @@
   opacity: 0;
   height: 0;
   transform: translate(0, -100%);
+  user-select: none;
 }
