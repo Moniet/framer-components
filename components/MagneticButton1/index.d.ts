@@ -53,6 +53,7 @@ export declare const propsControls: {
         displayStepper: boolean;
     };
     cursorPadding: {
+        description: string;
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
