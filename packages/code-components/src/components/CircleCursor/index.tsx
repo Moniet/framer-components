@@ -115,11 +115,11 @@ export const CircleCursor = ({
 }
 
 export const propControls = {
-  size: getNumProps(50, false, 5, { min: 10, max: 100 }),
-  hoverScale: getNumProps(1, false, 0.1, { min: 1, max: 5 }),
+  size: getNumProps(30, false, 5, { min: 10, max: 100 }),
+  hoverScale: getNumProps(2, false, 0.1, { min: 1, max: 5 }),
   bgColor: { ...getColorProps("deepskyblue"), title: "Background Color" },
   opacity: getNumProps(1, false, 0.1, { min: 0, max: 1 }),
-  opacityOnHover: getNumProps(1, false, 0.1, { min: 0, max: 1 }),
+  opacityOnHover: getNumProps(0.5, false, 0.1, { min: 0, max: 1 }),
   borderWidth: getNumProps(0, false, 1, { min: 0, max: 10 }),
   borderColor: getColorProps("transparent"),
   delay: {
