@@ -101,7 +101,7 @@ export const propsControls = {
   text: getStrProps("Oshe"),
   backgroundColor: getColorProps("#fff"),
   strokeWidth: getNumProps(2, true, 1, { min: 1, max: 10 }),
-  offset: getNumProps(10, false, 10, { min: 10, max: 100 }),
+  offset: getNumProps(5, false, 5, { min: 1, max: 100 }),
   animationFrom: {
     title: "Animation From",
     type: ControlType.Enum,
