@@ -1,4 +1,4 @@
-var n="a287e752b8c0a6ae7a1e714d0fe98460cd6b91a3982c495d9cc762257672187c",c=`._img_owfn7_1 {
+var n="2f29e9fe346ea15b7d4551def3ebde78030004cef778fd326fc6e791be22af10",r=`._img_owfn7_1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -13,4 +13,4 @@ var n="a287e752b8c0a6ae7a1e714d0fe98460cd6b91a3982c495d9cc762257672187c",c=`._im
   transform: scaleX(var(--scale));
   transform-origin: left;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(n)){var t=document.createElement("style");t.id=n,t.textContent=c,document.head.appendChild(t)}})();var o={img:"_img_owfn7_1"};import{Fragment as r,jsx as s}from"react/jsx-runtime";var i=Array(3).fill("-"),f=({isHovering:t=!1,image:e})=>s(r,{children:i.map((l,a)=>s("img",{className:o.img,alt:e?.alt||"",src:e?.src||"https://cdn.openai.com/labs/images/A%20photo%20of%20a%20white%20fur%20monster%20standing%20in%20a%20purple%20room.webp",style:{"--z-index":a,"--delay":t?Math.sin(a/10*Math.PI/2).toFixed(2)+"s":Math.sin((i.length-a-1)/10*Math.PI/2).toFixed(2)+"s","--clip-path":t?"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)":"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)","--scale":t?1:0}},a))});export{f as Effect1};
+`;(function(){if(globalThis.window&&!document.getElementById(n)){var t=document.createElement("style");t.id=n,t.textContent=r,document.head.appendChild(t)}})();var o={img:"_img_owfn7_1"};import{Fragment as l,jsx as s}from"react/jsx-runtime";var i=Array(3).fill("-"),p=({isHovering:t=!1,image:a})=>s(l,{children:i.map((c,e)=>s("img",{className:o.img,alt:a?.alt||"",src:a?.src||"https://cdn.openai.com/labs/images/A%20photo%20of%20a%20white%20fur%20monster%20standing%20in%20a%20purple%20room.webp",style:{"--z-index":e,"--delay":t?Math.sin(e/10*Math.PI/2).toFixed(2)+"s":Math.sin((i.length-e-1)/10*Math.PI/2).toFixed(2)+"s","--clip-path":t?"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)":"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)","--scale":t?1:0}},e))});export{p as Effect1};

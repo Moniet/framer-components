@@ -21,6 +21,7 @@ export declare const propsControls: {
         defaultValue: string;
     };
     bgColor: {
+        title: string;
         type: ControlType;
         defaultValue: string;
     };
