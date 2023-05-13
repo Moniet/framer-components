@@ -3,6 +3,11 @@ import { ControlType } from "framer"
 import { useFollowCursor } from "../../hooks/useFollowCursor"
 import { motion, useTransform } from "framer-motion"
 import styles from "./styles.module.css"
+import {
+  getColorProps,
+  getNumProps,
+  getStrProps
+} from "../../utils/framerControlProps"
 
 export const MagneticButton = ({
   text = "Magnetic Button",
@@ -13,7 +18,7 @@ export const MagneticButton = ({
   borderRadius = 5,
   buttonPadding = 50,
   cursorPadding = 50,
-  sensitivity = 150, //
+  sensitivity = 150,
   movement = 50
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -46,7 +51,7 @@ export const MagneticButton = ({
       }
       className={styles.wrapper}
       ref={ref}
-      onMouseOver={handleMouseEnter as any}
+      onMouseEnter={handleMouseEnter as any}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -62,4 +67,19 @@ export const MagneticButton = ({
   )
 }
 
-export const propsControls = {}
+export const propsControls = {
+  text: getStrProps("Magnetic Button"),
+  textColor: getColorProps(),
+  bgColor: { ...getColorProps("#fff"), title: "Background Color" },
+  borderColor: getColorProps("#000"),
+  borderWidth: getNumProps(2, true, 1, { min: 0 }),
+  borderRadius: getNumProps(5, true, 1, { min: 0 }),
+  buttonPadding: getNumProps(50, true, 5, { min: 0 }),
+  cursorPadding: {
+    ...getNumProps(50, true, 5, { min: 0 }),
+    description:
+      'The "invisible" padding around the button for the cursor to interact with'
+  },
+  sensitivity: getNumProps(150, false, 10, { min: 50, max: 1000 }),
+  movement: { ...getNumProps(50, false, 10, { min: 10, max: 1000 }) }
+}
