@@ -4,15 +4,16 @@ type Props = {
     delay: number;
     hideDefaultCursor: boolean;
     size: number;
-    hoverSize: number;
-    color: string;
+    hoverScale: number;
+    bgColor: string;
+    borderColor: string;
+    opacity: number;
+    opacityOnHover: number;
+    borderWidth: number;
+    text?: string;
 };
-export declare const CircleCursor: ({ children, delay, size, hoverSize, color, hideDefaultCursor }: Partial<Props>) => import("react").ReactPortal | null;
+export declare const CircleCursor: ({ children, delay, size, opacity, opacityOnHover, borderColor, borderWidth, hoverScale, bgColor, hideDefaultCursor }: Partial<Props>) => import("react").ReactPortal | null;
 export declare const propControls: {
-    textOnHover: {
-        type: ControlType;
-        defaultValue: string;
-    };
     size: {
         step?: number | undefined;
         min?: number | undefined;
@@ -21,20 +22,13 @@ export declare const propControls: {
         defaultValue: number;
         displayStepper: boolean;
     };
-    sizeOnHover: {
+    hoverScale: {
         step?: number | undefined;
         min?: number | undefined;
         max?: number | undefined;
         type: ControlType;
         defaultValue: number;
         displayStepper: boolean;
-    };
-    children: {
-        type: ControlType;
-    };
-    textColor: {
-        type: ControlType;
-        defaultValue: string;
     };
     bgColor: {
         title: string;
@@ -56,6 +50,18 @@ export declare const propControls: {
         type: ControlType;
         defaultValue: number;
         displayStepper: boolean;
+    };
+    borderWidth: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    borderColor: {
+        type: ControlType;
+        defaultValue: string;
     };
     delay: {
         type: ControlType;
