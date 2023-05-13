@@ -1,8 +1,8 @@
 .container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: var(--align, center);
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  align-items: var(--align, center) !important;
   gap: var(--gap, 0px);
   height: 100%;
   width: 100%;

@@ -10,11 +10,11 @@
 }
 
 .wrapper > div {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: var(--direction, column);
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  flex-direction: var(--direction, column) !important;
+  scroll-snap-type: var(--axis) mandatory !important;
   align-items: var(--align, center);
-  scroll-snap-type: var(--axis) mandatory;
   gap: var(--gap, 0px);
   height: 100%;
   width: 100%;
@@ -28,6 +28,15 @@
 .yScroll {
   overflow-y: auto;
   max-height: 100%;
+}
+
+.wrapper > div > * {
+  scroll-snap-align: var(--snap);
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
 }
 
 .container > * {
