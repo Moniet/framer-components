@@ -1,6 +1,5 @@
 import { ControlType } from "framer";
 type Props = {
-    children: JSX.Element;
     delay: number;
     hideDefaultCursor: boolean;
     size: number;
@@ -12,7 +11,7 @@ type Props = {
     borderWidth: number;
     text?: string;
 };
-export declare const CircleCursor: ({ children, delay, size, opacity, opacityOnHover, borderColor, borderWidth, hoverScale, bgColor, hideDefaultCursor }: Partial<Props>) => import("react").ReactPortal | null;
+export declare const CircleCursor: ({ delay, size, opacity, opacityOnHover, borderColor, borderWidth, hoverScale, bgColor, hideDefaultCursor }: Partial<Props>) => import("react").ReactPortal | null;
 export declare const propControls: {
     size: {
         step?: number | undefined;
