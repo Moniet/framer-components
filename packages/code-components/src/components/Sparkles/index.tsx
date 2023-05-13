@@ -132,7 +132,7 @@ export const Sparkles = ({
 export const propsControls = {
   children: getSingleChild(),
   minSize: getNumProps(10, true, 2),
-  maxSize: getNumProps(10, true, 2),
+  maxSize: getNumProps(20, true, 2),
   numOfStars: getNumProps(20, false, 5, { min: 1, max: 100 }),
   duration: getNumProps(0.5, false, 0.1, { min: 0.1, max: 2 }),
   color: {
