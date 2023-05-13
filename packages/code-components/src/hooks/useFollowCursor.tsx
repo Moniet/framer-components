@@ -6,6 +6,7 @@ import {
   useTransform
 } from "framer-motion"
 import { useCachedRect } from "./useCachedRect"
+import { useCallback } from "react"
 
 type Options = {
   movement?: number
@@ -34,29 +35,29 @@ export const useFollowCursor = (
   const x = useSpring(xt)
   const y = useSpring(yt)
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => {
+      const { left = 0, top = 0, height, width } = rect.current || {}
+      const midX = left + width / 2
+      const midY = top + height / 2
+      const xDrift = e.clientX - midX
+      const yDrift = e.clientY - midY
 
-    const { left = 0, top = 0, height, width } = rect.current || {}
-    const midX = left + window.scrollX + width / 2
-    const midY = top + window.scrollY + height / 2
-    const xDrift = e.clientX - midX
-    const yDrift = e.clientY - midY
+      xPos.set(xDrift)
+      yPos.set(yDrift)
+    },
+    [rect.current]
+  )
 
-    xPos.set(xDrift)
-    yPos.set(yDrift)
-  }
-
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (e: React.MouseEvent) => {
     xPos.set(0)
     yPos.set(0)
   }
 
   const handleMouseEnter = (e: MouseEvent) => {
-    e.stopPropagation()
-
-    rect.current = ref.current?.getBoundingClientRect() as any
+    rect.current = (
+      e.currentTarget as HTMLElement
+    )?.getBoundingClientRect() as any
   }
 
   return {
