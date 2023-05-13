@@ -1,0 +1,35 @@
+.btn {
+  border-radius: var(--border-radius, 5px);
+  padding: var(--btn-padding, 30px);
+  border: solid var(--border-width, 2px) var(--border-color, #000);
+  background-color: var(--bg-color, #fff);
+  color: var(--text-color, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  padding: var(--cursor-padding);
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.btn [data-fc="text-wrap"] {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn span {
+  opacity: 0;
+  height: 0;
+  transform: translate(0, -100%);
+}

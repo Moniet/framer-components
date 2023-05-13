@@ -91,7 +91,10 @@ export const typography = {
     },
     fontWeight: {
       type: ControlType.Number,
-      defaultValue: 400
+      defaultValue: 400,
+      step: 100,
+      min: 100,
+      max: 1000
     },
     font: {
       type: ControlType.String,

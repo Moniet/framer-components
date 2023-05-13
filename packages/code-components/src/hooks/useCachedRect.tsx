@@ -4,7 +4,6 @@ export const useCachedRect = (ref: MutableRefObject<any>) => {
   const dimensions = React.useRef(null)
 
   React.useEffect(() => {
-    console.log(ref)
     let timeout: NodeJS.Timeout
 
     const getSize = () => {
