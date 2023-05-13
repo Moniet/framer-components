@@ -40,7 +40,6 @@ const useMousePosition = () => {
 }
 
 type Props = {
-  children: JSX.Element
   delay: number
   hideDefaultCursor: boolean
   size: number
@@ -54,7 +53,6 @@ type Props = {
 }
 
 export const CircleCursor = ({
-  children,
   delay = 0.3,
   size = 20,
   opacity = 1,
@@ -82,7 +80,7 @@ export const CircleCursor = ({
     return () => {
       document.body.removeChild(container)
     }
-  }, [isServer, children])
+  }, [isServer])
 
   if (!cont) return null
 
