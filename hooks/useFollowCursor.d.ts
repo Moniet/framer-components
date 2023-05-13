@@ -7,7 +7,7 @@ export declare const useFollowCursor: (ref: RefObject<HTMLElement>, options?: Op
     mouseX: import("framer-motion").MotionValue<any>;
     mouseY: import("framer-motion").MotionValue<any>;
     handleMouseMove: (e: React.MouseEvent) => void;
-    handleMouseLeave: () => void;
+    handleMouseLeave: (e: React.MouseEvent) => void;
     handleMouseEnter: (e: MouseEvent) => void;
 };
 export {};
