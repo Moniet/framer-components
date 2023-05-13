@@ -1,4 +1,4 @@
-import*as a from"react";var r="460920dbf95a75b566862b633b4108db5df38faed10a956c353a0e8874812562",c=`._container_10347_1 {
+import*as i from"react";var r="261288591d5b1d6bd22265bc3a119b9e648f9486633c3a806e7954c9175167bf",c=`._container_10347_1 {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -31,4 +31,4 @@ import*as a from"react";var r="460920dbf95a75b566862b633b4108db5df38faed10a956c3
   min-width: 100%;
   overflow: hidden;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(r)){var t=document.createElement("style");t.id=r,t.textContent=c,document.head.appendChild(t)}})();var e={container:"_container_10347_1",wrapper:"_wrapper_10347_12",xScroll:"_xScroll_10347_22"};import{ControlType as n}from"framer";import{getSingleChild as d,getNumProps as s}from"../../utils/framerControlProps.js";import{Example as m}from"./Example.js";import{jsx as o}from"react/jsx-runtime";var u=({children:t,align:i="center",gap:p=0})=>{let l=`${(t?a.Children.count(t):2)===1?e.wrapper:e.container} ${e.xScroll}`;return o("div",{className:l,style:{"--align":i,"--gap":p+"px"},children:t||o(m,{})})},y={children:{type:n.Array,control:d()},gap:s(0,!0,10),align:{type:n.Enum,options:["start","center","end"]}};export{u as HorizontalScroll,y as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(r)){var t=document.createElement("style");t.id=r,t.textContent=c,document.head.appendChild(t)}})();var e={container:"_container_10347_1",wrapper:"_wrapper_10347_12",xScroll:"_xScroll_10347_22"};import{ControlType as n}from"framer";import{getSingleChild as s,getNumProps as d}from"../../utils/framerControlProps.js";import{Example as m}from"./Example.js";import{jsx as o}from"react/jsx-runtime";var u=({children:t,align:a="center",gap:p=0})=>{let l=`${(t?i.Children.count(t):2)===1?e.wrapper:e.container} ${e.xScroll}`;return o("div",{className:l,style:{"--align":a,"--gap":p+"px"},children:t||o(m,{})})},y={children:{type:n.Array,control:s()},gap:d(0,!0,10),align:{type:n.Enum,options:["start","center","end"]}};export{u as HorizontalScroll,y as propsControls};
