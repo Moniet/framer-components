@@ -1,7 +1,7 @@
 import { ControlType } from "framer";
 export declare const getNumProps: (defaultValue: number, stepper: boolean, step?: number, minmax?: {
     min: number;
-    max: number;
+    max?: number;
 }) => {
     step?: number | undefined;
     min?: number | undefined;
@@ -104,4 +104,8 @@ export declare const getTypeographyStyles: (typography: any) => any;
 export declare const getBoolProps: (defaultValue: any) => {
     type: ControlType;
     defaultValue: any;
+};
+export declare const getColorProps: (defaultValue?: string) => {
+    type: ControlType;
+    defaultValue: string;
 };

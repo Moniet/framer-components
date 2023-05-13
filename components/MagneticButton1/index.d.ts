@@ -1,3 +1,4 @@
+import { ControlType } from "framer";
 export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, borderWidth, borderRadius, buttonPadding, cursorPadding, sensitivity, movement }: {
     text?: string | undefined;
     textColor?: string | undefined;
@@ -10,4 +11,69 @@ export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, b
     sensitivity?: number | undefined;
     movement?: number | undefined;
 }) => JSX.Element;
-export declare const propsControls: {};
+export declare const propsControls: {
+    text: {
+        type: ControlType;
+        defaultValue: string;
+    };
+    textColor: {
+        type: ControlType;
+        defaultValue: string;
+    };
+    bgColor: {
+        type: ControlType;
+        defaultValue: string;
+    };
+    borderColor: {
+        type: ControlType;
+        defaultValue: string;
+    };
+    borderWidth: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    borderRadius: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    buttonPadding: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    cursorPadding: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    sensitivity: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+    movement: {
+        step?: number | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        type: ControlType;
+        defaultValue: number;
+        displayStepper: boolean;
+    };
+};
