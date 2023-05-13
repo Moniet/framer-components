@@ -9,12 +9,17 @@
   height: fit-content;
 }
 
+.cursorPosition {
+  width: max-content;
+  height: max-content;
+  transform: translate(-50%, -50%);
+}
+
 .cursor {
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   background-color: var(--color);
   pointer-events: none;
-  transform: translate(-50%, -50%);
   border: solid var(--border-width) var(--border-color);
 }

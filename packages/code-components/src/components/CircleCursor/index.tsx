@@ -1,13 +1,9 @@
 import * as React from "react"
 import { createPortal } from "react-dom"
-import { LayoutGroup, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { ControlType, useMotionValue } from "framer"
 import styles from "./styles.modules.css"
-import {
-  getColorProps,
-  getNumProps,
-  getStrProps
-} from "../../utils/framerControlProps"
+import { getColorProps, getNumProps } from "../../utils/framerControlProps"
 
 const useMousePosition = () => {
   const mouseX = useMotionValue(0)
@@ -98,19 +94,21 @@ export const CircleCursor = ({
           } as any
         }
       >
-        <motion.div
-          className={styles.cursor}
-          style={
-            {
-              x: 0,
-              y: 0,
-              "--color": bgColor,
-              "--size": size + "px",
-              "--border-color": borderColor,
-              "--border-width": borderWidth + "px"
-            } as any
-          }
-        />
+        <div className={styles.cursorPosition}>
+          <motion.div
+            className={styles.cursor}
+            style={
+              {
+                x: 0,
+                y: 0, //
+                "--color": bgColor,
+                "--size": size + "px",
+                "--border-color": borderColor,
+                "--border-width": borderWidth + "px"
+              } as any
+            }
+          />
+        </div>
       </motion.div>
     </>,
     cont
@@ -124,7 +122,7 @@ export const propControls = {
   opacity: getNumProps(1, false, 0.1, { min: 0, max: 1 }),
   opacityOnHover: getNumProps(1, false, 0.1, { min: 0, max: 1 }),
   borderWidth: getNumProps(0, false, 1, { min: 0, max: 10 }),
-  borderColor: getColorProps("transparent"), //
+  borderColor: getColorProps("transparent"),
   delay: {
     type: ControlType.Number,
     min: 0,
