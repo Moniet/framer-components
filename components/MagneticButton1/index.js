@@ -1,4 +1,4 @@
-import{useRef as B}from"react";import{useFollowCursor as P}from"../../hooks/useFollowCursor.js";import{motion as l,useTransform as c}from"framer-motion";var p="0fd7c051605459a2151777ba486a1a03268946919cabdb9e427e8a93d9edd3e4",E=`._btn_za2mt_1 {
+import{useRef as B}from"react";import{useFollowCursor as P}from"../../hooks/useFollowCursor.js";import{motion as l,useTransform as c}from"framer-motion";var p="88190478a3f3310910da505bb54d2482292d9958e5edbead27bce762163c8883",E=`._btn_za2mt_1 {
   border-radius: var(--border-radius, 5px);
   padding: var(--btn-padding, 30px);
   border: solid var(--border-width, 2px) var(--border-color, #000);
