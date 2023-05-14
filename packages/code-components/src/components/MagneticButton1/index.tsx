@@ -52,7 +52,7 @@ export const MagneticButton = ({
           "--border-color": borderColor,
           "--bg-color": bgColor,
           "--text-color": textColor,
-          ...getTypeographyStyles(typography)
+          ...getTypeographyStyles(typography, 20, 400)
         } as any
       }
       className={styles.wrapper}
@@ -88,5 +88,31 @@ export const propsControls = {
   },
   sensitivity: getNumProps(150, false, 10, { min: 50, max: 1000 }),
   movement: { ...getNumProps(50, false, 10, { min: 10, max: 1000 }) },
-  typography
+  typography: {
+    type: ControlType.Object,
+    controls: {
+      letterSpacing: getNumProps(0, false, 1, { min: 0, max: 100 }),
+      fontSize: {
+        type: ControlType.Number,
+        defaultValue: 20,
+        min: 1,
+        max: 100
+      },
+      fontWeight: {
+        type: ControlType.Number,
+        defaultValue: 400,
+        step: 100,
+        min: 100,
+        max: 1000
+      },
+      font: {
+        type: ControlType.String,
+        default: "Helvetica, sans-serif"
+      },
+      color: {
+        type: ControlType.Color,
+        default: "#555"
+      }
+    }
+  }
 }
