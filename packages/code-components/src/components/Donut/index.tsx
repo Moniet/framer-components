@@ -4,18 +4,18 @@ import { getColorProps, getNumProps } from "../../utils/framerControlProps"
 import { useRef } from "react"
 
 export const Donut = ({
-  strokeWidth = 8,
+  strokeWidth = 5,
   strokeColor = "#000",
-  size = 100,
   progress = 75,
   duration = 2
 }) => {
   const prog = progress / 100
   const ref = useRef(null)
   const inView = useInView(ref)
+  const size = 100
 
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size}${size}`} ref={ref}>
+    <svg width="100%" height="100%" viewBox={`0 0 100 100`} ref={ref}>
       <motion.circle
         className={styles.circ}
         cx={size * 0.5}
@@ -42,7 +42,6 @@ export const Donut = ({
 export const propsControls = {
   strokeWidth: getNumProps(5, true, 1),
   strokeColor: getColorProps("#000"),
-  size: getNumProps(200, true, 10, { min: 50 }),
   progress: getNumProps(75, false, 5, { min: 0, max: 100 }),
   duration: getNumProps(2, false, 0.1, { min: 0.1, max: 5 })
 }
