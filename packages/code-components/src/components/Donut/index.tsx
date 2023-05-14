@@ -1,6 +1,7 @@
-import { motion } from "framer"
+import { motion, useInView } from "framer"
 import styles from "./styles.module.css"
 import { getColorProps, getNumProps } from "../../utils/framerControlProps"
+import { useRef } from "react"
 
 export const Donut = ({
   strokeWidth = 8,
@@ -10,16 +11,18 @@ export const Donut = ({
   duration = 2
 }) => {
   const prog = progress / 100
+  const ref = useRef(null)
+  const inView = useInView(ref)
 
   return (
-    <svg width={100} height={100} viewBox="0 0 100 100">
+    <svg width={size} height={size} viewBox={`0 0 ${size}${size}`} ref={ref}>
       <motion.circle
         className={styles.circ}
         cx={size * 0.5}
         cy={size * 0.5}
         r={size * 0.5 - strokeWidth}
         initial={{ pathLength: 0 }}
-        animate={{ pathLength: prog }}
+        animate={{ pathLength: inView ? prog : 0 }}
         transition={{ duration, type: "spring", bounce: 0.1 }}
         fill="transparent"
         stroke={strokeColor}
