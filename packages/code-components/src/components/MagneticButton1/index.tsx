@@ -4,6 +4,10 @@ import { useFollowCursor } from "../../hooks/useFollowCursor"
 import { motion, useTransform } from "framer-motion"
 import styles from "./styles.module.css"
 import {
+  getTypeographyStyles,
+  typography
+} from "../../utils/framerControlProps"
+import {
   getColorProps,
   getNumProps,
   getStrProps
@@ -19,7 +23,8 @@ export const MagneticButton = ({
   buttonPadding = 50,
   cursorPadding = 50,
   sensitivity = 150,
-  movement = 50
+  movement = 50,
+  typography
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const {
@@ -46,7 +51,8 @@ export const MagneticButton = ({
           "--border-width": borderWidth + "px",
           "--border-color": borderColor,
           "--bg-color": bgColor,
-          "--text-color": textColor
+          "--text-color": textColor,
+          ...getTypeographyStyles(typography)
         } as any
       }
       className={styles.wrapper}
@@ -81,5 +87,6 @@ export const propsControls = {
       'The "invisible" padding around the button for the cursor to interact with'
   },
   sensitivity: getNumProps(150, false, 10, { min: 50, max: 1000 }),
-  movement: { ...getNumProps(50, false, 10, { min: 10, max: 1000 }) }
+  movement: { ...getNumProps(50, false, 10, { min: 10, max: 1000 }) },
+  typography
 }
