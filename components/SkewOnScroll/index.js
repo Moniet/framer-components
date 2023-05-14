@@ -1,4 +1,4 @@
-import{getMultipleChildren as h,getNumProps as e}from"../../utils/framerControlProps.js";import{useScroll as y,useTransform as o,useVelocity as v,motion as k}from"framer-motion";import{ControlType as s}from"framer";var i="c96598c848e2430b30c6ed566da98ef816060fd8a30a7301d48422d364930a36",g=`._container_1mwzs_1 {
+import{getMultipleChildren as h,getNumProps as e}from"../../utils/framerControlProps.js";import{useScroll as y,useTransform as o,useVelocity as v,motion as k}from"framer-motion";import{ControlType as s}from"framer";var i="1525592f9569fe2e3e7681276b8e12f8dc8340dc6648281406c6c50049d738d8",g=`._container_1mwzs_1 {
   display: flex;
   flex-direction: var(--direction, column);
   gap: var(--gap, 100px);
