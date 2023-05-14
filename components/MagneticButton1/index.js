@@ -1,9 +1,13 @@
-import{useRef as P}from"react";import{useFollowCursor as T}from"../../hooks/useFollowCursor.js";import{motion as l,useTransform as c}from"framer-motion";var p="5b2a977d93aaaf163d629d139a9d6cb1e290161dcc949428ba5171e9b0561059",B=`._btn_fn73v_1 {
+import{useRef as P}from"react";import{useFollowCursor as L}from"../../hooks/useFollowCursor.js";import{motion as f,useTransform as l}from"framer-motion";var p="871ee3668c889e2585efc2fc0b3d1e5e7e61defa91e1a3baf918bdb4c0c91df3",B=`._btn_1iyf3_1 {
   border-radius: var(--border-radius, 5px);
   padding: var(--btn-padding, 30px);
   border: solid var(--border-width, 2px) var(--border-color, #000);
   background-color: var(--bg-color, #fff);
-  color: var(--text-color, #000);
+  color: var(--color, #000);
+  letter-spacing: var(--letter-spacing, 1px);
+  font-family: var(--font-family, sans-serif);
+  font-size: var(--font-size, 40px);
+  font-weight: var(--font-weight, bold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,14 +16,14 @@ import{useRef as P}from"react";import{useFollowCursor as T}from"../../hooks/useF
   position: relative;
 }
 
-._wrapper_fn73v_15 {
+._wrapper_1iyf3_19 {
   padding: var(--cursor-padding);
   width: fit-content;
   height: fit-content;
   position: relative;
 }
 
-._btn_fn73v_1 [data-fc="text-wrap"] {
+._btn_1iyf3_1 [data-fc="text-wrap"] {
   pointer-events: none;
   user-select: none;
   position: absolute;
@@ -28,10 +32,10 @@ import{useRef as P}from"react";import{useFollowCursor as T}from"../../hooks/useF
   transform: translate(-50%, -50%);
 }
 
-._btn_fn73v_1 span {
+._btn_1iyf3_1 span {
   opacity: 0;
   height: 0;
   transform: translate(0, -100%);
   user-select: none;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(p)){var e=document.createElement("style");e.id=p,e.textContent=B,document.head.appendChild(e)}})();var n={btn:"_btn_fn73v_1",wrapper:"_wrapper_fn73v_15"};import{getColorProps as a,getNumProps as o,getStrProps as L}from"../../utils/framerControlProps.js";import{jsx as t,jsxs as N}from"react/jsx-runtime";var S=({text:e="Magnetic Button",textColor:u="#000",bgColor:f="#fff",borderColor:m="#000",borderWidth:v=2,borderRadius:b=5,buttonPadding:g=50,cursorPadding:x=50,sensitivity:h=150,movement:_=50})=>{let i=P(null),{mouseX:s,mouseY:d,handleMouseMove:w,handleMouseLeave:y,handleMouseEnter:M}=T(i,{movement:_,range:h}),C=c(s,r=>r*-.5),E=c(d,r=>r*-.5);return t("div",{style:{"--cursor-padding":x+"px","--btn-padding":g+"px","--border-radius":b+"px","--border-width":v+"px","--border-color":m,"--bg-color":f,"--text-color":u},className:n.wrapper,ref:i,onMouseEnter:M,onMouseMove:w,onMouseLeave:y,children:t(l.div,{style:{x:s,y:d},children:N("div",{className:n.btn,children:[t("div",{"data-fc":"text-wrap",children:t(l.div,{style:{x:C,y:E},children:e})}),t("span",{children:e})]})})})},W={text:L("Magnetic Button"),textColor:a(),bgColor:{...a("#fff"),title:"Background Color"},borderColor:a("#000"),borderWidth:o(2,!0,1,{min:0}),borderRadius:o(5,!0,1,{min:0}),buttonPadding:o(50,!0,5,{min:0}),cursorPadding:{...o(50,!0,5,{min:0}),description:'The "invisible" padding around the button for the cursor to interact with'},sensitivity:o(150,!1,10,{min:50,max:1e3}),movement:{...o(50,!1,10,{min:10,max:1e3})}};export{S as MagneticButton,W as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(p)){var e=document.createElement("style");e.id=p,e.textContent=B,document.head.appendChild(e)}})();var n={btn:"_btn_1iyf3_1",wrapper:"_wrapper_1iyf3_19"};import{getTypeographyStyles as N,typography as R}from"../../utils/framerControlProps.js";import{getColorProps as i,getNumProps as t,getStrProps as k}from"../../utils/framerControlProps.js";import{jsx as o,jsxs as z}from"react/jsx-runtime";var q=({text:e="Magnetic Button",textColor:c="#000",bgColor:u="#fff",borderColor:m="#000",borderWidth:g=2,borderRadius:b=5,buttonPadding:v=50,cursorPadding:y=50,sensitivity:h=150,movement:x=50,typography:w})=>{let a=P(null),{mouseX:s,mouseY:d,handleMouseMove:_,handleMouseLeave:M,handleMouseEnter:C}=L(a,{movement:x,range:h}),E=l(s,r=>r*-.5),T=l(d,r=>r*-.5);return o("div",{style:{"--cursor-padding":y+"px","--btn-padding":v+"px","--border-radius":b+"px","--border-width":g+"px","--border-color":m,"--bg-color":u,"--text-color":c,...N(w)},className:n.wrapper,ref:a,onMouseEnter:C,onMouseMove:_,onMouseLeave:M,children:o(f.div,{style:{x:s,y:d},children:z("div",{className:n.btn,children:[o("div",{"data-fc":"text-wrap",children:o(f.div,{style:{x:E,y:T},children:e})}),o("span",{children:e})]})})})},A={text:k("Magnetic Button"),textColor:i(),bgColor:{...i("#fff"),title:"Background Color"},borderColor:i("#000"),borderWidth:t(2,!0,1,{min:0}),borderRadius:t(5,!0,1,{min:0}),buttonPadding:t(50,!0,5,{min:0}),cursorPadding:{...t(50,!0,5,{min:0}),description:'The "invisible" padding around the button for the cursor to interact with'},sensitivity:t(150,!1,10,{min:50,max:1e3}),movement:{...t(50,!1,10,{min:10,max:1e3})},typography:R};export{q as MagneticButton,A as propsControls};

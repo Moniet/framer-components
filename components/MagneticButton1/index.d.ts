@@ -1,5 +1,5 @@
 import { ControlType } from "framer";
-export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, borderWidth, borderRadius, buttonPadding, cursorPadding, sensitivity, movement }: {
+export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, borderWidth, borderRadius, buttonPadding, cursorPadding, sensitivity, movement, typography }: {
     text?: string | undefined;
     textColor?: string | undefined;
     bgColor?: string | undefined;
@@ -10,6 +10,7 @@ export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, b
     cursorPadding?: number | undefined;
     sensitivity?: number | undefined;
     movement?: number | undefined;
+    typography: any;
 }) => JSX.Element;
 export declare const propsControls: {
     text: {
@@ -77,5 +78,39 @@ export declare const propsControls: {
         type: ControlType;
         defaultValue: number;
         displayStepper: boolean;
+    };
+    typography: {
+        type: ControlType;
+        controls: {
+            letterSpacing: {
+                step?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                type: ControlType;
+                defaultValue: number;
+                displayStepper: boolean;
+            };
+            fontSize: {
+                type: ControlType;
+                defaultValue: number;
+                min: number;
+                max: number;
+            };
+            fontWeight: {
+                type: ControlType;
+                defaultValue: number;
+                step: number;
+                min: number;
+                max: number;
+            };
+            font: {
+                type: ControlType;
+                default: string;
+            };
+            color: {
+                type: ControlType;
+                default: string;
+            };
+        };
     };
 };
