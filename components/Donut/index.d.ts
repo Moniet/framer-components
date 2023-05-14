@@ -1,8 +1,9 @@
-export declare const Donut: ({ strokeWidth, strokeColor, progress, duration }: {
+export declare const Donut: ({ strokeWidth, strokeColor, progress, duration, bgColor }: {
     strokeWidth?: number | undefined;
     strokeColor?: string | undefined;
     progress?: number | undefined;
     duration?: number | undefined;
+    bgColor?: string | undefined;
 }) => JSX.Element;
 export declare const propsControls: {
     strokeWidth: {
@@ -32,5 +33,10 @@ export declare const propsControls: {
         type: import("framer").ControlType;
         defaultValue: number;
         displayStepper: boolean;
+    };
+    bgColor: {
+        title: string;
+        type: import("framer").ControlType;
+        defaultValue: string;
     };
 };

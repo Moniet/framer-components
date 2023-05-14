@@ -1,4 +1,4 @@
-import{useRef as N}from"react";import{ControlType as o}from"framer";import{useFollowCursor as P}from"../../hooks/useFollowCursor.js";import{motion as f,useTransform as l}from"framer-motion";var p="51c4c1c071585f046e68dd5352681b2549b487b27ff298ccdad21864df113981",B=`._btn_1iyf3_1 {
+import{useRef as N}from"react";import{ControlType as o}from"framer";import{useFollowCursor as P}from"../../hooks/useFollowCursor.js";import{motion as f,useTransform as l}from"framer-motion";var p="16b83ebff6248cfbf5291ff860f57164ad84dd70d551187d2bcb44519f6108e6",B=`._btn_1iyf3_1 {
   border-radius: var(--border-radius, 5px);
   padding: var(--btn-padding, 30px);
   border: solid var(--border-width, 2px) var(--border-color, #000);
