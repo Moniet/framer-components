@@ -55,7 +55,7 @@ export const propsControls = {
   progress: getNumProps(75, false, 5, { min: 0, max: 100 }),
   duration: getNumProps(2, false, 0.1, { min: 0.1, max: 5 }),
   bgColor: {
-    ...getColorProps(),
+    ...getColorProps("#e8e8e"),
     title: "Background Stroke Color"
   }
 }
