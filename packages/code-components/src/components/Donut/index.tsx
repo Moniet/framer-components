@@ -7,7 +7,8 @@ export const Donut = ({
   strokeWidth = 5,
   strokeColor = "#000",
   progress = 75,
-  duration = 2
+  duration = 2,
+  bgColor = "#e8e8e8"
 }) => {
   const prog = progress / 100
   const ref = useRef(null)
@@ -16,6 +17,15 @@ export const Donut = ({
 
   return (
     <svg width="100%" height="100%" viewBox={`0 0 100 100`} ref={ref}>
+      <circle
+        cx={size * 0.5}
+        cy={size * 0.5}
+        r={size * 0.5 - strokeWidth}
+        fill="transparent"
+        stroke={bgColor}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+      />
       <motion.circle
         className={styles.circ}
         cx={size * 0.5}
@@ -43,5 +53,9 @@ export const propsControls = {
   strokeWidth: getNumProps(5, true, 1),
   strokeColor: getColorProps("#000"),
   progress: getNumProps(75, false, 5, { min: 0, max: 100 }),
-  duration: getNumProps(2, false, 0.1, { min: 0.1, max: 5 })
+  duration: getNumProps(2, false, 0.1, { min: 0.1, max: 5 }),
+  bgColor: {
+    ...getColorProps(),
+    title: "Background Stroke Color"
+  }
 }
