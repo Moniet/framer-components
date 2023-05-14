@@ -100,7 +100,7 @@ export declare const typography: {
         };
     };
 };
-export declare const getTypeographyStyles: (typography: any) => any;
+export declare const getTypeographyStyles: (typography: any, dfontSize?: number, dfontWeight?: number) => any;
 export declare const getBoolProps: (defaultValue: any) => {
     type: ControlType;
     defaultValue: any;
