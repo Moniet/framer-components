@@ -107,11 +107,15 @@ export const typography = {
   }
 }
 
-export const getTypeographyStyles = (typography) =>
+export const getTypeographyStyles = (
+  typography,
+  dfontSize = 50,
+  dfontWeight = 600
+) =>
   ({
     "--font-family": typography?.font || "inherit",
-    "--font-size": (typography?.fontSize || 50) + "px",
-    "--font-weight": typography?.fontWeight || 600,
+    "--font-size": (typography?.fontSize || dfontSize) + "px",
+    "--font-weight": typography?.fontWeight || dfontWeight || 600,
     "--color": typography?.color || "#222"
   } as any)
 
