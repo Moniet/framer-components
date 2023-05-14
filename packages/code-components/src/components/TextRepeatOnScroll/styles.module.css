@@ -6,7 +6,7 @@
   letter-spacing: var(--letter-spacing);
   position: relative;
   grid-auto-rows: 15px;
-  height: fit-content;
+  height: 100%;
   width: fit-content;
 }
 
