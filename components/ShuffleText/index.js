@@ -1,4 +1,4 @@
-import{useRef as f,useState as h}from"react";import{getNumProps as g,getTypeographyStyles as x,typography as y}from"../../utils/framerControlProps.js";import{useEffect as v}from"react";import{useSplitText as M}from"../../hooks/useSplitText.js";var l="762a36bcd13e3fd9a4bbab6c366254657785d285fc8bf948edf8777541bda6e9",d=`._container_8s2l8_1 {
+import{useRef as f,useState as h}from"react";import{getNumProps as g,getTypeographyStyles as x,typography as y}from"../../utils/framerControlProps.js";import{useEffect as v}from"react";import{useSplitText as M}from"../../hooks/useSplitText.js";var l="7fc80b517d0be9f9c12d781d8d8a2906a1488a04e634b6b11990d118166878b1",d=`._container_8s2l8_1 {
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
