@@ -15,7 +15,6 @@ import {
 
 export const MagneticButton = ({
   text = "Magnetic Button",
-  textColor = "#000",
   bgColor = "#fff",
   borderColor = "#000",
   borderWidth = 2,
@@ -51,7 +50,6 @@ export const MagneticButton = ({
           "--border-width": borderWidth + "px",
           "--border-color": borderColor,
           "--bg-color": bgColor,
-          "--text-color": textColor,
           ...getTypeographyStyles(typography, 20, 400)
         } as any
       }
@@ -75,7 +73,6 @@ export const MagneticButton = ({
 
 export const propsControls = {
   text: getStrProps("Magnetic Button"),
-  textColor: getColorProps(),
   bgColor: { ...getColorProps("#fff"), title: "Background Color" },
   borderColor: getColorProps("#000"),
   borderWidth: getNumProps(2, true, 1, { min: 0 }),
