@@ -1,4 +1,4 @@
-import*as i from"react";var o="730b14fc0e4944398ee28b414437998856991028e401996ed8765a7c1eb99b68",c=`._container_wvwov_1 {
+import*as a from"react";var o="460920dbf95a75b566862b633b4108db5df38faed10a956c353a0e8874812562",c=`._container_wvwov_1 {
   display: flex !important;
   flex-wrap: nowrap !important;
   flex-direction: row !important;
@@ -31,4 +31,4 @@ import*as i from"react";var o="730b14fc0e4944398ee28b414437998856991028e401996ed
   min-width: 100%;
   overflow: hidden;
 }
-`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=c,document.head.appendChild(t)}})();var e={container:"_container_wvwov_1",wrapper:"_wrapper_wvwov_12",xScroll:"_xScroll_wvwov_22"};import{ControlType as r}from"framer";import{getSingleChild as s,getNumProps as m}from"../../utils/framerControlProps.js";import{Example as w}from"./Example.js";import{jsx as n}from"react/jsx-runtime";var f=({children:t,align:a="center",gap:p=0})=>{let l=`${(t?i.Children.count(t):2)===1?e.wrapper:e.container} ${e.xScroll}`;return n("div",{className:l,style:{"--align":a,"--gap":p+"px"},children:t||n(w,{})})},u={children:{type:r.Array,control:s()},gap:m(0,!0,10),align:{type:r.Enum,options:["start","center","end"]}};export{f as HorizontalScroll,u as propsControls};
+`;(function(){if(globalThis.window&&!document.getElementById(o)){var t=document.createElement("style");t.id=o,t.textContent=c,document.head.appendChild(t)}})();var e={container:"_container_wvwov_1",wrapper:"_wrapper_wvwov_12",xScroll:"_xScroll_wvwov_22"};import{ControlType as r}from"framer";import{getSingleChild as d,getNumProps as s}from"../../utils/framerControlProps.js";import{Example as m}from"./Example.js";import{jsx as n}from"react/jsx-runtime";var f=({children:t,align:i="center",gap:p=0})=>{let l=`${(t?a.Children.count(t):2)===1?e.wrapper:e.container} ${e.xScroll}`;return n("div",{className:l,style:{"--align":i,"--gap":p+"px"},children:t||n(m,{})})},u={children:{type:r.Array,control:d()},gap:s(0,!0,10),align:{type:r.Enum,options:["start","center","end"]}};export{f as HorizontalScroll,u as propsControls};

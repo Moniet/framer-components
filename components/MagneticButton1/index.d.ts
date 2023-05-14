@@ -1,7 +1,6 @@
 import { ControlType } from "framer";
-export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, borderWidth, borderRadius, buttonPadding, cursorPadding, sensitivity, movement, typography }: {
+export declare const MagneticButton: ({ text, bgColor, borderColor, borderWidth, borderRadius, buttonPadding, cursorPadding, sensitivity, movement, typography }: {
     text?: string | undefined;
-    textColor?: string | undefined;
     bgColor?: string | undefined;
     borderColor?: string | undefined;
     borderWidth?: number | undefined;
@@ -14,10 +13,6 @@ export declare const MagneticButton: ({ text, textColor, bgColor, borderColor, b
 }) => JSX.Element;
 export declare const propsControls: {
     text: {
-        type: ControlType;
-        defaultValue: string;
-    };
-    textColor: {
         type: ControlType;
         defaultValue: string;
     };
