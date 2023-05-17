@@ -24,7 +24,7 @@ type Props = {
   margin?: number
   align: "top" | "bottom" | "left" | "right"
   id?: string
-  boxShadow: BoxShadowProps[]
+  boxShadow?: BoxShadowProps[]
 }
 
 export const VideoPeek = ({

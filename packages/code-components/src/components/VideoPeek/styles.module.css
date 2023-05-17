@@ -26,6 +26,7 @@
   height: var(--height);
   border-radius: var(--border-radius);
   overflow: hidden;
+  pointer-events: none;
 }
 
 .video {

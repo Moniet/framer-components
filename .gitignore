@@ -8,6 +8,8 @@ node_modules
 #FRONEND
 /frontend/.next
 /frontend/build
+/frontend/.env.local
+/frontend/.env
 
 #PACKAGES
 /packages/*/**/dist

@@ -1,0 +1,1 @@
+cd packages/code-components && pnpm build-fe 

@@ -9,6 +9,13 @@
   height: fit-content;
   min-width: 10px;
   min-height: 10px;
+  transform-origin: center;
+}
+
+@media (max-width: 991px) {
+  .cursorWrapper {
+    display: none;
+  }
 }
 
 .cursorPosition {

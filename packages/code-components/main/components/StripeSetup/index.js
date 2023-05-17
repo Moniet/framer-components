@@ -1,0 +1,1 @@
+import{ControlType as r,addPropertyControls as o}from"framer";import e from"../../hooks/getStripe.js";import{useEffect as p}from"react";var i=({stripeKey:t})=>(p(()=>{t&&e(t)},[]),null),n={stripeKey:{title:"Stripe Key",type:r.String}};o(i,n);export{i as StripeSetup,n as propControls};
