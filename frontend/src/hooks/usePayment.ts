@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 export const usePayment = () => {
   const { data, isLoading } = useComponents()
-  const hasPaid = !!data
+  const hasPaid = !!data?.data
   const router = useRouter()
   const user = useUser()
 
