@@ -18,14 +18,12 @@ import GooDemo from './GooDemo'
 import GradientBgDemo from './GradientBgDemo'
 import HorizontalScrollDemo from './HorizontalScrollDemo'
 import ImageParallaxOnScrollDemo from './ImageParallaxOnScrollDemo'
-import { ImageRepeatOnHover } from 'code-components/dist/components/ImageRepeatOnHover'
 import ImageRepeatOnHoverDemo from './ImageRepeatOnHoverDemo'
 import ImageScaleOnHoverDemo from './ImageScaleOnHoverDemo'
 import ImageScaleOnScrollDemo from './ImageScaleOnScroll'
 import LiquidRevealDemo from './LiquidRevealDemo'
 import MagneticButtonDemo from './MagneticButtonDemo'
 import ScrollSnapDemo from './ScrollSnaplDemo'
-import { ShuffleText } from 'code-components/dist/components/ShuffleText'
 import ShuffleTextDemo from './ShuffleTextDemo'
 import SkewOnScrollDemo from './SkewOnScrollDemo'
 import SparklesDemo from './SparklesDemo'
@@ -38,12 +36,8 @@ import TypewriterDemo from './TypewriterDemo'
 import VideoPeekDemo from './VideoPeekDemo'
 import { NextSeo } from 'next-seo'
 import FlipOnScrollDemo3 from './FlipOnScrollDemo3'
-import CustomGlobalCursorDemo from './CustomGlobalCursorDemo'
 
 const DemoPage = () => {
-  const [page, setPage] = useState()
-  const totalPages = 10 // totalCount / page limit
-  const { data } = useSWR('/api/components', (url) => fetch(url).then((res) => res.json()))
   const [hideCursor, setHideCursor] = useState(false)
 
   return (
