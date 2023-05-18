@@ -1,6 +1,6 @@
 import { NextApiHandler } from 'next'
 import Stripe from 'stripe'
-import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { priceIds } from '@/utils/stripePrices'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as any, {
   apiVersion: '2022-11-15',
@@ -20,7 +20,7 @@ const payment: NextApiHandler = async (req, res) => {
       line_items: [
         {
           quantity: 1,
-          price: 'price_1N8isQCMVxcjybDEegEf3LMk',
+          price: priceIds.lifetime,
         },
       ],
       customer_email: req.body.email,
@@ -29,7 +29,7 @@ const payment: NextApiHandler = async (req, res) => {
       customer_creation: 'if_required',
       metadata: {
         userEmail: email,
-        purchaseId: 'price_1N8isQCMVxcjybDEegEf3LMk',
+        purchaseId: priceIds.lifetime,
       },
     })
 
