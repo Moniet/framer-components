@@ -13,7 +13,7 @@ const SquircleDemo = () => {
       <Center>
         <Flex sx={{ flexDirection: 'column', gap: '2rem' }}>
           <div sx={{ size: '250px' }}>
-            <Squircle curvature={progress / 100} />
+            <Squircle curvature={progress / 100} color="#2061fc" />
           </div>
           <Flex sx={{ gap: '0.5rem', flexDirection: 'column', alignItems: 'center' }}>
             <Slider

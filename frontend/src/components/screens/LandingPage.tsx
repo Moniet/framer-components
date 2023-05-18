@@ -9,6 +9,7 @@ import { VideoPeek } from 'code-components/dist/components/VideoPeek'
 import { HiCheckCircle } from 'react-icons/hi'
 import { Sparkles } from 'code-components/dist/components/Sparkles'
 import { usePayment } from '@/hooks/usePayment'
+import { NextSeo } from 'next-seo'
 
 const SlideIn = ({ children }: any) => {
   const ref = useRef() as any
@@ -386,6 +387,10 @@ const LandingPage = () => {
         mx: 'auto',
       }}
     >
+      <NextSeo
+        title="FramerLib"
+        description="We create highly customizable and easy to work with code-components and code-overrides for Framer"
+      />
       <section>
         <FirstSection />
       </section>

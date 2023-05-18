@@ -38,6 +38,7 @@ import TextRollDemo from './TextRollDemo'
 import TextSlideInOnViewDemo from './TextSlideInOnViewDemo'
 import TypewriterDemo from './TypewriterDemo'
 import VideoPeekDemo from './VideoPeekDemo'
+import { NextSeo } from 'next-seo'
 
 const DemoPage = () => {
   const [page, setPage] = useState()
@@ -119,6 +120,11 @@ const DemoPage = () => {
       </Grid>
 
       {!hideCursor && <CircleCursor bgColor="#fff" opacityOnHover={0.5} />}
+
+      <NextSeo
+        title="FramerLib  | Demo"
+        description="We create highly customizable and easy to work with code-components and code-overrides for Framer"
+      />
     </Flex>
   )
 }

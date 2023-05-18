@@ -19,6 +19,7 @@ export const components = {
     url: 'https://framer.com/m/CircleCursor-TZIC.js@rXOZxpqFc89DgoF3W3zJ',
     createdAt: '2023-05-17',
     id: 3,
+    guideLink: '/guide/circle-cursor',
   },
   CopyText: {
     title: 'Copy Text',
@@ -96,6 +97,7 @@ export const components = {
     id: 14,
     tags: ['Easy To Create Scroll'],
     url: 'https://framer.com/m/HorizontalScroll-3kAY.js@1WzqWLcy7itUAOUDwjMY',
+    guideLink: '/guide/horizontal-scroll',
   },
   ImageParallaxOnScroll: {
     title: 'Image Parallax On Scroll',
@@ -145,6 +147,7 @@ export const components = {
     id: 21,
     tags: ['Utility'],
     url: 'https://framer.com/m/ScrollSnap-Iem8.js@HxexDtkkKnBFbVWW92W9',
+    guideLink: '/guide/snap-scroll',
   },
   ShuffleText: {
     title: 'Shuffle Text',

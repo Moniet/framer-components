@@ -1,4 +1,5 @@
 import { useComponents } from '@/hooks/useComponents'
+import Link from 'next/link'
 import { ReactNode, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { Button, Flex } from 'theme-ui'
@@ -58,7 +59,12 @@ const DemoCard = ({ children = '', title = '', tags, id, guideLink }: CardProps)
           <p>
             <b sx={{ fontWeight: 600, fontSize: '1rem' }}>{title}</b>
           </p>
-          <p sx={{ fontSize: '1rem', color: '#999' }}>{tags?.['0']}</p>
+          {tags && !guideLink && <p sx={{ fontSize: '1rem', color: '#999' }}>{tags?.['0']}</p>}
+          {guideLink && (
+            <Link sx={{ color: '#999' }} href={guideLink}>
+              View Guide
+            </Link>
+          )}
         </div>
         {data?.data && (
           <Button

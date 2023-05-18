@@ -12,7 +12,7 @@ const TextRollDemo = () => {
         <div sx={{ height: '50px', width: '200px' }}>
           <Center>
             <TextRoll
-              text="Enter Any Text, Any It Will Roll, Like This"
+              text="Enter Any Text, And It Will Roll, Like This"
               typography={{
                 color: 'white',
                 fontSize: 40,
