@@ -3,7 +3,7 @@ import { components } from '@/db/components'
 import Center from './Center'
 import { FlipOnScroll } from 'code-components/dist/components/FlipOnScroll3'
 
-const FlipOnScrollDemo = () => {
+const FlipOnScrollDemo3 = () => {
   return (
     <DemoCard {...components.FilpOnScroll2}>
       <Center>
@@ -17,4 +17,4 @@ const FlipOnScrollDemo = () => {
   )
 }
 
-export default FlipOnScrollDemo
+export default FlipOnScrollDemo3

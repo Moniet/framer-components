@@ -8,7 +8,7 @@ const CustomCursorOnHoverDemo = ({ setHideCursor }: { setHideCursor: (a: boolean
   return (
     <DemoCard {...CC}>
       <Center>
-        <CustomCursorOnHover cursor={{ src: '/default-cursor.png' }}>
+        <CustomCursorOnHover cursor={{ src: '/galaxy-cursor.png' }}>
           <div
             sx={{ size: '250px', bg: 'accent.2' }}
             onMouseOver={() => setHideCursor(true)}

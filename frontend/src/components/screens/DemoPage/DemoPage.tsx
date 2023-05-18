@@ -1,11 +1,9 @@
 import { Sparkles } from 'code-components/dist/components/Sparkles'
-import { ReactNode, lazy, useState } from 'react'
-import { Button, Flex, Grid } from 'theme-ui'
+import { useState } from 'react'
+import { Flex, Grid } from 'theme-ui'
 import { motion } from 'framer-motion'
 import useSWR from 'swr'
 
-import { FiCopy } from 'react-icons/fi'
-import Skeleton from './Skeleton'
 import AutoGridDemo from './AutoGridDemo'
 import BlinkRevealDemo from './BlinkRevealDemo'
 import CopyTextDemo from './CopyTextDemo'
@@ -15,7 +13,7 @@ import DonutDemo from './DonutDemo'
 import FiltersDemo from './FiltersDemo'
 import FlipOnScrollDemo from './FlipOnScrollDemo'
 import FlipOnScrollDemo2 from './FlipOnScrollDemo2'
-import FlipOnScrollDemo3 from './FollowCursorDemo'
+import FollowCursor from './FollowCursorDemo'
 import GooDemo from './GooDemo'
 import GradientBgDemo from './GradientBgDemo'
 import HorizontalScrollDemo from './HorizontalScrollDemo'
@@ -39,6 +37,8 @@ import TextSlideInOnViewDemo from './TextSlideInOnViewDemo'
 import TypewriterDemo from './TypewriterDemo'
 import VideoPeekDemo from './VideoPeekDemo'
 import { NextSeo } from 'next-seo'
+import FlipOnScrollDemo3 from './FlipOnScrollDemo3'
+import CustomGlobalCursorDemo from './CustomGlobalCursorDemo'
 
 const DemoPage = () => {
   const [page, setPage] = useState()
@@ -96,7 +96,8 @@ const DemoPage = () => {
         <FiltersDemo />
         <FlipOnScrollDemo />
         <FlipOnScrollDemo2 />
-        <FlipOnScrollDemo3 setHideCursor={setHideCursor} />
+        <FlipOnScrollDemo3 />
+        <FollowCursor setHideCursor={setHideCursor} />
         <GooDemo />
         <GradientBgDemo />
         <HorizontalScrollDemo />

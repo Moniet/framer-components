@@ -35,6 +35,13 @@ export const components = {
     tags: ['Custom Cursor'],
     url: 'https://framer.com/m/CustomCursor-pqPs.js@ZBEe9yXyAPqqASoc9OQ2',
   },
+  GlobalCustomCursor: {
+    title: 'Custom Global Cursor',
+    createdAt: '2023-05-17',
+    id: 5,
+    tags: ['Replace the cursor with any image'],
+    url: 'https://framer.com/m/CustomCursor-pqPs.js@ZBEe9yXyAPqqASoc9OQ2',
+  },
   Donut: {
     title: 'Donut',
     createdAt: '2023-05-17',
