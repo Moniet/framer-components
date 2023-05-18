@@ -105,7 +105,8 @@ const FirstSection = () => {
             type: 'spring',
             bounce: 0.1,
           }}
-          src="/framerlib_promo.mp4"
+          preload="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/framerlib_promo.mp4"
+          src="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/framerlib_promo.mp4"
           sx={{ width: 'min(100%, 900px)', borderRadius: '10px' }}
           muted
           controls
