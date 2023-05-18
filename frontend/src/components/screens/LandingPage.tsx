@@ -362,8 +362,8 @@ const PricingSection = () => {
 const Details = ({ header, para }: any) => {
   return (
     <details sx={{ color: 'text' }}>
-      <summary sx={{ fontSize: '1.25rem', display: 'flex', fontWeight: 'bold', mb: '1rem' }}>
-        <strong>{header}</strong>
+      <summary sx={{ fontSize: '1.25rem', display: 'flex', fontWeight: 500, mb: '1rem' }}>
+        {header}
       </summary>
       <p sx={{ pb: '1rem' }}>{para}</p>
     </details>

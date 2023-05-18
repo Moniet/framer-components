@@ -62,7 +62,15 @@ const DemoPage = () => {
         }}
       >
         <Sparkles>
-          <h1 sx={{ fontSize: '2.5rem', color: 'text', lineHeight: 1.5, textAlign: 'center' }}>
+          <h1
+            sx={{
+              fontSize: '2.5rem',
+              color: 'text',
+              lineHeight: 1.5,
+              textAlign: 'center',
+              fontWeight: 600,
+            }}
+          >
             Copy and Paste in Framer
             <br />
             It&#39;s easy as pie{' '}
