@@ -16,9 +16,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "noImplicitAny": false,
-    "outDir": "./v1"
+    "noImplicitAny": false
   },
-  "include": ["src/**/*", "css.d.ts", "scripts", "api"],
+  "include": ["src/**/*", "css.d.ts"],
   "exclude": ["node_modules", "src/**/*.modules.css", "dist"]
 }

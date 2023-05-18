@@ -1,1 +1,0 @@
-import{Fragment as t,jsx as e,jsxs as p}from"react/jsx-runtime";var o=()=>e("div",{style:{width:"100px",height:"100px",backgroundColor:"deepskyblue"}}),r=()=>p(t,{children:[e(o,{}),e(o,{}),e(o,{}),e(o,{})]});export{r as Example};

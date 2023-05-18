@@ -19,6 +19,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "api"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "api",
+    "src/components/screens/DemoPage/SkewOnScrollDemo.tsx"
+  ],
   "exclude": ["node_modules"]
 }

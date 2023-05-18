@@ -8,6 +8,7 @@ import { CircleCursor } from 'code-components/dist/components/CircleCursor'
 import { VideoPeek } from 'code-components/dist/components/VideoPeek'
 import { HiCheckCircle } from 'react-icons/hi'
 import { Sparkles } from 'code-components/dist/components/Sparkles'
+import { usePayment } from '@/hooks/usePayment'
 
 const SlideIn = ({ children }: any) => {
   const ref = useRef() as any
@@ -62,6 +63,8 @@ const Header = ({ children }: { children?: ReactNode }) => {
 }
 
 const FirstSection = () => {
+  const [hasPaid, isLoading, redirect] = usePayment()
+
   return (
     <Flex
       sx={{
@@ -128,7 +131,7 @@ const FirstSection = () => {
       </p>
       <div sx={{ pt: '3rem' }} />
 
-      <Link href="/buy">
+      <button onClick={() => redirect()}>
         {/* TODO: add stripe */}
         <MagneticButton
           bgColor="#fff"
@@ -142,8 +145,7 @@ const FirstSection = () => {
           }}
           text="Buy now $29.99"
         />
-      </Link>
-      <CircleCursor bgColor="#fff" opacityOnHover={0.5} />
+      </button>
     </Flex>
   )
 }
@@ -305,13 +307,13 @@ const PricingCard = () => {
           $29.99 <small>/device</small>
         </h2>
 
-        <Flex sx={{ alignItems: 'center' }}>
+        {/* <Flex sx={{ alignItems: 'center' }}>
           <Checkbox />
           <Flex as="p" sx={{ fontSize: '1rem', alignItems: 'center' }}>
             Add one year of updates&nbsp;
             <b sx={{ fontSize: '1.5rem' }}> +$4.99</b>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Flex>
       <Flex sx={{ flexDirection: 'column', gap: '1rem' }}>
         <CheckItem text="Lifetime access" />
@@ -323,6 +325,7 @@ const PricingCard = () => {
   )
 }
 const PricingSection = () => {
+  const [__, isLoading, redirect] = usePayment()
   return (
     <Flex sx={{ flexDirection: 'column', gap: '2rem' }}>
       <SlideIn>
@@ -332,6 +335,8 @@ const PricingSection = () => {
       </SlideIn>
       <PricingCard />
       <Button
+        disabled={isLoading}
+        onClick={() => redirect()}
         bg="#383838"
         color="text"
         mt="2rem"
@@ -354,62 +359,65 @@ const Details = ({ header, para }: any) => {
   )
 }
 
-const LandingPage = () => (
-  <div
-    sx={{
-      display: 'flex',
-      background: 'background',
-      flexDirection: 'column',
-      width: '100vw',
-      minHeight: '100vh',
-      height: '100%',
-      px: '3rem',
-      maxWidth: '1200px',
-      mx: 'auto',
-    }}
-  >
-    <section>
-      <FirstSection />
-    </section>
-    <div sx={{ mt: '10rem' }} />
-    <section>
-      <SecondSection />
-      <Flex
-        sx={{
-          fontSize: '1rem',
-          color: 'text',
-          flexDirection: 'column',
-          alignSelf: ['center', , , , 'start'],
-          mt: ['2rem', , , , 0],
-        }}
-      >
-        <span sx={{ fontWeight: 600, fontSize: '1.5rem' }}>Built with ❤️</span>
-        <span>FRAMER.LIB TEAM</span>
-      </Flex>
-    </section>
+const LandingPage = () => {
+  const [__, isLoading, redirect] = usePayment()
 
-    <div sx={{ mt: '5rem' }} />
-    <section>
-      <ThirdSection />
-    </section>
-    <div sx={{ mt: '5rem' }} />
-    <section>
-      <PricingSection />
-    </section>
-    <div sx={{ mt: '10rem' }} />
-    <section>
-      <div sx={{ maxWidth: '800px', mx: 'auto' }}>
-        <h2 sx={{ fontWeight: 'bold', fontSize: '2rem', textAlign: 'center' }}>FAQs</h2>
-        <div sx={{ mt: '3rem' }} />
-        <Flex sx={{ flexDirection: 'column', gap: '1rem' }}>
-          <Details
-            header="What is FramerLib?"
-            para="FramerLib is a no-code component library for Framer. 
+  return (
+    <div
+      sx={{
+        display: 'flex',
+        background: 'background',
+        flexDirection: 'column',
+        width: '100vw',
+        minHeight: '100vh',
+        height: '100%',
+        px: '3rem',
+        maxWidth: '1200px',
+        mx: 'auto',
+      }}
+    >
+      <section>
+        <FirstSection />
+      </section>
+      <div sx={{ mt: '10rem' }} />
+      <section>
+        <SecondSection />
+        <Flex
+          sx={{
+            fontSize: '1rem',
+            color: 'text',
+            flexDirection: 'column',
+            alignSelf: ['center', , , , 'start'],
+            mt: ['2rem', , , , 0],
+          }}
+        >
+          <span sx={{ fontWeight: 600, fontSize: '1.5rem' }}>Built with ❤️</span>
+          <span>FRAMER.LIB TEAM</span>
+        </Flex>
+      </section>
+
+      <div sx={{ mt: '5rem' }} />
+      <section>
+        <ThirdSection />
+      </section>
+      <div sx={{ mt: '5rem' }} />
+      <section>
+        <PricingSection />
+      </section>
+      <div sx={{ mt: '10rem' }} />
+      <section>
+        <div sx={{ maxWidth: '800px', mx: 'auto' }}>
+          <h2 sx={{ fontWeight: 'bold', fontSize: '2rem', textAlign: 'center' }}>FAQs</h2>
+          <div sx={{ mt: '3rem' }} />
+          <Flex sx={{ flexDirection: 'column', gap: '1rem' }}>
+            <Details
+              header="What is FramerLib?"
+              para="FramerLib is a no-code component library for Framer. 
           Our component kit is a powerful tool that allows you to create stunning, high-quality animations for your Framer prototypes. With its intuitive interface and customizable options, you can easily add movement, transitions, and effects to images, creating a dynamic and engaging user experience."
-          />
-          <Details
-            header="How do I use FramerLib? Is it easy to use?"
-            para="The Framerlib component library is designed to make your prototyping process as smooth and efficient as possible. It offers a wide range of pre-built components that you can easily incorporate into your Framer projects.
+            />
+            <Details
+              header="How do I use FramerLib? Is it easy to use?"
+              para="The Framerlib component library is designed to make your prototyping process as smooth and efficient as possible. It offers a wide range of pre-built components that you can easily incorporate into your Framer projects.
             Here's why using Framerlib is incredibly user-friendly:
             
             1. Intuitive Integration: Framerlib seamlessly integrates with Framer, allowing you to quickly import and use components without any complex setup. Simply 'Copy' and 'Paste' the component in Framer and start using it right away.
@@ -417,43 +425,51 @@ const LandingPage = () => (
             2. Pre-built Components: Framerlib provides a collection of ready-to-use components, such as buttons, image and text animations, and so much more. These components are carefully crafted, well-documented, and follow best practices, making it easy to add interactive elements to your projects.
             
             3. Customization Options: Each component in Framerlib comes with customization options, allowing you to easily tailor them to your specific design needs. Whether it's adjusting colors, sizes, or animations, you have the flexibility to create a unique look and feel for your project."
-          />
-          <Details
-            header="Do I need to know how to code?"
-            para="No! you do not need to know how to code to use Framerlib. Framerlib is designed to simplify the prototyping process for those without any coding experience. Buy our kit and simply 'Copy' and 'Paste' the components.  Learn more about how to use the components in the 'Guide' page. "
-          />
-          <Details
-            header="Why should I use FramerLib?"
-            para="Framerlib offers an intuitive and accessible experience for users of all skill levels. Its pre-built components, customization options and component reusability make it easy to create interactive projects using Framer. Whether you're a beginner or an experienced designer, FramerLib empowers you to quickly bring your ideas to life without hassle."
-          />
-        </Flex>
-      </div>
-    </section>
-    <div sx={{ mt: '10rem' }} />
-    <Flex
-      sx={{
-        width: '80vw',
-        mx: 'auto',
-        flexDirection: 'column',
-        alignItems: 'center',
-        alignSelf: 'center',
-        '& > div': {
-          width: '100%',
-        },
-      }}
-    >
-      <Sparkles minSize={15} maxSize={25}>
-        <p sx={{ mb: '2rem', fontSize: '2rem', textAlign: 'center' }}>
-          <b>Get started!</b>
-        </p>
-        <Flex sx={{ gap: '1rem', width: '100%', justifyContent: 'center' }}>
-          <Button sx={{ bg: 'text', color: 'background' }}>Buy Now</Button>
-          <Button sx={{ bg: 'accent.1', text: 'text' }}>Request Component</Button>
-        </Flex>
-      </Sparkles>
-    </Flex>
-    <div sx={{ mt: '10rem' }} />
-  </div>
-)
+            />
+            <Details
+              header="Do I need to know how to code?"
+              para="No! you do not need to know how to code to use Framerlib. Framerlib is designed to simplify the prototyping process for those without any coding experience. Buy our kit and simply 'Copy' and 'Paste' the components.  Learn more about how to use the components in the 'Guide' page. "
+            />
+            <Details
+              header="Why should I use FramerLib?"
+              para="Framerlib offers an intuitive and accessible experience for users of all skill levels. Its pre-built components, customization options and component reusability make it easy to create interactive projects using Framer. Whether you're a beginner or an experienced designer, FramerLib empowers you to quickly bring your ideas to life without hassle."
+            />
+          </Flex>
+        </div>
+      </section>
+      <div sx={{ mt: '10rem' }} />
+      <Flex
+        sx={{
+          width: '80vw',
+          mx: 'auto',
+          flexDirection: 'column',
+          alignItems: 'center',
+          alignSelf: 'center',
+          '& > div': {
+            width: '100%',
+          },
+        }}
+      >
+        <Sparkles minSize={15} maxSize={25}>
+          <p sx={{ mb: '2rem', fontSize: '2rem', textAlign: 'center' }}>
+            <b>Get started!</b>
+          </p>
+          <Flex sx={{ gap: '1rem', width: '100%', justifyContent: 'center' }}>
+            <Button
+              sx={{ bg: 'text', color: 'background' }}
+              disabled={isLoading}
+              onClick={redirect}
+            >
+              Buy Now
+            </Button>
+            <Button sx={{ bg: 'accent.1', text: 'text' }}>Request Component</Button>
+          </Flex>
+        </Sparkles>
+      </Flex>
+      <div sx={{ mt: '10rem' }} />
+      <CircleCursor bgColor="#fff" opacityOnHover={0.5} opacity={0.9} />
+    </div>
+  )
+}
 
 export default LandingPage

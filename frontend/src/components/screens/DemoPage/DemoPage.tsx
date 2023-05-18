@@ -1,77 +1,49 @@
 import { Sparkles } from 'code-components/dist/components/Sparkles'
-import { ReactNode, useState } from 'react'
+import { ReactNode, lazy, useState } from 'react'
 import { Button, Flex, Grid } from 'theme-ui'
 import { motion } from 'framer-motion'
+import useSWR from 'swr'
 
 import { FiCopy } from 'react-icons/fi'
-
-type CardProps = {
-  children: ReactNode
-  title: string
-  tag: string
-}
-
-const Card = ({ children = '', title = '', tag = '' }: CardProps) => {
-  const copyLink = () => {}
-
-  return (
-    <Flex
-      sx={{
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-        aspectRatio: '1.35',
-        gap: '1rem',
-      }}
-    >
-      <Flex
-        sx={{
-          border: 'solid 1px',
-          borderColor: '#262627',
-          bg: '#0f0f0f',
-          borderRadius: '10px',
-          size: '100%',
-        }}
-      >
-        {children}
-      </Flex>
-      <Flex sx={{ justifyContent: 'space-between' }}>
-        <div>
-          <p>
-            <b sx={{ fontWeight: 600, fontSize: '1rem' }}>{title}</b>
-          </p>
-          <p sx={{ fontSize: '1rem', color: '#999' }}>{tag}</p>
-        </div>
-        <Button
-          onClick={() => copyLink()}
-          sx={{
-            display: 'flex',
-            color: 'text',
-            bg: '#262626',
-            borderRadius: '50px',
-            alignItems: 'center',
-            py: '0.5rem',
-            gap: '0.5rem',
-            height: 'fit-content',
-            cursor: 'pointer',
-            transition: 'transform 0.2s ease',
-            '&:active': {
-              transform: 'scale(0.9)',
-            },
-          }}
-        >
-          <FiCopy size={15} />
-          Copy
-        </Button>
-      </Flex>
-      <div sx={{ pt: '10rem' }} />
-    </Flex>
-  )
-}
+import Skeleton from './Skeleton'
+import AutoGridDemo from './AutoGridDemo'
+import BlinkRevealDemo from './BlinkRevealDemo'
+import CopyTextDemo from './CopyTextDemo'
+import CustomCursorOnHoverDemo from './CustomCursorOnHoverDemo'
+import { CircleCursor } from 'code-components/dist/components/CircleCursor'
+import DonutDemo from './DonutDemo'
+import FiltersDemo from './FiltersDemo'
+import FlipOnScrollDemo from './FlipOnScrollDemo'
+import FlipOnScrollDemo2 from './FlipOnScrollDemo2'
+import FlipOnScrollDemo3 from './FollowCursorDemo'
+import GooDemo from './GooDemo'
+import GradientBgDemo from './GradientBgDemo'
+import HorizontalScrollDemo from './HorizontalScrollDemo'
+import ImageParallaxOnScrollDemo from './ImageParallaxOnScrollDemo'
+import { ImageRepeatOnHover } from 'code-components/dist/components/ImageRepeatOnHover'
+import ImageRepeatOnHoverDemo from './ImageRepeatOnHoverDemo'
+import ImageScaleOnHoverDemo from './ImageScaleOnHoverDemo'
+import ImageScaleOnScrollDemo from './ImageScaleOnScroll'
+import LiquidRevealDemo from './LiquidRevealDemo'
+import MagneticButtonDemo from './MagneticButtonDemo'
+import ScrollSnapDemo from './ScrollSnaplDemo'
+import { ShuffleText } from 'code-components/dist/components/ShuffleText'
+import ShuffleTextDemo from './ShuffleTextDemo'
+import SkewOnScrollDemo from './SkewOnScrollDemo'
+import SparklesDemo from './SparklesDemo'
+import SplitTextRevealDemo from './SplitTextRevealDemo'
+import SquircleDemo from './SquircleDemo'
+import TextRepeatOnScrollDemo from './TextRepeatOnScroll'
+import TextRollDemo from './TextRollDemo'
+import TextSlideInOnViewDemo from './TextSlideInOnViewDemo'
+import TypewriterDemo from './TypewriterDemo'
+import VideoPeekDemo from './VideoPeekDemo'
 
 const DemoPage = () => {
   const [page, setPage] = useState()
   const totalPages = 10 // totalCount / page limit
+  const { data } = useSWR('/api/components', (url) => fetch(url).then((res) => res.json()))
+  const [hideCursor, setHideCursor] = useState(false)
 
   return (
     <Flex
@@ -112,13 +84,41 @@ const DemoPage = () => {
       <Grid
         sx={{
           gridTemplateColumns: ['repeat(1, 1fr)', , , 'repeat(2, 1fr)'],
-          gap: '1rem',
+          gap: '5rem 3rem',
         }}
       >
-        <Card title={'Squircle'} tag="Utility">
-          <div />
-        </Card>
+        <AutoGridDemo />
+        <BlinkRevealDemo />
+        <CopyTextDemo />
+        <CustomCursorOnHoverDemo setHideCursor={setHideCursor} />
+        <DonutDemo />
+        <FiltersDemo />
+        <FlipOnScrollDemo />
+        <FlipOnScrollDemo2 />
+        <FlipOnScrollDemo3 setHideCursor={setHideCursor} />
+        <GooDemo />
+        <GradientBgDemo />
+        <HorizontalScrollDemo />
+        <ImageParallaxOnScrollDemo />
+        <ImageRepeatOnHoverDemo />
+        <ImageScaleOnHoverDemo />
+        <ImageScaleOnScrollDemo />
+        <LiquidRevealDemo />
+        <MagneticButtonDemo />
+        <ScrollSnapDemo />
+        <ShuffleTextDemo />
+        <SkewOnScrollDemo />
+        <SparklesDemo />
+        <SplitTextRevealDemo />
+        <SquircleDemo />
+        <TextRepeatOnScrollDemo />
+        <TextRollDemo />
+        <TextSlideInOnViewDemo />
+        <TypewriterDemo />
+        <VideoPeekDemo />
       </Grid>
+
+      {!hideCursor && <CircleCursor bgColor="#fff" opacityOnHover={0.5} />}
     </Flex>
   )
 }

@@ -1,14 +1,14 @@
-import * as React from "react"
-import { createPortal } from "react-dom"
-import { motion } from "framer-motion"
-import { ControlType, useMotionValue } from "framer"
-import styles from "./styles.modules.css"
-import { getColorProps, getNumProps } from "../../utils/framerControlProps"
+import * as React from 'react'
+import { createPortal } from 'react-dom'
+import { motion } from 'framer-motion'
+import { ControlType, useMotionValue } from 'framer'
+import styles from './styles.modules.css'
+import { getColorProps, getNumProps } from '../../utils/framerControlProps'
 
 const useMousePosition = () => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
-  const [isHovering, setIsHovering] = React.useState("")
+  const [isHovering, setIsHovering] = React.useState('')
 
   React.useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -17,17 +17,17 @@ const useMousePosition = () => {
 
       const t = (e.target as HTMLDivElement).nodeName
 
-      if (["A", "BUTTON", "IMG"].includes(t)) {
+      if (['A', 'BUTTON', 'IMG'].includes(t)) {
         setIsHovering(t)
       } else if (isHovering) {
-        setIsHovering("")
+        setIsHovering('')
       }
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener('mousemove', handleMouseMove)
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [isHovering])
 
@@ -52,24 +52,24 @@ export const CircleCursor = ({
   size = 20,
   opacity = 1,
   opacityOnHover = 0.5,
-  borderColor = "transparent",
+  borderColor = 'transparent',
   borderWidth = 0,
   hoverScale = 3,
-  bgColor = "deepskyblue",
-  hideDefaultCursor = false
+  bgColor = 'deepskyblue',
+  hideDefaultCursor = false,
 }: Partial<Props>) => {
   const [mouseX, mouseY, isHovering] = useMousePosition()
   const [cont, setCont] = React.useState<HTMLDivElement>()
   const isServer = !!globalThis.window
 
   React.useEffect(() => {
-    const container = document.createElement("div")
-    container.setAttribute("data-type", "fc-cursor")
+    const container = document.createElement('div')
+    container.setAttribute('data-type', 'fc-cursor')
     document.body.appendChild(container)
     setCont(container)
 
     if (hideDefaultCursor) {
-      document.body.style.cursor = "none"
+      document.body.style.cursor = 'none'
     }
 
     return () => {
@@ -88,8 +88,8 @@ export const CircleCursor = ({
             x: mouseX,
             y: mouseY,
             scale: isHovering ? hoverScale : 1,
-            "--delay": `${delay}s`,
-            opacity: isHovering ? opacityOnHover : opacity
+            '--delay': `${delay}s`,
+            opacity: isHovering ? opacityOnHover : opacity,
           } as any
         }
       >
@@ -100,10 +100,10 @@ export const CircleCursor = ({
               {
                 x: 0,
                 y: 0, //
-                "--color": bgColor,
-                "--size": size + "px",
-                "--border-color": borderColor,
-                "--border-width": borderWidth + "px"
+                '--color': bgColor,
+                '--size': size + 'px',
+                '--border-color': borderColor,
+                '--border-width': borderWidth + 'px',
               } as any
             }
           />
@@ -117,20 +117,20 @@ export const CircleCursor = ({
 export const propControls = {
   size: getNumProps(30, false, 5, { min: 10, max: 100 }),
   hoverScale: getNumProps(2, false, 0.1, { min: 1, max: 5 }),
-  bgColor: { ...getColorProps("deepskyblue"), title: "Background Color" },
+  bgColor: { ...getColorProps('deepskyblue'), title: 'Background Color' },
   opacity: getNumProps(1, false, 0.1, { min: 0, max: 1 }),
   opacityOnHover: getNumProps(0.5, false, 0.1, { min: 0, max: 1 }),
   borderWidth: getNumProps(0, false, 1, { min: 0, max: 10 }),
-  borderColor: getColorProps("transparent"),
+  borderColor: getColorProps('transparent'),
   delay: {
     type: ControlType.Number,
     min: 0,
     max: 2,
     step: 0.1,
-    defaultValue: 0.3
+    defaultValue: 0.3,
   },
   hideDefaultCursor: {
     type: ControlType.Boolean,
-    defaultValue: false
-  }
+    defaultValue: false,
+  },
 }

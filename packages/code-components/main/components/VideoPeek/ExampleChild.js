@@ -1,1 +1,0 @@
-import{jsx as e}from"react/jsx-runtime";var o=()=>e("div",{style:{fontFamily:"Helvetica, sans-serif",fontSize:"30px",color:"#222",fontWeight:"bold"},children:"\u{1F446} Hover Over Me"});export{o as ExampleChild};

@@ -1,1 +1,0 @@
-var r=(s="Example Split Text")=>{let i=s.split("");return(()=>{let e=[];for(let t=0;t<s.length;t++)/ /.test(i[t])?e.push({isSpace:!0}):e.push({letter:i[t],isLetter:!0,position:t});return e})()||[]};export{r as useSplitText};

@@ -1,7 +1,7 @@
-import { ControlType } from "framer"
-import { AnimatePresence, motion } from "framer-motion"
-import { useEffect, useState } from "react"
-import styles from "./styles.module.css"
+import { ControlType } from 'framer'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import styles from './styles.module.css'
 
 type Props = {
   text: string
@@ -22,12 +22,12 @@ type Props = {
 }
 
 export const TextRoll = ({
-  text = "Example Text, Goes Here",
+  text = 'Example Text, Goes Here',
   typography = {
     fontWeight: 400,
     fontSize: 20,
-    font: "Helvetica, sans-serif",
-    color: "#555"
+    font: 'Helvetica, sans-serif',
+    color: '#555',
   },
   animation = {
     fadeInOut: true,
@@ -35,21 +35,14 @@ export const TextRoll = ({
     duration: 1000,
     offset: 50,
     initialAnimation: false,
-    syncAnimations: true
-  }
-}: Props) => {
+    syncAnimations: true,
+  },
+}: Partial<Props>) => {
   const { fontWeight, fontSize, font, color } = typography
-  const {
-    fadeInOut,
-    delay,
-    duration,
-    offset,
-    initialAnimation,
-    syncAnimations
-  } = animation
+  const { fadeInOut, delay, duration, offset, initialAnimation, syncAnimations } = animation
 
   const [index, setIndex] = useState(0)
-  const words = text.split(",")
+  const words = text.split(',')
   const currentWord = words[index]
 
   useEffect(() => {
@@ -69,18 +62,15 @@ export const TextRoll = ({
 
   return (
     <div className={styles.container}>
-      <AnimatePresence
-        initial={initialAnimation}
-        mode={syncAnimations ? "popLayout" : "wait"}
-      >
+      <AnimatePresence initial={initialAnimation} mode={syncAnimations ? 'popLayout' : 'wait'}>
         <motion.div
           key={index}
           className={styles.text}
           style={{
-            fontFamily: font || "inherit",
-            fontSize: fontSize + "px",
+            fontFamily: font || 'inherit',
+            fontSize: fontSize + 'px',
             fontWeight,
-            color
+            color,
           }}
           animate={{ y: [offset, 0], opacity: 1, dur: duration }}
           exit={{ opacity: fadeInOut ? 0 : 1, y: -offset, dur: duration }}
@@ -95,45 +85,45 @@ export const TextRoll = ({
 export const propControls = {
   text: {
     type: ControlType.String,
-    defaultValue: "Example Text, Created By, Comma Separating, These Words"
+    defaultValue: 'Example Text, Created By, Comma Separating, These Words',
   },
   animation: {
     type: ControlType.Object,
-    Title: "Animation",
+    Title: 'Animation',
     controls: {
       duration: {
         type: ControlType.Number,
         defaultValue: 1000,
         max: 10000,
         min: 100,
-        displayStepper: true
+        displayStepper: true,
       },
       delay: {
         type: ControlType.Number,
         max: 10000,
         min: 100,
-        defaultValue: 2000
+        defaultValue: 2000,
       },
       offset: {
         type: ControlType.Number,
-        defaultValue: 50
+        defaultValue: 50,
       },
       fadeInOut: {
-        title: "Fade In/Out",
+        title: 'Fade In/Out',
         type: ControlType.Boolean,
-        defaultValue: false
+        defaultValue: false,
       },
       initialAnimation: {
-        title: "Initial Anim",
+        title: 'Initial Anim',
         type: ControlType.Boolean,
-        defaultValue: false
+        defaultValue: false,
       },
       syncAnimations: {
-        title: "Sync",
+        title: 'Sync',
         type: ControlType.Boolean,
-        defaultValue: true
-      }
-    }
+        defaultValue: true,
+      },
+    },
   },
   typography: {
     type: ControlType.Object,
@@ -142,20 +132,20 @@ export const propControls = {
         type: ControlType.Number,
         defaultValue: 20,
         min: 1,
-        max: 100
+        max: 100,
       },
       fontWeight: {
         type: ControlType.Number,
-        defaultValue: 400
+        defaultValue: 400,
       },
       font: {
         type: ControlType.String,
-        default: "Helvetica, sans-serif"
+        default: 'Helvetica, sans-serif',
       },
       color: {
         type: ControlType.Color,
-        default: "#555"
-      }
-    }
-  }
+        default: '#555',
+      },
+    },
+  },
 }

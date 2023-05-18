@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Button, Flex } from 'theme-ui'
 import { useMedia } from 'react-use'
 import { useState } from 'react'
+import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
+import { usePayment } from '@/hooks/usePayment'
 
 const Hamburger = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +29,9 @@ const Cross = () => {
 const Nav = () => {
   const isSmall = useMedia('(max-width: 991px)', false)
   const [showMenu, setShowMenu] = useState(false)
-
+  const user = useUser()
+  const sb = useSupabaseClient()
+  const [hasPaid, isLoading, toSignIn] = usePayment()
   return (
     <nav>
       <Flex
@@ -45,7 +49,9 @@ const Nav = () => {
           zIndex: '1000000',
         }}
       >
-        <span sx={{ fontWeight: 600 }}>FRAMER.LIB 📚</span>
+        <Link href="/" sx={{ fontWeight: 600 }}>
+          FRAMER.LIB 📚
+        </Link>
 
         {isSmall && (
           <Button
@@ -92,38 +98,54 @@ const Nav = () => {
                 color: 'text',
                 textDecoration: 'none',
               },
-              button: {
-                fontWeight: 800,
-              },
             }}
           >
             <Link href="/guide">Guide</Link>
             <Link href="/demo">Demo</Link>
-            <Link href="sign-in">
+            {!user && (
+              <Link href="sign-in">
+                <Button
+                  as="div"
+                  bg="transparent"
+                  sx={{
+                    border: 'solid 1px',
+                    borderColor: 'text',
+                    color: 'text',
+                    pointerEvents: 'none',
+                    borderRadius: '8px',
+                  }}
+                >
+                  Sign In
+                </Button>
+              </Link>
+            )}
+            {user && (
               <Button
-                as="div"
+                onClick={() => {
+                  sb.auth.signOut()
+                }}
                 bg="transparent"
                 sx={{
                   border: 'solid 1px',
                   borderColor: 'text',
                   color: 'text',
-                  pointerEvents: 'none',
                   borderRadius: '8px',
+                  fontWeight: 400,
                 }}
               >
-                Sign In
+                Sign Out
               </Button>
-            </Link>
-            <Link href="buy">
+            )}
+            {!hasPaid && !isLoading && (
               <Button
-                as="div"
                 bg="text"
                 color="background"
-                sx={{ pointerEvents: 'none', borderRadius: '8px' }}
+                onClick={() => toSignIn()}
+                sx={{ borderRadius: '8px' }}
               >
                 Buy Now
               </Button>
-            </Link>
+            )}
           </div>
         )}
       </Flex>

@@ -1,13 +1,13 @@
-import { motion, useMotionValue, useInView } from "framer-motion"
-import { useRef } from "react"
-import { getSingleChild } from "src/utils/framerControlProps"
-import { getNumProps } from "../../utils/framerControlProps"
-import styles from "./styles.module.css"
+import { motion, useMotionValue, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { getSingleChild } from 'src/utils/framerControlProps'
+import { getNumProps, getBoolProps } from '../../utils/framerControlProps'
+import styles from './styles.module.css'
 
-export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
+export const LiquidReveal = ({ children, id = '123', duration = 3, onceOnView = false }) => {
   const ref = useRef(null)
   const turb = useMotionValue(0.1)
-  const inView = useInView(ref, { once: true, amount: 0.4 })
+  const inView = useInView(ref, { once: onceOnView, amount: 0.4 })
   const filterId = `fc-liquid-turb-${id}`
 
   return (
@@ -22,11 +22,11 @@ export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
               numOctaves="1"
               id="turb"
               animate={{
-                baseFrequency: inView ? [0.2, 0] : [0.2]
+                baseFrequency: inView ? [0.2, 0] : [0.2],
               }}
               transition={{
                 duration: duration,
-                type: "spring"
+                type: 'spring',
               }}
             />
 
@@ -49,5 +49,6 @@ export const LiquidReveal = ({ children, id = "123", duration = 3 }) => {
 
 export const propsControls = {
   children: getSingleChild(),
-  duration: getNumProps(3, true, 0.1, { min: 0.1, max: 5 })
+  duration: getNumProps(3, true, 0.1, { min: 0.1, max: 5 }),
+  onceOnView: getBoolProps(false),
 }

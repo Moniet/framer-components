@@ -1,9 +1,8 @@
-import * as React from "react"
-import { ControlType } from "framer"
-import styles from "./styles.modules.css"
+import * as React from 'react'
+import { ControlType } from 'framer'
+import styles from './styles.modules.css'
 
-const defaultSrc =
-  "https://labs.moniet.dev/framer-components/public/default-cursor.png"
+const defaultSrc = 'https://labs.moniet.dev/framer-components/public/default-cursor.png'
 
 export const CustomCursorOnHover = ({
   cursor: cursorProps,
@@ -12,7 +11,7 @@ export const CustomCursorOnHover = ({
   delay = 0.3,
   scaleIn = true,
   fadeIn = true,
-  backgroundColor = "#fff"
+  backgroundColor = '#fff',
 }) => {
   const container = React.useRef<HTMLDivElement>() //
   const cursor = React.useRef<HTMLDivElement>()
@@ -21,11 +20,11 @@ export const CustomCursorOnHover = ({
 
   const calculatePosition = (e: React.MouseEvent<HTMLDivElement>) => {
     const { top, left } = dimensions.current
-    const y = e.clientY - top
-    const x = e.clientX - left
+    const y = e.clientY + window.scrollY - top
+    const x = e.clientX + window.scrollX - left
 
-    cursorWrapper.current?.style.setProperty("--x", x + "px")
-    cursorWrapper.current?.style.setProperty("--y", y + "px")
+    cursorWrapper.current?.style.setProperty('--x', x + 'px')
+    cursorWrapper.current?.style.setProperty('--y', y + 'px')
   }
 
   React.useEffect(() => {
@@ -35,24 +34,23 @@ export const CustomCursorOnHover = ({
       clearTimeout(timeout)
       timeout = setTimeout(() => {
         // reset dimensions /
-        const { width, height, top, left } =
-          container.current?.getBoundingClientRect() || {}
+        const { width, height, top, left } = container.current?.getBoundingClientRect() || {}
         const newDims = {
           left,
           top,
           width,
-          height
+          height,
         }
 
         dimensions.current = newDims as any
-        cursorWrapper.current?.style.setProperty("--x", "50%")
-        cursorWrapper.current?.style.setProperty("--y", "50%")
+        cursorWrapper.current?.style.setProperty('--x', '50%')
+        cursorWrapper.current?.style.setProperty('--y', '50%')
       }, 150)
     }
 
     onResize()
 
-    window.addEventListener("resize", onResize)
+    window.addEventListener('resize', onResize)
 
     return () => {
       try {
@@ -68,23 +66,23 @@ export const CustomCursorOnHover = ({
       onMouseOver={(e) => {
         if (cursorWrapper.current) {
           const prevTransition = cursorWrapper.current.style.transition
-          cursorWrapper.current.style.transition = "none"
+          cursorWrapper.current.style.transition = 'none'
           calculatePosition(e)
           cursorWrapper.current.style.transition = prevTransition
-          cursorWrapper.current?.style.setProperty("--opacity", "1")
-          cursorWrapper.current?.style.setProperty("--scale", "1")
+          cursorWrapper.current?.style.setProperty('--opacity', '1')
+          cursorWrapper.current?.style.setProperty('--scale', '1')
         }
       }}
       onMouseLeave={() => {
-        cursorWrapper.current?.style.setProperty("--opacity", "0")
-        cursorWrapper.current?.style.setProperty("--scale", "0")
+        cursorWrapper.current?.style.setProperty('--opacity', '0')
+        cursorWrapper.current?.style.setProperty('--scale', '0')
       }}
       onMouseMove={(e) => {
         calculatePosition(e)
       }}
       style={
         {
-          "--bg-color": backgroundColor
+          '--bg-color': backgroundColor,
         } as any
       }
     >
@@ -94,10 +92,10 @@ export const CustomCursorOnHover = ({
         className={styles.cursorWrapper}
         style={
           {
-            "--size": `${size}px`,
-            "--scale": scaleIn ? 0 : 1,
-            "--opacity": fadeIn ? 0 : 1,
-            "--delay": `${delay}s`
+            '--size': `${size}px`,
+            '--scale': scaleIn ? 0 : 1,
+            '--opacity': fadeIn ? 0 : 1,
+            '--delay': `${delay}s`,
           } as any
         }
       >
@@ -105,7 +103,7 @@ export const CustomCursorOnHover = ({
           ref={cursor as any}
           className={styles.cursor}
           aria-hidden={true}
-          style={{ "--size": `${size}px` } as any}
+          style={{ '--size': `${size}px` } as any}
         >
           <img alt="cursor" src={cursorProps?.src || defaultSrc} />
         </div>
@@ -116,32 +114,32 @@ export const CustomCursorOnHover = ({
 
 export const propControls = {
   cursor: {
-    type: ControlType.ResponsiveImage
+    type: ControlType.ResponsiveImage,
   },
   children: {
-    type: ControlType.ComponentInstance
+    type: ControlType.ComponentInstance,
   },
   size: {
     type: ControlType.Number,
-    defaultValue: 45
+    defaultValue: 45,
   },
   scaleIn: {
     type: ControlType.Boolean,
-    defaultValue: true
+    defaultValue: true,
   },
   fadeIn: {
     type: ControlType.Boolean,
-    defaultValue: true
+    defaultValue: true,
   },
   delay: {
     type: ControlType.Number,
     min: 0,
     max: 2,
     step: 0.05,
-    defaultValue: 0.3
+    defaultValue: 0.3,
   },
   backgroundColor: {
     type: ControlType.Color,
-    defaultValue: "#fff"
-  }
+    defaultValue: '#fff',
+  },
 }
