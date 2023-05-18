@@ -80,7 +80,7 @@ export const components = {
     title: 'Goo',
     createdAt: '2023-05-17',
     id: 12,
-    tags: ['Turn Any Frame To Goo'],
+    tags: ['Turn Any Frame Into Goo'],
     url: 'https://framer.com/m/Goo-aDY9.js@BMh3iTQQA3l7mvdYNEl2',
   },
   GradientBgAnimation: {
@@ -94,7 +94,7 @@ export const components = {
     title: 'Horizontal Scroll',
     createdAt: '2023-05-17',
     id: 14,
-    tags: ['Easy To Apply Scroll'],
+    tags: ['Easy To Create Scroll'],
     url: 'https://framer.com/m/HorizontalScroll-3kAY.js@1WzqWLcy7itUAOUDwjMY',
   },
   ImageParallaxOnScroll: {

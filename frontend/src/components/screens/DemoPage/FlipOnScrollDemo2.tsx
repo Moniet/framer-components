@@ -8,7 +8,7 @@ const FlipOnScrollDemo = () => {
     <DemoCard {...components.FilpOnScroll2}>
       <Center>
         <div sx={{ size: '250px' }}>
-          <FlipOnScroll initialScale={1.2} rotate={60} offsetTop={-200}>
+          <FlipOnScroll initialScale={1.2} rotate={60} offsetTop={-500}>
             <img src="./astronaut.png" sx={{ size: '250px' }} />
           </FlipOnScroll>
         </div>

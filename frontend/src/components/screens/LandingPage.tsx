@@ -105,9 +105,10 @@ const FirstSection = () => {
             type: 'spring',
             bounce: 0.1,
           }}
-          src="https://labs.moniet.dev/framer-components/public/screen-rec.mov"
+          src="/framerlib_promo.mp4"
           sx={{ width: 'min(100%, 900px)', borderRadius: '10px' }}
           muted
+          controls
           autoPlay
         />
       </div>
@@ -264,14 +265,22 @@ const ThirdSection = () => {
         <VideoPeekTab text="Snap Scroll" src="/snap_scroll.mp4" />
       </Grid>
 
-      <Button
-        bg="#383838"
-        color="text"
-        mt="2rem"
-        sx={{ fontSize: '1rem', width: 'fit-content', alignSelf: 'center' }}
-      >
-        View All
-      </Button>
+      <Link href="/demo" sx={{ textAlign: 'center' }}>
+        <Button
+          as="div"
+          bg="#383838"
+          color="text"
+          mt="2rem"
+          sx={{
+            fontSize: '1rem',
+            width: 'fit-content',
+            alignSelf: 'center',
+            pointerEvents: 'none',
+          }}
+        >
+          View All
+        </Button>
+      </Link>
     </Flex>
   )
 }
