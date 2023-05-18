@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo'
 import { ReactNode } from 'react'
 import { Flex } from 'theme-ui'
 
@@ -5,10 +6,12 @@ const GuideTemplate = ({
   header = '',
   videoSrc = '',
   children,
+  desc = '',
 }: {
   header: string
   videoSrc: string
   children: ReactNode
+  desc: string
 }) => {
   return (
     <Flex
@@ -27,6 +30,7 @@ const GuideTemplate = ({
         },
       }}
     >
+      <NextSeo title={'FrameLib | ' + header} description={desc} />
       <h1
         sx={{
           fontSize: '2rem',

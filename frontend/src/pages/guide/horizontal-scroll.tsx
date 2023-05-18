@@ -5,6 +5,7 @@ const HorizontalScrollGuide = () => {
     <GuideTemplate
       header="How-to Use Horizontal Scroll"
       videoSrc="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/horizontal scroll guide.mp4"
+      desc="Learn how to add horizontal-scroll to anything Framer with FramerLib "
     >
       <div />
       <h2>Steps:</h2>{' '}

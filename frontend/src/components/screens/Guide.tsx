@@ -3,6 +3,7 @@ import GuideTemplate from './GuideTemplate'
 const Guide = () => {
   return (
     <GuideTemplate
+      desc="Learn the basics of how to use FramerLib components in your framer projects"
       header="How-to use FramerLib"
       videoSrc="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/guide video.mp4"
     >

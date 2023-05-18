@@ -6,6 +6,7 @@ const ScrollSnapGuide = () => {
     <GuideTemplate
       header="Circle Cursor Guide"
       videoSrc="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/circle cursor guide.mp4"
+      desc="Learn how to add a custom global cursor animation with FramerLib"
     >
       <div />
       <h2>Steps:</h2>{' '}

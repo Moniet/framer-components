@@ -6,6 +6,7 @@ const ScrollSnapGuide = () => {
     <GuideTemplate
       header="Scroll Snap Guide"
       videoSrc="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/snap-scroll-guide.mp4"
+      desc="Learn how to add snap scroll on framer with the FramerLib SnapScroll component"
     >
       <div />
       <div />
