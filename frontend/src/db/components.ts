@@ -53,7 +53,7 @@ export const components = {
     title: 'Filters',
     createdAt: '2023-05-17',
     id: 7,
-    tags: ['Custom Effecs'],
+    tags: ['Custom Effects'],
     url: 'https://framer.com/m/Filters-gYW9.js@GhOMVTkTgPNOCCWNvJ5r',
   },
   FilpOnScroll: {
