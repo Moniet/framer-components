@@ -10,6 +10,7 @@ import { HiCheckCircle } from 'react-icons/hi'
 import { Sparkles } from 'code-components/dist/components/Sparkles'
 import { usePayment } from '@/hooks/usePayment'
 import { NextSeo } from 'next-seo'
+import Video from '../design-system/Video'
 
 const SlideIn = ({ children }: any) => {
   const ref = useRef() as any
@@ -90,29 +91,7 @@ const FirstSection = () => {
           justifyContent: 'center',
         }}
       >
-        <motion.video
-          initial={{
-            opacity: 0,
-            rotateX: '60deg',
-            y: 40,
-          }}
-          animate={{
-            rotateX: '0deg',
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1.5,
-            type: 'spring',
-            bounce: 0.1,
-          }}
-          preload="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/framerlib_promo.mp4"
-          src="https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/framerlib_promo.mp4"
-          sx={{ width: 'min(100%, 900px)', borderRadius: '10px' }}
-          muted
-          controls
-          autoPlay
-        />
+        <Video />
       </div>
       <div sx={{ pt: '3rem' }} />
       <div sx={{ fontWeight: 600, fontSize: '1.25rem' }}>
