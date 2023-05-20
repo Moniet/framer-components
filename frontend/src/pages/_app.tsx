@@ -11,6 +11,7 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { CircleCursor } from 'code-components/dist/components/CircleCursor'
 import { DefaultSeo } from 'next-seo'
+import { Analytics } from '@vercel/analytics/react'
 
 const manrope = Manrope({
   weight: 'variable',
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <SessionContextProvider supabaseClient={supabaseClient} initialSession={pageProps}>
+      <Analytics />
       <DefaultSeo
         openGraph={{
           images: [
