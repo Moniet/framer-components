@@ -456,7 +456,10 @@ const LandingPage = () => {
             >
               Buy Now
             </Button>
-            <Button sx={{ bg: 'accent.1', text: 'text' }}>Request Component</Button>
+
+            <a href="mailto:support@framerlib.com">
+              <Button sx={{ bg: 'accent.1', text: 'text' }}>Request Component</Button>
+            </a>
           </Flex>
         </Sparkles>
       </Flex>
