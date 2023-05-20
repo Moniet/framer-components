@@ -185,7 +185,7 @@ const SecondSection = () => {
         }}
       >
         <StickyCard
-          header="Easy to use Components"
+          header="Easy to use"
           para="Our library includes a wide range of components suitable for various industries, from startups and e-commerce businesses to portfolios and personal projects. You can customize each component to fit your unique design requirements and preview your designs in real-time."
         />
         <StickyCard
