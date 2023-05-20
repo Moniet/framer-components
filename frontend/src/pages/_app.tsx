@@ -10,6 +10,7 @@ import { useState } from 'react'
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { CircleCursor } from 'code-components/dist/components/CircleCursor'
+import { DefaultSeo } from 'next-seo'
 
 const manrope = Manrope({
   weight: 'variable',
@@ -21,6 +22,20 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <SessionContextProvider supabaseClient={supabaseClient} initialSession={pageProps}>
+      <DefaultSeo
+        openGraph={{
+          images: [
+            {
+              alt: 'FramerLib | Copy & Paste No-Code Components For Framer',
+              height: 630,
+              width: 1200,
+              url: 'https://framerlib.com/og.png',
+              secureUrl: 'https://framerlib.com/og.png',
+            },
+          ],
+          siteName: 'FramerLib | Copy & Paste No-Code Components For Framer',
+        }}
+      />
       <div className={manrope.className}>
         <ThemeProvider theme={theme}>
           <Global
