@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "cd ../packages/code-components && pnpm build-fe && cd ../../frontend && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -29,6 +30,7 @@
     "micro": "^10.0.1",
     "next": "13.3.0",
     "next-seo": "^6.0.0",
+    "next-sitemap": "^4.1.3",
     "popmotion": "^11.0.5",
     "postcss": "8.4.23",
     "react": "18.2.0",
