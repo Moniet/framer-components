@@ -307,9 +307,9 @@ const PricingCard = () => {
       </Flex>
       <Flex sx={{ flexDirection: 'column', gap: '1rem' }}>
         <CheckItem text="Lifetime access" />
-        <CheckItem text="Copy and Paste in Framer" />
         <CheckItem text="A year of updates" />
-        <CheckItem text="Share Features" />
+        <CheckItem text="Copy and Paste in Framer" />
+        <CheckItem text="Access to newly added components" />
       </Flex>
     </Flex>
   )
