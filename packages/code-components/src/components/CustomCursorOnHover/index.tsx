@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { ControlType } from 'framer'
 import styles from './styles.modules.css'
+import { useFollowCursor } from '../../hooks/useFollowCursor'
+import { motion, useMotionValue } from 'framer-motion'
 
 const defaultSrc = 'https://labs.moniet.dev/framer-components/public/default-cursor.png'
 
@@ -13,49 +15,24 @@ export const CustomCursorOnHover = ({
   fadeIn = true,
   backgroundColor = '#fff',
 }) => {
-  const container = React.useRef<HTMLDivElement>() //
+  const container = React.useRef<HTMLDivElement>(null)
   const cursor = React.useRef<HTMLDivElement>()
-  const cursorWrapper = React.useRef<HTMLDivElement>(null)
-  const dimensions = React.useRef({ left: 0, top: 0, height: 0, width: 0 })
+  const [isHovering, setIsHovering] = React.useState(false)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
 
-  const calculatePosition = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { top, left } = dimensions.current
-    const y = e.clientY + window.scrollY - top
-    const x = e.clientX + window.scrollX - left
+  const handleMouseEnter = (e: MouseEvent) => setIsHovering(true)
 
-    cursorWrapper.current?.style.setProperty('--x', x + 'px')
-    cursorWrapper.current?.style.setProperty('--y', y + 'px')
+  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    mouseX.set(e.clientX)
+    mouseY.set(e.clientY)
   }
 
   React.useEffect(() => {
-    let timeout: NodeJS.Timeout
-
-    const onResize = () => {
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        // reset dimensions /
-        const { width, height, top, left } = container.current?.getBoundingClientRect() || {}
-        const newDims = {
-          left,
-          top,
-          width,
-          height,
-        }
-
-        dimensions.current = newDims as any
-        cursorWrapper.current?.style.setProperty('--x', '50%')
-        cursorWrapper.current?.style.setProperty('--y', '50%')
-      }, 150)
-    }
-
-    onResize()
-
-    window.addEventListener('resize', onResize)
-
-    return () => {
-      try {
-        clearTimeout(timeout)
-      } catch {}
+    if (container.current) {
+      const { top, left } = container.current?.getBoundingClientRect()
+      mouseX.set(left)
+      mouseY.set(top)
     }
   }, [])
 
@@ -63,51 +40,34 @@ export const CustomCursorOnHover = ({
     <div
       ref={container as any}
       className={styles.container}
-      onMouseOver={(e) => {
-        if (cursorWrapper.current) {
-          const prevTransition = cursorWrapper.current.style.transition
-          cursorWrapper.current.style.transition = 'none'
-          calculatePosition(e)
-          cursorWrapper.current.style.transition = prevTransition
-          cursorWrapper.current?.style.setProperty('--opacity', '1')
-          cursorWrapper.current?.style.setProperty('--scale', '1')
-        }
-      }}
-      onMouseLeave={() => {
-        cursorWrapper.current?.style.setProperty('--opacity', '0')
-        cursorWrapper.current?.style.setProperty('--scale', '0')
-      }}
-      onMouseMove={(e) => {
-        calculatePosition(e)
-      }}
+      onMouseEnter={handleMouseEnter as any}
+      onMouseLeave={() => setIsHovering(false)}
+      onMouseMove={handleMouseMove}
       style={
         {
           '--bg-color': backgroundColor,
+          '--size': `${size}px`,
         } as any
       }
     >
       {children}
-      <div
-        ref={cursorWrapper}
-        className={styles.cursorWrapper}
+
+      <motion.div
+        ref={cursor as any}
+        className={styles.cursor}
+        aria-hidden={true}
         style={
           {
-            '--size': `${size}px`,
-            '--scale': scaleIn ? 0 : 1,
-            '--opacity': fadeIn ? 0 : 1,
-            '--delay': `${delay}s`,
+            '--delay': delay + 's',
+            x: mouseX,
+            y: mouseY,
+            opacity: isHovering ? 1 : fadeIn ? 0 : 1,
+            scale: isHovering ? 1 : scaleIn ? 0 : 1,
           } as any
         }
       >
-        <div
-          ref={cursor as any}
-          className={styles.cursor}
-          aria-hidden={true}
-          style={{ '--size': `${size}px` } as any}
-        >
-          <img alt="cursor" src={cursorProps?.src || defaultSrc} />
-        </div>
-      </div>
+        <img alt="cursor" src={cursorProps?.src || defaultSrc} />
+      </motion.div>
     </div>
   )
 }
