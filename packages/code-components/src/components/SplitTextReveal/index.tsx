@@ -50,31 +50,28 @@ export const SplitTextReveal = ({
       }
       ref={ref}
     >
-      {splitText?.map(({ isSpace, letter, position }) =>
-        isSpace ? (
-          <span
-            key={position}
-            data-component={'fc-space'}
-            style={{ '--space': space + 'px' } as any}
-          ></span>
-        ) : (
-          <motion.span
-            key={position}
-            variants={variants}
-            animate={inView ? 'reveal' : 'initial'}
-            initial="initial"
-            transition={{
-              delay: position * staggerBy, // stagger * no. of previous letters
-              duration: staggerBy,
-              type: 'spring',
-              damping: 20,
-              bounce: 0.1,
-            }}
-          >
-            {letter}
-          </motion.span>
-        )
-      )}
+      {splitText?.map(({ isSpace, letter, position }, i: number) => (
+        <React.Fragment key={i}>
+          {isSpace ? (
+            <span data-component={'fc-space'} style={{ '--space': space + 'px' } as any}></span>
+          ) : (
+            <motion.span
+              variants={variants}
+              animate={inView ? 'reveal' : 'initial'}
+              initial="initial"
+              transition={{
+                delay: position * staggerBy, // stagger * no. of previous letters
+                duration: staggerBy,
+                type: 'spring',
+                damping: 20,
+                bounce: 0.1,
+              }}
+            >
+              {letter}
+            </motion.span>
+          )}
+        </React.Fragment>
+      ))}
     </div>
   )
 }
