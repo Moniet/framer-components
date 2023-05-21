@@ -49,6 +49,7 @@ const DemoPage = () => {
         px: '3rem',
         maxWidth: '1200px',
         mx: 'auto',
+        overflowX: 'hidden',
       }}
     >
       <Flex
