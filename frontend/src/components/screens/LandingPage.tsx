@@ -293,9 +293,7 @@ const PricingCard = () => {
     >
       <Flex sx={{ flexDirection: 'column', gap: '1.5rem', color: 'text' }}>
         <span sx={{ fontSize: '1rem', fontWeight: 600 }}>Component Kit</span>
-        <h2 sx={{ fontSize: '3rem' }}>
-          $29.99 <small>/device</small>
-        </h2>
+        <h2 sx={{ fontSize: '3rem' }}>$29.99</h2>
 
         {/* <Flex sx={{ alignItems: 'center' }}>
           <Checkbox />

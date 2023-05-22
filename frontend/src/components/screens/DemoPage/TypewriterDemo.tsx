@@ -8,7 +8,15 @@ const TypewriterDemo = () => {
     <DemoCard {...(components.Typewriter as any)}>
       <Center>
         <div sx={{ height: '100px' }}>
-          <Typewriter text="Typewriter Example Text" color="#fff" fontSize={25} fontWeight={600} />
+          <Typewriter
+            cursorBlinking
+            cursorColor="#fff"
+            cursor
+            text="Typewriter Example Text, Cycles like this, Super Customizable, And simple to use!"
+            color="#fff"
+            fontSize={25}
+            fontWeight={600}
+          />
         </div>
       </Center>
     </DemoCard>
