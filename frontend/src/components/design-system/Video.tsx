@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Flex } from 'theme-ui'
 import { motion } from 'framer-motion'
-import { FiPlay } from 'react-icons/fi'
 import { HiPlay } from 'react-icons/hi'
 
 const Video = () => {
