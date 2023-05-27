@@ -9,7 +9,8 @@
     "build": "node esmbuild/esmbuild.cjs && tsc --outDir $(sh scripts/getVersion.sh) && zsh scripts/moveAssets.sh;",
     "build-fe": "node esmbuild/esmbuild.cjs dist && tsc --outDir dist && sh scripts/moveDistAssets.sh",
     "build-watch": "node esmbuild/esmbuild.cjs watch",
-    "deploy-cdn": "pnpm build; ts-node --esm ./scripts/deployComponents.ts"
+    "deploy-cdn": "pnpm build; ts-node --esm ./scripts/deployComponents.ts",
+    "tsc-watch": "tsc --outDir dist --watch"
   },
   "type": "module",
   "keywords": [],
