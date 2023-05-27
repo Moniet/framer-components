@@ -1,4 +1,4 @@
-import { ControlType } from "framer"
+import { ControlType } from 'framer'
 
 export const getNumProps = (
   defaultValue: number,
@@ -13,23 +13,23 @@ export const getNumProps = (
   defaultValue,
   displayStepper: stepper,
   ...(minmax ?? {}),
-  ...(step ? { step } : {})
+  ...(step ? { step } : {}),
 })
 
 export const getStrProps = (defaultValue: string) => ({
   type: ControlType.String,
-  defaultValue
+  defaultValue,
 })
 
 export const getSingleChild = () => ({
-  type: ControlType.ComponentInstance
+  type: ControlType.ComponentInstance,
 })
 
 export const getMultipleChildren = () => ({
   type: ControlType.Array,
   control: {
-    type: ControlType.ComponentInstance
-  }
+    type: ControlType.ComponentInstance,
+  },
 })
 
 export type BoxShadowProps = {
@@ -44,34 +44,34 @@ export const boxShadowProps = {
   x: {
     type: ControlType.Number,
     displayStepper: true,
-    defaultValue: 0
+    defaultValue: 0,
   },
   y: {
     type: ControlType.Number,
     displayStepper: true,
-    defaultValue: 0
+    defaultValue: 0,
   },
   blur: {
     type: ControlType.Number,
     displayStepper: true,
-    defaultValue: 20
+    defaultValue: 20,
   },
   color: {
     type: ControlType.Color,
-    defaultValue: "rgba(0,0,0,0.08)"
+    defaultValue: 'rgba(0,0,0,0.08)',
   },
   size: {
     type: ControlType.Number,
     displayStepper: true,
-    defaultValue: 0
-  }
+    defaultValue: 0,
+  },
 }
 
 export const easingProps = {
   type: ControlType.Enum,
-  options: ["ease", "ease-in-out", "ease-out", "ease-in", "linear"],
-  optionTitles: ["Ease", "Ease-In-Out", "Ease-Out", "Ease-In", "Linear"],
-  defaultValue: "ease"
+  options: ['ease', 'ease-in-out', 'ease-out', 'ease-in', 'linear'],
+  optionTitles: ['Ease', 'Ease-In-Out', 'Ease-Out', 'Ease-In', 'Linear'],
+  defaultValue: 'ease',
 }
 
 export type ImageProps = {
@@ -79,6 +79,16 @@ export type ImageProps = {
   alt?: string
 }
 
+/** 
+* typography css 
+---
+css```
+  font-family: var(--font-family, sans-serif);
+  font-size: var(--font-size, 40px);
+  font-weight: var(--font-weight, bold);
+  letter-spacing: var(--letter-spacing);
+```
+*/
 export const typography = {
   type: ControlType.Object,
   controls: {
@@ -87,44 +97,40 @@ export const typography = {
       type: ControlType.Number,
       defaultValue: 20,
       min: 1,
-      max: 100
+      max: 100,
     },
     fontWeight: {
       type: ControlType.Number,
       defaultValue: 400,
       step: 100,
       min: 100,
-      max: 1000
+      max: 1000,
     },
     font: {
       type: ControlType.String,
-      default: "Helvetica, sans-serif"
+      default: 'Helvetica, sans-serif',
     },
     color: {
       type: ControlType.Color,
-      default: "#555"
-    }
-  }
+      default: '#555',
+    },
+  },
 }
 
-export const getTypeographyStyles = (
-  typography,
-  dfontSize = 50,
-  dfontWeight = 600
-) =>
+export const getTypeographyStyles = (typography, dfontSize = 50, dfontWeight = 600) =>
   ({
-    "--font-family": typography?.font || "inherit",
-    "--font-size": (typography?.fontSize || dfontSize) + "px",
-    "--font-weight": typography?.fontWeight || dfontWeight || 600,
-    "--color": typography?.color || "#222"
+    '--font-family': typography?.font || 'inherit',
+    '--font-size': (typography?.fontSize || dfontSize) + 'px',
+    '--font-weight': typography?.fontWeight || dfontWeight || 600,
+    '--color': typography?.color || '#222',
   } as any)
 
 export const getBoolProps = (defaultValue) => ({
   type: ControlType.Boolean,
-  defaultValue: defaultValue
+  defaultValue: defaultValue,
 })
 
-export const getColorProps = (defaultValue = "#000") => ({
+export const getColorProps = (defaultValue = '#000') => ({
   type: ControlType.Color,
-  defaultValue
+  defaultValue,
 })
