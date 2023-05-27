@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useMemo } from 'react'
 
 export const SmoothScroll = () => {
   const root = useMemo(
-    () => (globalThis.window ? (document.querySelector('#__next') as HTMLDivElement) : null),
+    () => (globalThis.window ? (document.querySelector('#main') as HTMLDivElement) : null),
     []
   )
 
@@ -33,7 +33,7 @@ export const SmoothScroll = () => {
       root.style.position = 'fixed'
       root.style.top = '0'
       root.style.left = '0'
-      root.style.overflow = 'hidden'
+      root.style.overflow = 'visible'
       root.style.transition = 'transform 0.3s ease-out'
     }
 
