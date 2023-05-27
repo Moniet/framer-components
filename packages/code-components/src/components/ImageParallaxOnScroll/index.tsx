@@ -1,6 +1,6 @@
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { addPropertyControls, ControlType } from 'framer'
+import { ControlType } from 'framer'
 import styles from './styles.modules.css'
 
 type Props = {
