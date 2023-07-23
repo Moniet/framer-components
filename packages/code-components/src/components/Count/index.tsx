@@ -14,7 +14,11 @@ export const Count = ({ from = 0, to = 50, duration = 1, typography, easing = 'e
     let c: AnimationPlaybackControls
     if (inView && ref.current) {
       c = animate(from, to, {
-        onUpdate: (v) => ((ref.current as any).textContent = Math.floor(v).toFixed(0)),
+        onUpdate: (v) => {
+          if (ref.current) {
+            ;(ref.current as any).textContent = Math.floor(v).toFixed(0)
+          }
+        },
         duration,
         type: 'tween',
         ease: easing as any,
