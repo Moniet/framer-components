@@ -1,7 +1,8 @@
 import { useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useEffect, useLayoutEffect, useMemo } from 'react'
+import { getNumProps } from '../../utils/framerControlProps'
 
-export const SmoothScroll = () => {
+export const SmoothScroll = ({ duration = 1 }) => {
   const root = useMemo(
     () => (globalThis.window ? (document.querySelector('#main') as HTMLDivElement) : null),
     []
@@ -34,13 +35,18 @@ export const SmoothScroll = () => {
       root.style.top = '0'
       root.style.left = '0'
       root.style.overflow = 'visible'
-      root.style.transition = 'transform 0.3s ease-out'
+      root.style.transition = 'transform ease-out'
+      root.style.transitionDuration = duration + 's'
     }
 
     return () => {
       window.removeEventListener('resize', setBodyHeight)
     }
-  }, [root])
+  }, [root, duration])
 
   return <span />
+}
+
+export const propControls = {
+  duration: getNumProps(1, true, 0.1, { min: 0.1 }),
 }
