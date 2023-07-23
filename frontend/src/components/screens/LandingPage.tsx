@@ -365,7 +365,7 @@ const LandingPage = () => {
       }}
     >
       <NextSeo
-        title="FramerLib"
+        title="FramerLib | Premium Framer Components"
         description="We create highly customizable and easy to work with code-components and code-overrides for Framer"
       />
       <section>
