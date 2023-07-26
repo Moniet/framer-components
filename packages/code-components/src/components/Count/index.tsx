@@ -1,13 +1,34 @@
 import { AnimationPlaybackControls, animate, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-import { getNumProps, getTypeographyStyles, typography } from '../../utils/framerControlProps'
+import {
+  getBoolProps,
+  getNumProps,
+  getTypeographyStyles,
+  typography,
+} from '../../utils/framerControlProps'
 import { ControlType } from 'framer'
 import styles from './styles.module.css'
 
-export const Count = ({ from = 0, to = 50, duration = 1, typography, easing = 'easeInOut' }) => {
+type CountProps = {
+  duration: number
+  from: number
+  to: number
+  easing: string
+  typography: any
+  runOnEveryView: boolean
+}
+
+export const Count = ({
+  from = 0,
+  to = 50,
+  duration = 1,
+  typography,
+  easing = 'easeInOut',
+  runOnEveryView = true,
+}: Partial<CountProps>) => {
   const ref = useRef(null)
   const inView = useInView(ref, {
-    once: true,
+    once: !runOnEveryView,
   })
 
   useEffect(() => {
@@ -47,8 +68,9 @@ export const propControls = {
     optionTitles: ['Ease', 'Ease-In-Out', 'Ease-Out', 'Ease-In', 'Linear'],
     defaultValue: 'ease',
   },
-  duration: getNumProps(5, true, 1, { min: 1 }),
+  duration: getNumProps(2, true, 1, { min: 1 }),
   typography: typography,
   from: getNumProps(0, true, 1, { min: 1 }),
   to: getNumProps(50, true, 1, { min: 1 }),
+  runOnEveryView: { ...getBoolProps(true), title: 'Run on every view' },
 }

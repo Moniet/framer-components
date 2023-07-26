@@ -2,9 +2,9 @@ import { useMotionValue, useScroll, useSpring, useTransform } from 'framer-motio
 import { useEffect, useLayoutEffect, useMemo } from 'react'
 import { getNumProps } from '../../utils/framerControlProps'
 
-export const SmoothScroll = ({ duration = 1 }) => {
+export const SmoothScroll = ({ duration = 1, rootSelector = '#main' }) => {
   const root = useMemo(
-    () => (globalThis.window ? (document.querySelector('#main') as HTMLDivElement) : null),
+    () => (globalThis.window ? (document.querySelector(rootSelector) as HTMLDivElement) : null),
     []
   )
 
@@ -18,11 +18,12 @@ export const SmoothScroll = ({ duration = 1 }) => {
       }, 100)
     }
 
-    window.addEventListener('resize', setBodyHeight)
-
-    window.addEventListener('scroll', (e) => {
+    const handleScroll = (e) => {
       root?.style.setProperty('transform', `translateY(${-1 * window.scrollY}px)`)
-    })
+    }
+
+    window.addEventListener('resize', setBodyHeight)
+    window.addEventListener('scroll', handleScroll)
 
     setTimeout(() => {
       setBodyHeight()
@@ -41,6 +42,17 @@ export const SmoothScroll = ({ duration = 1 }) => {
 
     return () => {
       window.removeEventListener('resize', setBodyHeight)
+      window.removeEventListener('scroll', handleScroll)
+      document.body.style.setProperty('height', 'auto')
+
+      if (root) {
+        root.style.height = 'auto'
+        root.style.width = 'auto'
+        root.style.position = 'relative'
+        root.style.overflow = 'auto'
+        root.style.transition = 'none'
+        root?.style.setProperty('transform', `translateY(0)`)
+      }
     }
   }, [root, duration])
 

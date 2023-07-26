@@ -7,7 +7,8 @@ import { components } from '@/db/components'
 const componentsHandler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
     const supabase = createServerSupabaseClient({ req, res })
-    const user = await supabase.auth.getUser()
+    const user = await supabase.auth.getUser().catch(() => null)
+
     const query = req.query
     const page = Number(query.page || 0)
 
@@ -16,8 +17,15 @@ const componentsHandler: NextApiHandler = async (req, res) => {
     const totalPages = Math.floor(componentNames.length / 6)
     const hasMore = page !== 6
 
-    if (!user) {
-      return res.status(401).json({})
+    if (!user?.data?.user) {
+      return res.status(200).json(
+        componentNames
+          .filter((key: any) => {
+            const component = components[key as keyof typeof components]
+            return component?.isFree
+          })
+          .map((key) => components[key])
+      )
     }
 
     const faunaClient = new Client({

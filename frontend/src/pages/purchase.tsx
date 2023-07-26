@@ -36,7 +36,6 @@ const Purchase = () => {
   useEffect(() => {
     ;(async () => {
       if (user) {
-        console.log({ user })
         const stripe = await getStripe()
         const checkoutSession = (await fetch('/api/payment', {
           method: 'POST',

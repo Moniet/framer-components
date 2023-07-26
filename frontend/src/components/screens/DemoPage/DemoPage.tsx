@@ -36,6 +36,11 @@ import TypewriterDemo from './TypewriterDemo'
 import VideoPeekDemo from './VideoPeekDemo'
 import { NextSeo } from 'next-seo'
 import FlipOnScrollDemo3 from './FlipOnScrollDemo3'
+import CountDemo from './CountDemo'
+import ImageWithOverlayDemo from './ImageWithOverlayDemo'
+import CustomGlobalCursorDemo from './CustomGlobalCursorDemo'
+import VideoWithThumbnailDemo from './VideoWithThumbnail'
+import SmoothScrollDemo from './SmoothScrollDemo'
 
 const DemoPage = () => {
   const [hideCursor, setHideCursor] = useState(false)
@@ -121,6 +126,11 @@ const DemoPage = () => {
         <TextSlideInOnViewDemo />
         <TypewriterDemo />
         <VideoPeekDemo />
+        <CountDemo />
+        <ImageWithOverlayDemo />
+        <CustomGlobalCursorDemo setHideCursor={setHideCursor} />
+        <VideoWithThumbnailDemo />
+        <SmoothScrollDemo />
       </Grid>
 
       {!hideCursor && <CircleCursor bgColor="#fff" opacityOnHover={0.5} />}

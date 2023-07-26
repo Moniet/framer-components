@@ -1,6 +1,6 @@
 import { useComponents } from '@/hooks/useComponents'
 import Link from 'next/link'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useMemo, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { Button, Flex } from 'theme-ui'
 
@@ -10,22 +10,22 @@ type CardProps = {
   tags?: string[]
   guideLink?: string
   id: number
+  isFree?: boolean
 }
 
-const DemoCard = ({ children = '', title = '', tags, id, guideLink }: CardProps) => {
+const DemoCard = ({ children = '', title = '', tags, id, guideLink, isFree }: CardProps) => {
   const { data } = useComponents()
   const [copied, setCopied] = useState(false)
+  const componentData = useMemo(() => data?.find((d: any) => d.id === id), [data, id])
   const copyLink = () => {
-    if (data) {
-      const d = data.data.find((d: any) => d.id === id)
-      d &&
-        navigator.clipboard
-          .writeText(d.url)
-          .then(() => {
-            setCopied(true)
-            setTimeout(() => setCopied(false), 10000)
-          })
-          .catch(() => alert("copy didn't work :("))
+    if (data && componentData?.url) {
+      navigator.clipboard
+        .writeText(componentData.url)
+        .then(() => {
+          setCopied(true)
+          setTimeout(() => setCopied(false), 10000)
+        })
+        .catch(() => alert("copy didn't work :("))
     }
   }
 
@@ -66,7 +66,7 @@ const DemoCard = ({ children = '', title = '', tags, id, guideLink }: CardProps)
             </Link>
           )}
         </div>
-        {data?.data && (
+        {(componentData || isFree) && (
           <Button
             onClick={() => copyLink()}
             sx={{
@@ -78,6 +78,7 @@ const DemoCard = ({ children = '', title = '', tags, id, guideLink }: CardProps)
               py: '0.5rem',
               gap: '0.5rem',
               height: 'fit-content',
+              minWidth: 'fit-content',
               cursor: 'pointer',
               transition: 'transform 0.2s ease',
               '&:active': {

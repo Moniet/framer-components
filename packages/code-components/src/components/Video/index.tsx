@@ -9,7 +9,7 @@ type Props = {
     src?: string
   }
   video: string
-  children: React.ReactNode
+  playButtonFrame: React.ReactNode
   defaultVolume: number
   isMuted: boolean
   autoPlay: boolean
@@ -21,7 +21,7 @@ type Props = {
 export const Video = ({
   image,
   video = 'https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/guide%20video.mp4',
-  children,
+  playButtonFrame = <PlayIcon />,
   defaultVolume = 0.3,
   isMuted,
   autoPlay,
@@ -121,7 +121,7 @@ export const Video = ({
             }}
           >
             <span style={{ margin: 'auto', color: playButtonColor }}>
-              {children || <PlayIcon />}
+              {playButtonFrame || <PlayIcon />}
             </span>
           </div>
         </div>
@@ -147,11 +147,11 @@ export const propControls = {
     title: 'Thumbnail',
     type: ControlType.ResponsiveImage,
   },
-  children: {
+  playButtonFrame: {
     type: ControlType.ComponentInstance,
   },
   playButtonColor: getColorProps('#fff'),
-  buttonBackgroundColor: getColorProps('rgba(0,0,0,0.5)'),
+  buttonBackgroundColor: getColorProps('rgba(0,0,0,0)'),
   autoPlay: getBoolProps(false),
   borderRadius: getNumProps(10, true, 1, { min: 0, max: 20 }),
 }

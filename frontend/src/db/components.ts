@@ -1,4 +1,16 @@
-export const components = {
+type Components = {
+  [index: string]: {
+    url: string
+    tags: string[]
+    title: string
+    createdAt: string
+    id: number
+    isFree?: boolean
+    guideLink?: string
+  }
+}
+
+export const components: Components = {
   AutoGrid: {
     url: 'https://framer.com/m/AutoGrid-lTk2.js@hv170vfHp56WiPDicOIN',
     tags: ['Layout'],
@@ -38,9 +50,10 @@ export const components = {
   GlobalCustomCursor: {
     title: 'Custom Global Cursor',
     createdAt: '2023-05-17',
-    id: 5,
+    id: 12330,
     tags: ['Replace the cursor with any image'],
     url: 'https://framer.com/m/CustomCursor-pqPs.js@ZBEe9yXyAPqqASoc9OQ2',
+    isFree: true,
   },
   Donut: {
     title: 'Donut',
@@ -48,6 +61,7 @@ export const components = {
     id: 6,
     tags: ['Utility'],
     url: 'https://framer.com/m/Donut-ZefS.js@OiMJhPX0OrV7CNaMx9lV',
+    isFree: true,
   },
   Filters: {
     title: 'Filters',
@@ -147,6 +161,7 @@ export const components = {
     id: 20,
     tags: ['Auto Animate'],
     url: 'https://framer.com/m/MagneticButton-zZGS.js@eg47E9JkAY6MnPRzlYeS',
+    isFree: true,
   },
   ScrollSnap: {
     title: 'Scroll Snap',
@@ -190,6 +205,7 @@ export const components = {
     id: 26,
     tags: ['Utility'],
     url: 'https://framer.com/m/Squircle-p7bb.js@GaIvjhkFMzr6Gciq7nvD',
+    isFree: true,
   },
   TextRepeatOnScroll: {
     title: 'Text Repeat On Scroll',
@@ -225,5 +241,43 @@ export const components = {
     id: 31,
     tags: [],
     url: 'https://framer.com/m/VideoPeek-PEf9.js@Jdz1bOYWuQ2WSKm222Xl',
+  },
+  Count: {
+    title: 'Count',
+    createdAt: '2023-06-23',
+    id: 32,
+    tags: ['You can set the speed as fast / slow as you like'],
+    url: 'https://framer.com/m/Count-mW18.js@qwXusBnu2k1ylyl9vdTJ',
+    isFree: true,
+  },
+  ImageWithOverlay: {
+    title: 'Image With Overlay + Animation',
+    createdAt: '2023-06-23',
+    id: 33,
+    tags: ['It can be used for image galleries'],
+    url: 'https://framer.com/m/eImageWithOverlay-HhBo.js@mGREyUY2sLE2a4PghFoZ',
+  },
+  SmoothScroll: {
+    title: 'Full Page Smooth Scroll',
+    createdAt: '2023-06-23',
+    id: 34,
+    tags: [],
+    url: 'https://framer.com/m/SmoothScroll-JYlL.js@33pY9Ss7YrAZuXdfuSEW',
+  },
+  CustomGlobalCursor: {
+    title: 'Custom Global Cursor Image',
+    createdAt: '2023-06-23',
+    id: 35,
+    tags: [],
+    url: 'https://framer.com/m/CustomGlobalCursor-HI82.js@O5hwclRlS9INygwnMqvt',
+    isFree: true,
+  },
+  VideoWithThumbnail: {
+    createdAt: '2023-06-23',
+    id: 36,
+    tags: ['Custom thumbnail + Play button'],
+    url: 'https://framer.com/m/VideoWithThumbnail-w2DA.js@lp5rPkutq0Bt4nsGKshh',
+    title: 'Video With Thumbnail',
+    isFree: true,
   },
 }

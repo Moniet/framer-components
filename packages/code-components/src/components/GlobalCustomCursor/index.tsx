@@ -2,13 +2,15 @@ import { ControlType, useMotionValue, useSpring } from 'framer'
 import { motion } from 'framer'
 import * as React from 'react'
 import { createPortal } from 'react-dom'
+import { getNumProps } from '../../utils/framerControlProps'
+import { getBoolProps } from '../../utils/framerControlProps'
 
 export const GlobalCustomCursor = ({
-  image,
+  cursor,
   duration = 0.5,
   bounce = false,
-  width = 40,
-  height = 40,
+  cursorWidth: width = 40,
+  cursorHeight: height = 40,
 }) => {
   const ref = React.useRef(null)
   const [loaded, setLoaded] = React.useState(false)
@@ -51,7 +53,7 @@ export const GlobalCustomCursor = ({
         setLoaded(true)
       }}
       ref={ref}
-      src={image?.src || 'https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/dogecoint.webp'}
+      src={cursor?.src || 'https://pub-db5cfbac23934b6e9312219ce0bd3ca4.r2.dev/dogecoint.webp'}
       width={width}
       height={height}
       style={{
@@ -75,4 +77,8 @@ export const propControls = {
   cursor: {
     type: ControlType.ResponsiveImage,
   },
+  cursorWidth: getNumProps(40, true, 1),
+  cursorHeight: getNumProps(40, true, 1),
+  bounce: getBoolProps(false),
+  duration: getNumProps(0.5, true, 0.1, { min: 0.1 }),
 }

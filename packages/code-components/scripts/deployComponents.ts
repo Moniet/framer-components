@@ -1,11 +1,11 @@
-import { createClient } from '@supabase/supabase-js'
 import * as glob from 'glob'
 import { join } from 'path'
 import dotenv from 'dotenv'
 import { execSync } from 'child_process'
 import fs from 'fs/promises'
-dotenv.config()
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
+
+dotenv.config()
 
 const s3Client = new S3Client({
   region: 'us-east-1',
@@ -35,13 +35,16 @@ const s3Client = new S3Client({
     return version + '/' + path.slice(index)
   })
 
+  const Bucket = 'jsx' // jsx-dev | jsx
+
   for (let [path, origPath] of entryPoints) {
     const jsData = await fs.readFile(origPath)
+    console.log('uploading : ' + path)
 
     await s3Client.send(
       new PutObjectCommand({
         Body: jsData.toString(),
-        Bucket: 'jsx',
+        Bucket,
         Key: path,
         ContentType: /\.(t|j)sx?/.test(path) ? 'text/javascript' : undefined,
       })
@@ -54,7 +57,7 @@ const s3Client = new S3Client({
     await s3Client.send(
       new PutObjectCommand({
         Body: data,
-        Bucket: 'jsx',
+        Bucket,
         Key: pubPath,
       })
     )
