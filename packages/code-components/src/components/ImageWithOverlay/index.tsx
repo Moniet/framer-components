@@ -26,7 +26,7 @@ export const ImageWithOverlay = ({
   overlayColor = '#000',
   overlayOpacity = 0.5,
   image,
-}: Props) => {
+}: Partial<Props>) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const [isOpen, setIsOpen] = useState(false)

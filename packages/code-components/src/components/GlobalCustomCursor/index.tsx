@@ -5,13 +5,23 @@ import { createPortal } from 'react-dom'
 import { getNumProps } from '../../utils/framerControlProps'
 import { getBoolProps } from '../../utils/framerControlProps'
 
+type Props = {
+  cursor?: {
+    src?: string
+  }
+  duration?: number
+  bounce?: boolean
+  cursorWidth?: number
+  cursorHeight?: number
+}
+
 export const GlobalCustomCursor = ({
   cursor,
   duration = 0.5,
   bounce = false,
   cursorWidth: width = 40,
   cursorHeight: height = 40,
-}) => {
+}: Props) => {
   const ref = React.useRef(null)
   const [loaded, setLoaded] = React.useState(false)
   const [isServer, setIsServer] = React.useState(true)
