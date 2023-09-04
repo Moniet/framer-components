@@ -26,7 +26,7 @@ const DemoCard = ({ children = '', title = '', tags, id, guideLink, isFree }: Ca
         .writeText(componentData.url)
         .then(() => {
           setCopied(true)
-          setTimeout(() => setCopied(false), 10000)
+          setTimeout(() => setCopied(false), 5000)
         })
         .catch(() => alert("copy didn't work :("))
     }
