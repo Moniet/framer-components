@@ -169,7 +169,7 @@ export const components: Components = {
     id: 21,
     tags: ['Utility'],
     url: 'https://framer.com/m/ScrollSnap-Iem8.js@HxexDtkkKnBFbVWW92W9',
-    guideLink: '/guide/snap-scroll',
+    guideLink: '/guide/scroll-snap',
   },
   ShuffleText: {
     title: 'Shuffle Text',
