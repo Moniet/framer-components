@@ -53,7 +53,7 @@ const componentsHandler: NextApiHandler = async (req, res) => {
       })
     }
 
-    return res.json({ data: null })
+    return res.json({ data: [] })
   }
 }
 
