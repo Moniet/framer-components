@@ -16,7 +16,10 @@ type CardProps = {
 const DemoCard = ({ children = '', title = '', tags, id, guideLink, isFree }: CardProps) => {
   const { data } = useComponents()
   const [copied, setCopied] = useState(false)
-  const componentData = useMemo(() => data?.find((d: any) => d.id === id), [data, id])
+  const componentData = useMemo(
+    () => (Array.isArray(data) ? data?.find((d: any) => d.id === id) : []),
+    [data, id]
+  )
   const copyLink = () => {
     if (data && componentData?.url) {
       navigator.clipboard

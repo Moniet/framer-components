@@ -38,7 +38,9 @@ const componentsHandler: NextApiHandler = async (req, res) => {
       data?: string[]
     }
 
-    if (purchases?.data?.find((d: any) => d === priceIds.lifetime)) {
+    const hasLifetimeAccess = !!purchases?.data?.includes(priceIds.lifetime)
+
+    if (hasLifetimeAccess) {
       const allComponents = componentNames.map((cn) => {
         const comp = (components as any)[cn]
         return {
