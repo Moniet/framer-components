@@ -255,7 +255,7 @@ export const components: Components = {
     createdAt: '2023-06-23',
     id: 33,
     tags: ['It can be used for image galleries'],
-    url: 'https://framer.com/m/eImageWithOverlay-HhBo.js@mGREyUY2sLE2a4PghFoZ',
+    url: 'https://framer.com/m/ImageWithOverlay-HhBo.js@mGREyUY2sLE2a4PghFoZ',
   },
   SmoothScroll: {
     title: 'Full Page Smooth Scroll',
