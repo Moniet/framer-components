@@ -5,8 +5,9 @@ export const useComponents = () => {
   const endpoint = 'api/components'
   const { data, error, isLoading } = useSWR(endpoint, (url) => fetch(url).then((res) => res.json()))
 
+  console.log({ data })
   return {
-    data: data?.data || [],
+    data: data || {},
     error,
     isLoading,
   }
