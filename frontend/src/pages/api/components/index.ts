@@ -18,14 +18,14 @@ const componentsHandler: NextApiHandler = async (req, res) => {
     const hasMore = page !== 6
 
     if (!user?.data?.user) {
-      return res.status(200).json(
-        componentNames
+      return res.status(200).json({
+        data: componentNames
           .filter((key: any) => {
             const component = components[key as keyof typeof components]
             return component?.isFree
           })
-          .map((key) => components[key])
-      )
+          .map((key) => components[key]),
+      })
     }
 
     const faunaClient = new Client({

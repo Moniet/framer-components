@@ -17,7 +17,7 @@ const DemoCard = ({ children = '', title = '', tags, id, guideLink, isFree }: Ca
   const { data } = useComponents()
   const [copied, setCopied] = useState(false)
   const componentData = useMemo(
-    () => (Array.isArray(data) ? data?.find((d: any) => d.id === id) : []),
+    () => Array.isArray(data) && data?.find((d: any) => d.id === id),
     [data, id]
   )
   const copyLink = () => {
