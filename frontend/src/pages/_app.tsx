@@ -54,6 +54,14 @@ export default function App({ Component, pageProps }: AppProps) {
           <Footer />
         </ThemeProvider>
       </div>
+      <a
+        sx={{ width: 0, height: 0, opacity: 0, position: 'absolute', pointerEvents: 'none' }}
+        href="https://www.instaapply.co/"
+        referrerPolicy="strict-origin-when-cross-origin"
+        rel="follow"
+      >
+        InstaApply
+      </a>
     </SessionContextProvider>
   )
 }
